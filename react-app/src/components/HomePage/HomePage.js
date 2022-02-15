@@ -1,5 +1,8 @@
 import React from 'react';
+
 import ImageCarousel from './ImageCarousel';
+import ScrapsRecent from '../ScrapsRecent/ScrapsRecent';
+
 import './HomePage.css';
 
 const HomePage = () => {
@@ -7,6 +10,7 @@ const HomePage = () => {
     return (
         <>
             <ImageCarousel />
+            <ScrapsRecent />
         </>
     )
 };
