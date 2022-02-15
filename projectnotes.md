@@ -15,4 +15,7 @@
 * Models: Likes
 
 # 02/15:
-* Seeds: Users
+* Seed: Users
+* Seed: Yarn Weights
+* Seed: Swap Targets
+* Seed: Scraps
