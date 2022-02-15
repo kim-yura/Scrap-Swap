@@ -8,8 +8,14 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
-    email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    profile_pic_url = db.Column(db.String)
+
+    follow = db.relationship('Follow', back_populates='user')
+    scrap = db.relationship('Scrap', back_populates='user')
+    comment = db.relationship('Comment', back_populates='user')
+    like = db.relationship('Like', back_populates='user')
 
     @property
     def password(self):
@@ -26,5 +32,14 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profile_pic_url': self.profile_pic_url
+        }
+
+    def to_JSON(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'profilePicURL': self.profile_pic_url
         }
