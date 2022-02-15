@@ -53,6 +53,7 @@ class Scrap(db.Model):
             'allergens': self.allergens,
             'textContent': self.text_content,
             'swapTargetId': self.swap_target_id,
+            'user': self.user.to_JSON(),
             'createdAt': self.created_at,
             'updatedAt': self.updated_at
         }

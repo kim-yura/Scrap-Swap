@@ -1,0 +1,41 @@
+.card {
+    height: 360px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #C2CAD0;
+    border-radius: 12px;
+}
+
+.card-image {
+    height: 240px;
+    width: 240px;
+    object-fit: contain;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-title {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 32px;
+    margin-bottom: 0px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.card-user {
+    margin-top: 0px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.card-target {
+    margin-top: 0px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 14px;
+}

@@ -1,4 +1,12 @@
 .home-container {
-    padding-left: 3%;
-    padding-right: 3%
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 48px;
+}
+
+.home-container-row {
+    display: flex;
+    column-gap: 12px;
+    justify-content: space-between;
+    width: 100%;
 }

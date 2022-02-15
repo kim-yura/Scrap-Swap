@@ -6,6 +6,7 @@ import ScrapsRecent from '../ScrapsRecent/ScrapsRecent';
 import './HomePage.css';
 
 const HomePage = () => {
+    window.scrollTo(0,0);
 
     return (
         <>

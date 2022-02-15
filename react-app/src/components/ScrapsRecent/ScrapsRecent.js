@@ -19,16 +19,21 @@ function ScrapsRecent() {
     });
 
     const allScrapsArr = Object.values(allScraps);
-    const recentScraps = (allScrapsArr.slice(-4)).reverse();
+    const recentScraps = (allScrapsArr.slice(-5)).reverse();
 
     return (
         <div className='home-container'>
             <h2>Browse Recent Scraps</h2>
-            {recentScraps.map(scrap => {
-                return(
-                    <ScrapCard scrap={scrap} />
-                )
-            })}
+            <div className='home-container-row'>
+                {recentScraps.map((scrap, idx) => {
+                    return (
+                        <ScrapCard scrap={scrap} key={idx}/>
+                    )
+                })}
+            </div>
+            <div className='home-container'>
+                Hello
+            </div>
         </div>
     )
 };

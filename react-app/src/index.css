@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     background-color: #FFFEFA;
+    min-width: 1400px;
 }
 
 * {
@@ -9,8 +10,21 @@ body {
 
 a {
     text-decoration: none;
+    color: #282828;
+}
+a:hover {
+    text-shadow: 0 0 12px #282828;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
 }
