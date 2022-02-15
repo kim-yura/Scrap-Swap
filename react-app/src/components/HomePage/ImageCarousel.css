@@ -1,0 +1,35 @@
+/* --------------- CAROUSEL IMAGES --------------- */
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* --------------- CAROUSEL TEXT --------------- */
+
+.overlay {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 600px;
+    color: #FFFEFA;
+    border-top: 2px solid #FFFEFA;
+    border-bottom: 2px solid #FFFEFA;
+    padding: 15px 0;
+}
+
+.overlay-title {
+    font-family: 'Josefin Slab', serif;
+    font-size: 44px;
+    text-shadow: 1px 1px 20px black;
+    letter-spacing: 2px;
+}
+
+.overlay-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    color: #FFFEFA;
+    text-shadow: 1px 1px 20px black;
+}
