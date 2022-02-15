@@ -13,3 +13,6 @@
 * Models: Scraps
 * Models: Comments
 * Models: Likes
+
+# 02/15:
+* Seeds: Users
