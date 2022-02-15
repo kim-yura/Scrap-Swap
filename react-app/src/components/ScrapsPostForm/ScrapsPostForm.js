@@ -69,7 +69,7 @@ const ScrapsPostForm = () => {
 
         if (yarnWeightId === 0) errors.push('Please select a yarn weight category.');
 
-        if (fiberContent) errors.push('Please enter the fiber content of your Scrap.');
+        if (!fiberContent) errors.push('Please enter the fiber content of your Scrap.');
 
         if (!yardage) errors.push('Please enter the yardage of your Scrap.');
         if (yardage == 0) errors.push('You cannot swap 0 yards of yarn!');
@@ -80,7 +80,8 @@ const ScrapsPostForm = () => {
         setValidationErrors(errors);
 
         if (!errors.length) {
-            // PUSH INTO DB
+            const submittedScrap = await dispatch(createScrap(newScrap));
+            history.push(`/scraps/${submittedScrap.id}`);
         };
     }
 
@@ -88,17 +89,19 @@ const ScrapsPostForm = () => {
         <div className='new-scrap-background'>
             <form className='new-scrap-form' onSubmit={handleSubmit}>
 
-                <div className='form-errors'>
-                    {validationErrors.length > 0 &&
-                        validationErrors.map(error =>
-                            <p className='form-error' key={error}>
-                                {error}
-                            </p>)}
-                </div>
+                {validationErrors.length ?
+                    <div className='form-errors'>
+                        {validationErrors.length > 0 &&
+                            validationErrors.map(error =>
+                                <p className='form-error' key={error}>
+                                    {error}
+                                </p>)}
+                    </div>
+                    : ''}
 
                 <div className='form-inputs'>
                     <div className='image-form'>
-                        {imageURL ? 'Image successfully uploaded!': 'Upload an image for your Scrap'}
+                        {imageURL ? 'Image successfully uploaded!' : 'Upload an image for your Scrap'}
                         {imageURL ? <img className='image' src={imageURL} alt='Scrap' /> : ''}
                         <input
                             type='file'
