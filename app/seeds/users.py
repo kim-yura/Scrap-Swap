@@ -4,15 +4,43 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
+        username='DemoYuRa',
+        email='yura@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_1.jpg')
+    knittywitty = User(
+        username='knittywitty',
+        email='knittywitty@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_2.jpg')
+    purlsofwisdom = User(
+        username='purlsofwisdom',
+        email='purlsofwisdom@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_3.jpg')
+    knithappens = User(
+        username='knithappens',
+        email='knithappens@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_4.jpg')
+    stitchcraft = User(
+        username='stitchcraft',
+        email='stitchcraft@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_5.jpg')
+    comingunraveled = User(
+        username='comingunraveled',
+        email='comingunraveled@aa.io',
+        password='password',
+        profile_pic_url='/images/profilepic_6.jpg')
+
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(knittywitty)
+    db.session.add(purlsofwisdom)
+    db.session.add(knithappens)
+    db.session.add(stitchcraft)
+    db.session.add(comingunraveled)
 
     db.session.commit()
 

@@ -4,9 +4,8 @@ from .db import db
 class Follow(db.Model):
     __tablename__ = 'follows'
 
-    id = db.Column(db.Integer, primary_key=True)
-    following_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    follower_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    following_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, primary_key=True)
+    follower_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, primary_key=True)
 
     user = db.relationship('User', back_populates='follow')
 
