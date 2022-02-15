@@ -9,6 +9,8 @@ import HomePage from './components/HomePage/HomePage';
 
 import ScrapsPostForm from './components/ScrapsPostForm/ScrapsPostForm';
 
+import ScrapView from './components/ScrapView/ScrapView';
+
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -21,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -51,8 +53,12 @@ function App() {
           <ScrapsPostForm />
         </ProtectedRoute>
 
+        <Route path='/scraps/:scrapId' exact={true} >
+          <ScrapView />
+        </Route>
+
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />

@@ -12,8 +12,18 @@ a {
     text-decoration: none;
     color: #282828;
 }
+
 a:hover {
+    font-weight: bold;
+}
+
+a:active {
     text-shadow: 0 0 12px #282828;
+}
+
+h1 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 44px;
 }
 
 h2 {

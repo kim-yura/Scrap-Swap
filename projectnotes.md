@@ -19,3 +19,10 @@
 * Seed: Yarn Weights
 * Seed: Swap Targets
 * Seed: Scraps
+* Navbar: Top and bottom styling, placeholder links
+* Homepage: Carousel
+* Scraps: READ API, route, store, render on homepage
+* Scraps: ScrapCard render on homepage complete
+* Scraps: POST API, route, store
+* AWS config
+* Scraps: Post Form complete with error handling, redirect to new Scrap page

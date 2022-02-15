@@ -5,11 +5,16 @@
     flex-direction: column;
     border: 1px solid #C2CAD0;
     border-radius: 12px;
+    background-color: #FFFEFA;
+    box-shadow: 1px 1px 4px #282828;
+}
+.card:active {
+    box-shadow: 2px 4px 8px #282828;
 }
 
 .card-image {
     height: 240px;
-    width: 240px;
+    width: 239px;
     object-fit: cover;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;

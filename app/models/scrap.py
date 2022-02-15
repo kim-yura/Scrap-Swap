@@ -54,6 +54,7 @@ class Scrap(db.Model):
             'textContent': self.text_content,
             'swapTargetId': self.swap_target_id,
             'user': self.user.to_JSON(),
+            'yarnWeight': self.yarn_weight.to_JSON(),
             'createdAt': self.created_at,
             'updatedAt': self.updated_at
         }
