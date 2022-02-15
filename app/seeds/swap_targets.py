@@ -1,4 +1,3 @@
-from turtle import pos
 from app.models import db, SwapTarget
 
 

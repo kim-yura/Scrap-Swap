@@ -14,6 +14,8 @@ class Scrap(db.Model):
     yardage = db.Column(db.Integer, nullable=False)
     allergens = db.Column(db.Text)
     swap_target_id = db.Column(db.Integer, db.ForeignKey('swap_targets.id'), nullable=False)
+    text_content = db.Column(db.Text)
+
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
@@ -33,6 +35,7 @@ class Scrap(db.Model):
             'fiber_content': self.fiber_content,
             'yardage': self.yardage,
             'allergens': self.allergens,
+            'text_content': self.text_content,
             'swap_target_id': self.swap_target_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at
@@ -48,6 +51,7 @@ class Scrap(db.Model):
             'fiberContent': self.fiber_content,
             'yardage': self.yardage,
             'allergens': self.allergens,
+            'textContent': self.text_content,
             'swapTargetId': self.swap_target_id,
             'createdAt': self.created_at,
             'updatedAt': self.updated_at
