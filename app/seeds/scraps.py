@@ -69,6 +69,28 @@ def seed_scraps():
         allergens='',
         text_content="I'm clearing out my mother's estate and I know she would want her yarn stash to go to somebody who will enjoy using it. All the yarns I've listed are free to good homes."
     )
+    scrap_7 = Scrap(
+        user_id=4,
+        title='Crystal Palace Yarns Panda Silk Print',
+        image_url='/images/scrap_7.jpg',
+        yarn_weight_id=3,
+        fiber_content='52% Bamboo Rayon, 43% Merino, 5% Silk',
+        yardage=193,
+        swap_target_id=2,
+        allergens='Non-smoking home',
+        text_content="I got this as a gift, but I don't really know what to do with it, LOL. It's discontinued, but if you want to help me with postage, I'll send it your way for free!"
+    )
+    scrap_8 = Scrap(
+        user_id=6,
+        title='Berroco Folio',
+        image_url='/images/scrap_8.jpg',
+        yarn_weight_id=3,
+        fiber_content='65% Alpaca, 35% Rayon',
+        yardage=138,
+        swap_target_id=2,
+        allergens='Non-smoking home',
+        text_content="Leftover from knitting a shawl. It's super fuzzy and warm and soft, and I'll happily send it your way if you help me with postage!"
+    )
 
     db.session.add(scrap_1)
     db.session.add(scrap_2)
@@ -76,6 +98,8 @@ def seed_scraps():
     db.session.add(scrap_4)
     db.session.add(scrap_5)
     db.session.add(scrap_6)
+    db.session.add(scrap_7)
+    db.session.add(scrap_8)
 
     db.session.commit()
 
