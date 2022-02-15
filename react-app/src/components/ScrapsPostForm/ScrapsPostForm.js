@@ -22,7 +22,7 @@ const ScrapsPostForm = () => {
     const [fiberContent, setFiberContent] = useState('');
     const [yardage, setYardage] = useState('');
     const [allergens, setAllergens] = useState('');
-    const [swapTargetId, setSwapTargetId] = useState(1);
+    const [swapTargetId, setSwapTargetId] = useState(0);
     const [textContent, setTextContent] = useState('');
 
     const [validationErrors, setValidationErrors] = useState([]);
@@ -47,6 +47,41 @@ const ScrapsPostForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const newScrap = {
+            userId,
+            title,
+            imageURL,
+            yarnWeightId,
+            fiberContent,
+            yardage,
+            allergens,
+            swapTargetId,
+            textContent
+        };
+
+        const errors = [];
+
+        if (!title) errors.push('Please enter a title.');
+        if (title.length > 50) errors.push('Titles cannot be longer than 50 characters.');
+
+        if (!imageURL) errors.push('Scraps need an image.');
+
+        if (yarnWeightId === 0) errors.push('Please select a yarn weight category.');
+
+        if (fiberContent) errors.push('Please enter the fiber content of your Scrap.');
+
+        if (!yardage) errors.push('Please enter the yardage of your Scrap.');
+        if (yardage == 0) errors.push('You cannot swap 0 yards of yarn!');
+        if (yardage < 0) errors.push('You cannot swap negative amounts of yarn!');
+
+        if (swapTargetId === 0) errors.push('Please select a swap target.');
+
+        setValidationErrors(errors);
+
+        if (!errors.length) {
+            // PUSH INTO DB
+        };
     }
 
     return (
@@ -63,7 +98,7 @@ const ScrapsPostForm = () => {
 
                 <div className='form-inputs'>
                     <div className='image-form'>
-                        Upload an image for your Scrap
+                        {imageURL ? 'Image successfully uploaded!': 'Upload an image for your Scrap'}
                         {imageURL ? <img className='image' src={imageURL} alt='Scrap' /> : ''}
                         <input
                             type='file'

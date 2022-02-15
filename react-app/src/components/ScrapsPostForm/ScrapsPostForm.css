@@ -21,6 +21,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
+    padding-right: 32px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -42,10 +43,14 @@
 /* --------------- IMAGE FORM --------------- */
 
 .image {
-    width: 60%;
+    width: 80%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 12px;
 }
 
 .image-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,4 +121,19 @@
 
 #textContent::-webkit-scrollbar-thumb {
     background-color: #282828;
+}
+
+
+/* --------------- ERRORS --------------- */
+.form-errors {
+    background-color: #E7717D;
+    margin-top: -48px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.form-error {
+    line-height: 8px;
+    color: #FFFEFA;
+    text-shadow: 0 0 8px black;
 }
