@@ -7,32 +7,38 @@ def seed_users():
         username='DemoYuRa',
         email='yura@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_1.jpg')
+        profile_pic_url='/images/profilepic_1.jpg'
+        )
     knittywitty = User(
         username='knittywitty',
         email='knittywitty@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_2.jpg')
+        profile_pic_url='/images/profilepic_2.jpg'
+        )
     purlsofwisdom = User(
         username='purlsofwisdom',
         email='purlsofwisdom@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_3.jpg')
+        profile_pic_url='/images/profilepic_3.jpg'
+        )
     knithappens = User(
         username='knithappens',
         email='knithappens@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_4.jpg')
+        profile_pic_url='/images/profilepic_4.jpg'
+        )
     stitchcraft = User(
         username='stitchcraft',
         email='stitchcraft@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_5.jpg')
+        profile_pic_url='/images/profilepic_5.jpg'
+        )
     comingunraveled = User(
         username='comingunraveled',
         email='comingunraveled@aa.io',
         password='password',
-        profile_pic_url='/images/profilepic_6.jpg')
+        profile_pic_url='/images/profilepic_6.jpg'
+        )
 
 
     db.session.add(demo)
