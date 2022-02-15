@@ -2,7 +2,7 @@
     background-image: url('../../images/splash_1.jpg');
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .new-scrap-form {
@@ -14,11 +14,12 @@
     padding-top: 48px;
     padding-bottom: 48px;
     background-color: rgba(255, 255, 255, 80%);
+    text-align: center;
 }
 
 .form-inputs {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 20px;
     font-family: 'Open Sans', sans-serif;
 }
@@ -26,4 +27,93 @@
 .form-inputs>input {
     margin-top: 12px;
     margin-bottom: 12px;
+}
+
+.submit-button {
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+/* --------------- IMAGE FORM --------------- */
+
+.image {
+    width: 60%;
+}
+
+.image-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.image-form>input {
+    border: 1px solid #282828;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#file-upload-button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#image-upload-button {
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+/* --------------- FORM INPUTS --------------- */
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.form-fields>input {
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+}
+
+.form-fields>h2 {
+    margin-top: 0px;
+}
+
+.form-fields>select {
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+}
+
+#textContent {
+    height: 160px;
+    min-height: 160px;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+    resize: vertical;
+}
+
+#textContent::-webkit-scrollbar-thumb {
+    background-color: #282828;
 }
