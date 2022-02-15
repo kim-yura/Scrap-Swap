@@ -26,12 +26,15 @@ const NavBar = () => {
         <div className='navbar-bottom-left'>
           <li>
             <NavLink to='/' exact={true} activeClassName='active'>
-              <img className='navbar-logo' src='/images/logo_tight.png' alt='Site logo'/>
+              <img className='navbar-logo' src='/images/logo_tight.png' alt='Site logo' />
             </NavLink>
           </li>
         </div>
         <div className='navbar-bottom-right'>
-          <li>Post a Scrap</li>
+          <li>
+            <NavLink to='/scraps/create' exact={true}>
+              Post a Scrap
+            </NavLink></li>
           <li>|</li>
           <li>Search Bar placeholder</li>
         </div>
