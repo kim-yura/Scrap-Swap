@@ -22,11 +22,24 @@ const ScrapView = () => {
 
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
 
+    const sessionUserId = useSelector(state => {
+        return state.session.user.id
+    });
+    const selectedScrapOwnerId = selectedScrap.id;
+
     return (
         <div className='scrap-view-page'>
             <div className='scrap-view-gradient'></div>
             <div className='scrap-view-container'>
-                <img src={selectedScrap?.imageURL} />
+                <div className='scrap-view-container-left'>
+                    <img src={selectedScrap?.imageURL} />
+                    {sessionUserId === selectedScrapOwnerId ?
+                        <div className='scrap-view-buttons'>
+                            <button>Edit Scrap</button>
+                            <button>Delete Scrap</button>
+                        </div>
+                        : ''}
+                </div>
                 <div className='scrap-view-text'>
                     <h1>{selectedScrap?.title}</h1>
                     <div className='scrap-view-user-meta'>

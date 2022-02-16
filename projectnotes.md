@@ -27,3 +27,7 @@
 * AWS config
 * Scraps: Post Form complete with error handling, redirect to new Scrap page
 * Scraps: View Page with dynamic data, rendering, Link to user pages
+
+# 02/16:
+* UserView: Render of core user data
+* Scraps: Edit / Delete buttons render for users who owns said Scrap
