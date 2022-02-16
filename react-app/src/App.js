@@ -14,7 +14,6 @@ import ScrapsEditForm from './components/ScrapsEditForm/ScrapsEditForm';
 import ScrapView from './components/ScrapView/ScrapView';
 
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
 import UserView from './components/UserView/UserView';
 import { authenticate } from './store/session';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { loadAllScraps } from '../../store/scraps';
 
@@ -26,7 +26,6 @@ const ScrapsEditForm = () => {
     });
 
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
-    console.log(selectedScrap);
 
     const [title, setTitle] = useState(selectedScrap ? selectedScrap.title : '');
     const [image, setImage] = useState(null);
@@ -73,7 +72,6 @@ const ScrapsEditForm = () => {
             swapTargetId,
             textContent
         };
-        console.log(editedScrap);
 
         const errors = [];
 
@@ -102,6 +100,7 @@ const ScrapsEditForm = () => {
 
     return (
         <div className='edit-scrap-background'>
+            {sessionUserId !== selectedScrap?.userId ? <Redirect to='/' /> : ''}
             <form className='new-scrap-form' onSubmit={handleSubmit}>
 
                 {validationErrors.length ?

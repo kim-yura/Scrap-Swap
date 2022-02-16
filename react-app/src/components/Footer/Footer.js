@@ -20,10 +20,10 @@ const Footer = () => {
             <div className="footer-dev">
                 <li>©2022 Scrap Swap</li>
                 <li>Yu Ra Kim</li>
-                <a href="https://github.com/kim-yura" target="_blank">
+                <a href="https://github.com/kim-yura" target="_blank" rel='noreferrer'>
                     <i className="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/yura-kim/" target="_blank">
+                <a href="https://www.linkedin.com/in/yura-kim/" target="_blank" rel='noreferrer'>
                     <i className="fab fa-linkedin"></i>
                 </a>
             </div>

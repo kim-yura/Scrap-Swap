@@ -37,7 +37,7 @@ const ScrapView = () => {
             <div className='scrap-view-gradient'></div>
             <div className='scrap-view-container'>
                 <div className='scrap-view-container-left'>
-                    <img src={selectedScrap?.imageURL} />
+                    <img src={selectedScrap?.imageURL} alt='User-uploaded scrap'/>
                     {sessionUserId === selectedScrapOwnerId ?
                         <div className='scrap-view-buttons'>
                             <button onClick={() => handleEdit()}>Edit Scrap</button>

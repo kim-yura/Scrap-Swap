@@ -33,3 +33,4 @@
 * ScrapsView: Conditional rendering of edit/delete buttons for owned scraps
 * Scraps: EDIT API, route, store
 * Scraps: EDIT form commplete with error handling, redirect to edited Scrap page
+* Favicon
