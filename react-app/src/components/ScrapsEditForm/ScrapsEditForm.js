@@ -101,7 +101,7 @@ const ScrapsEditForm = () => {
     }
 
     return (
-        <div className='new-scrap-background'>
+        <div className='edit-scrap-background'>
             <form className='new-scrap-form' onSubmit={handleSubmit}>
 
                 {validationErrors.length ?
