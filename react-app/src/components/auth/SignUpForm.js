@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+
+import './Auth.css';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -9,6 +11,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -19,6 +22,8 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(['Passwords must match.']);
     }
   };
 
@@ -43,51 +48,57 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label>User Name</label>
+    <div className='signup-background'>
+      {errors.length ?
+        <div className='auth-errors'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div> : ''}
+
+      <form onSubmit={onSignUp} className='login-form'>
+        <img className='auth-logo' src='/images/logo_whitespace.png' alt='Site logo' />
+        <h3>
+          Sign Up for an Account
+        </h3>
         <input
           type='text'
           name='username'
+          placeholder='Enter a username'
           onChange={updateUsername}
           value={username}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
+          required={true}
+        />
         <input
           type='text'
           name='email'
+          placeholder='Enter an email address'
           onChange={updateEmail}
           value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
+          required={true}
+        />
         <input
           type='password'
           name='password'
+          placeholder='Enter a password'
           onChange={updatePassword}
           value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
+          required={true}
+        />
         <input
           type='password'
           name='repeat_password'
+          placeholder='Enter your password again'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
-        ></input>
-      </div>
-      <button type='submit'>Sign Up</button>
-    </form>
+        />
+        <button type='submit'>Sign Up</button>
+        <h3>
+          Already have an account? <Link className='auth-link' to={'/login'}>Sign in here</Link>
+        </h3>
+      </form>
+    </div>
   );
 };
 

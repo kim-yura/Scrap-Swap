@@ -5,6 +5,13 @@
     height: calc(100vh - 87px);
 }
 
+.signup-background {
+    background-image: url('../../images/splash_2.jpg');
+    object-fit: cover;
+    object-position: center;
+    height: calc(100vh - 87px);
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -64,4 +71,18 @@
     color: #FFFEFA;
     text-shadow: 0 0 8px black;
     font-family: 'Open Sans', sans-serif;
+}
+
+.auth-link {
+    color: black;
+    text-decoration: underline;
+}
+
+.auth-link:hover {
+    font-weight: bold;
+    text-shadow: 0 0 1px #282828;
+}
+
+.auth-link:active {
+    text-shadow: 0 0 2px #282828;
 }
