@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
 import './Auth.css';
@@ -52,6 +52,9 @@ const LoginForm = () => {
 
       <form onSubmit={onLogin} className='login-form'>
         <img className='auth-logo' src='/images/logo_whitespace.png' alt='Site logo' />
+        <h3>
+          Log In as an Existing User
+        </h3>
         <input
           name='email'
           type='text'
@@ -68,6 +71,9 @@ const LoginForm = () => {
         />
         <button type='submit'>Login</button>
         <button onClick={() => handleDemoLogin()}>Demo User</button>
+        <h3>
+          No account? <Link className='auth-link' to={'/sign-up'}>Sign up here</Link>
+        </h3>
       </form>
     </div>
   );
