@@ -26,3 +26,4 @@
 * Scraps: POST API, route, store
 * AWS config
 * Scraps: Post Form complete with error handling, redirect to new Scrap page
+* Scraps: View Page with dynamic data, rendering, Link to user pages

@@ -33,8 +33,12 @@ nav {
 }
 
 .logged-in:hover {
-    text-shadow: 0 0 12px #282828;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.logged-in:active {
+    text-shadow: 0 0 12px #282828;
 }
 
 .login-signup {
@@ -48,9 +52,14 @@ nav {
     font-size: 16px;
     color: #FFFEFA;
 }
+
 .login-signup-link:hover {
-    text-shadow: 0 0 12px #282828;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.login-signup-link:active {
+    text-shadow: 0 0 12px #282828;
 }
 
 .logout-button {
@@ -62,9 +71,12 @@ nav {
 }
 
 .logout-button:hover {
-    text-shadow: 0 0 12px #282828;
+    font-weight: bold;
     cursor: pointer;
 }
+
+.logout-button:active {
+    text-shadow: 0 0 12px #282828;}
 
 /* --------------- BOTTOM NAVBAR --------------- */
 
@@ -95,6 +107,7 @@ nav {
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
+
 .navbar-logo:hover {
     animation-name: bounce;
 }
@@ -106,8 +119,12 @@ nav {
 }
 
 .navbar-bottom-right>li:hover {
-    text-shadow: 0 0 12px #282828;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.navbar-bottom-right>li:active {
+    text-shadow: 0 0 12px #282828;
 }
 
 /* --------------- ANIMATION --------------- */
