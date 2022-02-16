@@ -34,7 +34,7 @@ def post_scrap():
 
 @scrap_routes.route('/', methods=['PUT'])
 def put_scrap():
-    db.session.query(Scrap).filter(Scrap.id == request.json['id'].update({
+    db.session.query(Scrap).filter(Scrap.id == request.json['id']).update({
         'title': request.json['title'],
         'image_url': request.json['image_url'],
         'yarn_weight_id': request.json['yarn_weight_id'],
@@ -44,7 +44,7 @@ def put_scrap():
         'swap_target_id': request.json['swap_target_id'],
         'text_content': request.json['text_content'],
         'updated_at': datetime.now()
-    }, synchronize_session='fetch'))
+    }, synchronize_session='fetch')
     db.session.commit()
     scrap = Scrap.query.get(request.json['id'])
     if scrap:

@@ -25,7 +25,7 @@ const ScrapView = () => {
     const sessionUserId = useSelector(state => {
         return state.session.user.id
     });
-    const selectedScrapOwnerId = selectedScrap.id;
+    const selectedScrapOwnerId = selectedScrap?.id;
 
     return (
         <div className='scrap-view-page'>

@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
 
 import ScrapsPostForm from './components/ScrapsPostForm/ScrapsPostForm';
+import ScrapsEditForm from './components/ScrapsEditForm/ScrapsEditForm';
 
 import ScrapView from './components/ScrapView/ScrapView';
 
@@ -52,6 +53,9 @@ function App() {
 
         <ProtectedRoute path='/scraps/create' exact={true} >
           <ScrapsPostForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/scraps/:scrapId/edit' exact={true} >
+          <ScrapsEditForm />
         </ProtectedRoute>
 
         <Route path='/scraps/:scrapId' exact={true} >

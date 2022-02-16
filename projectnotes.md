@@ -30,4 +30,4 @@
 
 # 02/16:
 * UserView: Render of core user data
-* Scraps: Edit / Delete buttons render for users who owns said Scrap
+* ScrapsView: Conditional rendering of edit/delete buttons for owned scraps
