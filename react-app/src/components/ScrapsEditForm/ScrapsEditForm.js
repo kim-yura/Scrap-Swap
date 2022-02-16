@@ -85,7 +85,7 @@ const ScrapsEditForm = () => {
         if (!fiberContent) errors.push('Please enter the fiber content of your Scrap.');
 
         if (!yardage) errors.push('Please enter the yardage of your Scrap.');
-        if (yardage == 0) errors.push('You cannot swap 0 yards of yarn!');
+        if (yardage === 0) errors.push('You cannot swap 0 yards of yarn!');
         if (yardage < 0) errors.push('You cannot swap negative amounts of yarn!');
 
         if (swapTargetId === 0) errors.push('Please select a swap target.');
