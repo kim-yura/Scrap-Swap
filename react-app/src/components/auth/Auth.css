@@ -1,12 +1,12 @@
 .login-background {
-    background-image: url('../../images/splash_1.jpg');
+    background-image: url('https://scrapswap.s3.amazonaws.com/splash_1.jpg');
     object-fit: cover;
     object-position: center;
     height: calc(100vh - 87px);
 }
 
 .signup-background {
-    background-image: url('../../images/splash_2.jpg');
+    background-image: url('https://scrapswap.s3.amazonaws.com/splash_2.jpg');
     object-fit: cover;
     object-position: center;
     height: calc(100vh - 87px);

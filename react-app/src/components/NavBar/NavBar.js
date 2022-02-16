@@ -26,7 +26,7 @@ const NavBar = () => {
         <div className='navbar-bottom-left'>
           <li>
             <NavLink to='/' exact={true} activeClassName='active'>
-              <img className='navbar-logo' src='/images/logo_tight.png' alt='Site logo' />
+              <img className='navbar-logo' src='https://scrapswap.s3.amazonaws.com/logo_tight.png' alt='Site logo' />
             </NavLink>
           </li>
         </div>

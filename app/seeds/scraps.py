@@ -6,7 +6,7 @@ def seed_scraps():
     scrap_1 = Scrap(
         user_id=1,
         title='Briar Rose',
-        image_url='/images/scrap_1.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_1.jpg',
         yarn_weight_id=4,
         fiber_content='Merino Cashmere',
         yardage=264,
@@ -17,7 +17,7 @@ def seed_scraps():
     scrap_2 = Scrap(
         user_id=1,
         title='Rowan Soft Yak DK',
-        image_url='/images/scrap_2.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_2.jpg',
         yarn_weight_id=6,
         fiber_content='75% Cotton, 15% Yak',
         yardage=148,
@@ -28,7 +28,7 @@ def seed_scraps():
     scrap_3 = Scrap(
         user_id=2,
         title='Ocean By the Sea Thicc',
-        image_url='/images/scrap_3.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_3.jpg',
         yarn_weight_id=10,
         fiber_content='Merino wool',
         yardage=28,
@@ -39,7 +39,7 @@ def seed_scraps():
     scrap_4 = Scrap(
         user_id=2,
         title='Anzula Cloud',
-        image_url='/images/scrap_4.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_4.jpg',
         yarn_weight_id=3,
         fiber_content='80% Merino, 10% Nylon, 10% Cashmere',
         yardage=172,
@@ -50,7 +50,7 @@ def seed_scraps():
     scrap_5 = Scrap(
         user_id=3,
         title="Stonehedge Fiber Mill Shepherd's Wool Worsted",
-        image_url='/images/scrap_5.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_5.jpg',
         yarn_weight_id=8,
         fiber_content='Merino Wool',
         yardage=250,
@@ -61,7 +61,7 @@ def seed_scraps():
     scrap_6 = Scrap(
         user_id=3,
         title="Stonehedge Fiber Mill Shepherd's Wool Worsted",
-        image_url='/images/scrap_6.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_6.jpg',
         yarn_weight_id=8,
         fiber_content='Merino Wool',
         yardage=250,
@@ -72,7 +72,7 @@ def seed_scraps():
     scrap_7 = Scrap(
         user_id=4,
         title='Crystal Palace Yarns Panda Silk Print',
-        image_url='/images/scrap_7.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_7.jpg',
         yarn_weight_id=3,
         fiber_content='52% Bamboo Rayon, 43% Merino, 5% Silk',
         yardage=193,
@@ -83,7 +83,7 @@ def seed_scraps():
     scrap_8 = Scrap(
         user_id=6,
         title='Berroco Folio',
-        image_url='/images/scrap_8.jpg',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_8.jpg',
         yarn_weight_id=3,
         fiber_content='65% Alpaca, 35% Rayon',
         yardage=138,

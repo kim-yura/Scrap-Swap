@@ -7,15 +7,15 @@ const ImageCarousel = () => {
 		<div className='carousel'>
 			<Carousel showThumbs={false} showArrows={false} showStatus={false} infiniteLoop={true} autoPlay={true} interval={4000}>
 				<div>
-					<img src='/images/carousel_1.jpg'
+					<img src='https://scrapswap.s3.amazonaws.com/carousel_1.jpg'
 					alt='Carousel 1: Multi-colored yarns'/>
 				</div>
 				<div>
-					<img src='/images/carousel_2.jpg'
+					<img src='https://scrapswap.s3.amazonaws.com/carousel_2.jpg'
 					alt='Carousel 2: Yarns in shades of green'/>
 				</div>
 				<div>
-					<img src='/images/carousel_3.jpg'
+					<img src='https://scrapswap.s3.amazonaws.com/carousel_3.jpg'
 					alt='Carousel 3: Yarns in shades of brown'
 					style={{transform: 'scaleX(-1)'}}/>
 				</div>

@@ -70,7 +70,7 @@ const SignUpForm = () => {
         </div> : ''}
 
       <form onSubmit={onSignUp} className='login-form'>
-        <img className='auth-logo' src='/images/logo_whitespace.png' alt='Site logo' />
+        <img className='auth-logo' src='https://scrapswap.s3.amazonaws.com/logo_whitespace.png' alt='Site logo' />
         <h3>
           Sign Up for an Account
         </h3>
