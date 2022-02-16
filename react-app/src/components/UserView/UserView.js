@@ -21,21 +21,24 @@ function UserView() {
   }, [userId]);
 
   if (!user) {
-    return null;
+    return <Redirect to='/' />;
   }
 
   return (
     <div className='user-view-page'>
       <div className='scrap-view-gradient'></div>
-      <ul>
+      <ul className='user-view-body'>
         <li>
-          <strong>User Id</strong> {userId}
+          <img className='user-view-profile-pic' src={user.profile_pic_url ? user.profile_pic_url : ''} alt='User profile' />
         </li>
-        <li>
-          <strong>Username</strong> {user.username}
+        <li className='user-view-header'>
+          {user.username}'s Page
         </li>
-        <li>
-          <strong>Email</strong> {user.email}
+        <li className='user-view-bio-header'>
+          Bio
+        </li>
+        <li className='user-view-bio'>
+          Lorem ipsum dolor sit amet.
         </li>
       </ul>
     </div>
