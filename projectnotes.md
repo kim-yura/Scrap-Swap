@@ -32,5 +32,9 @@
 * UserView: Render of core user data
 * ScrapsView: Conditional rendering of edit/delete buttons for owned scraps
 * Scraps: EDIT API, route, store
-* Scraps: EDIT form commplete with error handling, redirect to edited Scrap page
+* Scraps: EDIT form complete with error handling, redirect to edited Scrap page
 * Favicon
+### Post-Stand Up:
+* Scraps: DELETE API, route, store
+* Scraps: DELETE form complete with "are you sure" and "confirmation" pages, redirect
+* Scraps: EDIT and CREATE forms have cancel buttons with redirects

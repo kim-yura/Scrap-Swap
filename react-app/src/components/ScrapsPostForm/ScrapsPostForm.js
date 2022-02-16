@@ -45,6 +45,10 @@ const ScrapsPostForm = () => {
         }
     };
 
+    const handleCancel = () => {
+        history.push(`/`);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -170,6 +174,7 @@ const ScrapsPostForm = () => {
                             placeholder='Please enter any details of the Scrap swap. (e.g.: looking for specific colors, yarn weights, fiber content, allergen considerations)'
                         />
                         <button className='submit-button' onClick={handleSubmit}>Submit</button>
+                        <button className='submit-button' onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
             </form>
