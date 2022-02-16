@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect, Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, useParams } from 'react-router-dom';
+
+import { loadAllScraps } from '../../store/scraps';
+import UserScrapCard from './UserScrapCard';
 
 import './UserView.css';
 
 function UserView() {
   const [user, setUser] = useState({});
   const { userId } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(loadAllScraps())
     window.scrollTo(0, 0);
 
     if (!userId) {
@@ -20,6 +26,13 @@ function UserView() {
     })();
   }, [userId]);
 
+  const allScraps = useSelector(state => {
+    return state.scraps;
+  });
+
+  const usersScraps = Object.values(Object.values(allScraps).filter(scrap => scrap.userId === parseInt(userId)));
+
+  // TODO: MAKE THIS WORK
   if (!user) {
     return <Redirect to='/' />;
   }
@@ -27,6 +40,7 @@ function UserView() {
   return (
     <div className='user-view-page'>
       <div className='scrap-view-gradient'></div>
+
       <ul className='user-view-body'>
         <li>
           <img className='user-view-profile-pic' src={user.profile_pic_url ? user.profile_pic_url : ''} alt='User profile' />
@@ -40,7 +54,21 @@ function UserView() {
         <li className='user-view-bio'>
           Lorem ipsum dolor sit amet.
         </li>
+
+        <h3>{user.username}'s Scraps</h3>
+        <div className='user-view-scraps-gallery'>
+          {usersScraps.length ?
+            usersScraps.map((scrap, idx) => {
+              return (
+                <UserScrapCard scrap={scrap} key={idx} />
+              )
+            })
+
+            : 'no scraps found'}
+
+        </div>
       </ul>
+
     </div>
   );
 }

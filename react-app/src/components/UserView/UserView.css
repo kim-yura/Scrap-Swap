@@ -14,6 +14,11 @@
     padding-bottom: 36px;
 }
 
+.user-view-body>h3 {
+    padding-top: 24px;
+    padding-bottom: 8px;
+}
+
 .user-view-profile-pic {
     height: 200px;
     width: 200px;
@@ -36,4 +41,73 @@
 .user-view-bio {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+}
+
+.user-view-scraps-gallery {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+}
+
+
+.user-view-card {
+    height: 320px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-radius: 12px;
+    background-color: #FFFEFA;
+    box-shadow: 1px 1px 4px #282828;
+}
+
+.user-view-card:active {
+    box-shadow: 2px 4px 8px #282828;
+}
+
+.user-view-card-image {
+    height: 240px;
+    width: 256px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+    left: 0;
+}
+
+.user-view-card-title {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 34px;
+    margin-bottom:6px;
+    margin-top: 0px;
+    padding-left: 6px;
+    padding-right: 8px;
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: justify;
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+.user-view-card-title:hover {
+    text-shadow: 0 0 2px #282828;
+}
+
+.user-view-card-target {
+    text-align: justify;
+    padding-left: 6px;
+    margin-top: 0px;
 }

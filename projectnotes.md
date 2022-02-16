@@ -44,3 +44,5 @@
 * Log In: Error Handling
 * Sign Up: Styling
 * Sign Up: Error Handling
+* Reconfigured image URLs with AWS S3 links for Heroku deploy
+* Initial Heroku deploy
