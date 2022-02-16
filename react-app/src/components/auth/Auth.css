@@ -1,0 +1,67 @@
+.login-background {
+    background-image: url('../../images/splash_1.jpg');
+    object-fit: cover;
+    object-position: center;
+    height: calc(100vh - 87px);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 60px;
+    background-color: rgba(255, 255, 255, 85%);
+    height: 100%;
+}
+
+.login-form>button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    width: 40%;
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.login-form>input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 40%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border: 1px solid #282828;
+    border-radius: 6px;
+}
+
+.auth-logo {
+    border-radius: 50%;
+    margin-bottom: 24px;
+}
+
+.auth-errors {
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #E7717D;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: 32px;
+    color: #FFFEFA;
+    text-shadow: 0 0 8px black;
+    font-family: 'Open Sans', sans-serif;
+}

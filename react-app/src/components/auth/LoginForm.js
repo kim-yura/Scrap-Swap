@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
+import './Auth.css';
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -26,19 +28,30 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  const handleDemoLogin = async () => {
+    setEmail('yura@aa.io');
+    setPassword('password');
+    const data = await dispatch(login(email, password));
+    if (data) {
+      setErrors(data);
+    };
+  };
+
   if (user) {
     return <Redirect to='/' />;
-  }
+  };
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
+    <div className='login-background'>
+      {errors.length ?
+        <div className='auth-errors'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div> : ''}
+
+      <form onSubmit={onLogin} className='login-form'>
+        <img className='auth-logo' src='/images/logo_whitespace.png' alt='Site logo' />
         <input
           name='email'
           type='text'
@@ -46,9 +59,6 @@ const LoginForm = () => {
           value={email}
           onChange={updateEmail}
         />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
         <input
           name='password'
           type='password'
@@ -57,8 +67,9 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type='submit'>Login</button>
-      </div>
-    </form>
+        <button onClick={() => handleDemoLogin()}>Demo User</button>
+      </form>
+    </div>
   );
 };
 
