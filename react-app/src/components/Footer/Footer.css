@@ -1,0 +1,95 @@
+footer {
+    background-color: #282828;
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+    margin-top: 48px;
+}
+
+.tech-link {
+    color: #FFFEFA;
+}
+
+.tech-link:hover {
+    font-weight: bold;
+}
+
+.footer-row {
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    margin-left: 70px;
+    margin-right: 70px;
+    justify-content: space-around;
+    color: #FFFEFA;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.divider {
+    border-top: solid 1px #FFFEFA;
+    width: 100%;
+    margin: 0px;
+}
+
+.footer-dev {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #FFFEFA;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.dev-icons {
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 12px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    color: #FFFEFA;
+}
+
+.fab {
+    color: #FFFEFA;
+    font-size: 18px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.fab:hover {
+    cursor: pointer;
+    animation-name: bounce;
+}
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-6px);
+        -ms-transform: translateY(-6px);
+        transform: translateY(-6px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        transform: translateY(-3px)
+    }
+}

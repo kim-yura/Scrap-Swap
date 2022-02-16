@@ -30,10 +30,10 @@ const ScrapView = () => {
                 <div className='scrap-view-text'>
                     <h1>{selectedScrap?.title}</h1>
                     <div className='scrap-view-user-meta'>
-                        <Link to={`/users/${selectedScrap.user.id}`}>
+                        <Link to={`/users/${selectedScrap?.user.id}`}>
                             <img className='profile-pic' src={selectedScrap?.user.profilePicURL ? selectedScrap.user.profilePicURL : ''} alt='User profile pic' />
                         </Link>
-                        <p>Posted by <Link to={`/users/${selectedScrap.user.id}`}>{selectedScrap?.user.username}</Link></p>
+                        <p>Posted by <Link to={`/users/${selectedScrap?.user.id}`}>{selectedScrap?.user.username}</Link></p>
 
                     </div>
                     <p>Yarn Weight: {selectedScrap?.yarnWeight.name} Weight</p>

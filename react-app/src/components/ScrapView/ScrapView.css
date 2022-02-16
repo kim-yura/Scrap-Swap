@@ -6,6 +6,7 @@
 
 .scrap-view-container {
     width: 60%;
+    height: calc(100vh - 87px);
     margin-left: auto;
     margin-right: auto;
     display: flex;

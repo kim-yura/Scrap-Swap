@@ -1,7 +1,13 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     background-color: #FFFEFA;
     min-width: 1400px;
+    height: 100%;
+    position: relative;
 }
 
 * {
