@@ -30,6 +30,10 @@ function UserView() {
     return state.scraps;
   });
 
+  const sessionUserId = useSelector(state => {
+    return state.session.user?.id || ''
+  });
+
   const usersScraps = Object.values(Object.values(allScraps).filter(scrap => scrap.userId === parseInt(userId)));
 
   // TODO: MAKE THIS WORK
@@ -54,6 +58,12 @@ function UserView() {
         <li className='user-view-bio'>
           Lorem ipsum dolor sit amet.
         </li>
+
+        {sessionUserId === parseInt(userId) ?
+          <div className='user-options'>
+            <button className='user-option-button'>Edit Profile</button>
+          </div>
+          : ''}
 
         <h3>{user.username}'s Scraps</h3>
         <div className='user-view-scraps-gallery'>

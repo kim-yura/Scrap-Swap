@@ -111,3 +111,14 @@
     padding-left: 6px;
     margin-top: 0px;
 }
+
+
+.user-option-button {
+    margin-top: 12px;
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #FFFEFA;
+}
