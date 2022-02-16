@@ -3,6 +3,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-repeat: no-repeat;
+    object-position: center;
 }
 
 .new-scrap-form {
@@ -12,8 +14,8 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 48px;
-    padding-bottom: 48px;
-    background-color: rgba(255, 255, 255, 80%);
+    padding-bottom: 60px;
+    background-color: rgba(255, 255, 255, 85%);
     text-align: center;
 }
 
