@@ -10,6 +10,8 @@ import HomePage from './components/HomePage/HomePage';
 
 import ScrapsPostForm from './components/ScrapsPostForm/ScrapsPostForm';
 import ScrapsEditForm from './components/ScrapsEditForm/ScrapsEditForm';
+import ScrapDeleteForm from './components/ScrapsDeleteFom/ScrapsDeleteForm';
+import ScrapDeleteConfirmation from './components/ScrapsDeleteFom/ScrapsDeleteConfirmation';
 
 import ScrapView from './components/ScrapView/ScrapView';
 
@@ -55,6 +57,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/scraps/:scrapId/edit' exact={true} >
           <ScrapsEditForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/scraps/:scrapId/delete' exact={true} >
+          <ScrapDeleteForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/scraps/delete/confirm' exact={true} >
+          <ScrapDeleteConfirmation />
         </ProtectedRoute>
 
         <Route path='/scraps/:scrapId' exact={true} >

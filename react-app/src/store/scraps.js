@@ -3,7 +3,7 @@ import { csrfFetch } from '../helpers';
 const LOAD_ALL_SCRAPS = 'scraps/loadAllScraps';
 const CREATE_SCRAP = 'scraps/createScrap';
 const EDIT_SCRAP = 'scraps/editScrap';
-// const DELETE_SCRAP = 'scraps/DELETE_SCRAP';
+const DELETE_SCRAP = 'scraps/deleteScrap';
 
 // -------------------- READ -------------------- //
 
@@ -100,7 +100,7 @@ export const editScrap = ({
         const scrap = await response.json();
         dispatch(editScrapAction(scrap));
         return scrap;
-    }
+    };
 };
 
 const editScrapAction = (scrap) => ({
@@ -108,7 +108,27 @@ const editScrapAction = (scrap) => ({
     scrap
 });
 
+// -------------------- DELETE -------------------- //
 
+export const deleteScrap = (scrapId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/scraps/`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: scrapId })
+    });
+    const scrap = await response.json();
+    dispatch(deleteScrapAction(scrap, scrapId));
+};
+
+const deleteScrapAction = (scrap, scrapId) => {
+    return {
+        type: DELETE_SCRAP,
+        scrap,
+        scrapId
+    };
+};
 
 // -------------------- REDUCER -------------------- //
 
@@ -124,6 +144,9 @@ const scrapReducer = (state = {}, action) => {
         case CREATE_SCRAP:
         case EDIT_SCRAP:
             newState[action.scrap.id] = action.scrap;
+            return newState;
+        case DELETE_SCRAP:
+            delete newState[action.scrapId];
             return newState;
 
         default:

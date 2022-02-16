@@ -26,10 +26,13 @@ const ScrapView = () => {
     const sessionUserId = useSelector(state => {
         return state.session.user.id
     });
-    const selectedScrapOwnerId = selectedScrap?.id;
+    const selectedScrapOwnerId = selectedScrap?.user.id;
 
     const handleEdit = () => {
         history.push(`/scraps/${scrapId}/edit`);
+    };
+    const handleDelete = () => {
+        history.push(`/scraps/${scrapId}/delete`);
     };
 
     return (
@@ -41,7 +44,7 @@ const ScrapView = () => {
                     {sessionUserId === selectedScrapOwnerId ?
                         <div className='scrap-view-buttons'>
                             <button onClick={() => handleEdit()}>Edit Scrap</button>
-                            <button>Delete Scrap</button>
+                            <button onClick={() => handleDelete()}>Delete Scrap</button>
                         </div>
                         : ''}
                 </div>

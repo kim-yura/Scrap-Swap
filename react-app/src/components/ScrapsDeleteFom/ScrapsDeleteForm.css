@@ -1,0 +1,58 @@
+.delete-scrap-background {
+    background-image: url('../../images/splash_3.jpg');
+    object-fit: cover;
+    object-position: center;
+    height: calc(100vh - 87px);
+}
+
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 60px;
+    background-color: rgba(255, 255, 255, 85%);
+    height: 100%;
+}
+
+.delete-scrap-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.delete-scrap-image {
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    padding-top: 48px;
+}
+
+.delete-scrap-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding-top: 24px;
+}
+
+.delete-scrap-buttons {
+    display: flex;
+    column-gap: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    padding-top: 18px;
+}
+
+.delete-scrap-buttons>button {
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100px;
+}
