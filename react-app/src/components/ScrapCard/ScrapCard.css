@@ -1,23 +1,28 @@
 .card {
-    height: 360px;
-    width: 240px;
+    height: 340px;
+    width: 260px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #C2CAD0;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-radius: 12px;
     background-color: #FFFEFA;
     box-shadow: 1px 1px 4px #282828;
 }
+
 .card:active {
     box-shadow: 2px 4px 8px #282828;
 }
 
 .card-image {
     height: 240px;
-    width: 239px;
+    width: 256px;
     object-fit: cover;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    top: 0;
+    left: 0;
 }
 
 .card-title {
@@ -25,10 +30,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    height: 32px;
-    margin-bottom: 0px;
-    margin-left: 6px;
-    margin-right: 6px;
+    height: 34px;
+    margin-bottom:6px;
+    margin-top: 0px;
+    padding-left: 6px;
+    padding-right: 8px;
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+}
+
+.card-title:hover {
+    text-shadow: 0 0 2px #282828;
 }
 
 .card-user {
@@ -39,8 +53,8 @@
 }
 
 .card-target {
-    margin-top: 0px;
+    margin-top: -4px;
     margin-left: 6px;
     margin-right: 6px;
-    font-size: 14px;
+    font-size: 13px;
 }

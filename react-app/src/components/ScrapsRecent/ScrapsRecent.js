@@ -23,7 +23,7 @@ function ScrapsRecent() {
 
     return (
         <div className='home-container'>
-            <h2>Browse Recent Scraps</h2>
+            <h2 className='home-container-header'>Browse Recent Scraps</h2>
             <div className='home-container-row'>
                 {recentScraps.map((scrap, idx) => {
                     return (

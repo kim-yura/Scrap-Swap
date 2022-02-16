@@ -7,13 +7,13 @@ import { loadAllScraps } from '../../store/scraps';
 import './ScrapView.css';
 
 const ScrapView = () => {
-    window.scrollTo(0, 0);
 
     const dispatch = useDispatch();
     const { scrapId } = useParams();
 
     useEffect(() => {
-        dispatch(loadAllScraps())
+        dispatch(loadAllScraps());
+        window.scrollTo(0, 0);
     }, []);
 
     const allScraps = useSelector(state => {
