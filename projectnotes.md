@@ -46,3 +46,8 @@
 * Sign Up: Error Handling
 * Reconfigured image URLs with AWS S3 links for Heroku deploy
 * Initial Heroku deploy
+* User: Render user's scraps as clickable cards
+
+
+
+* Fix Heroku deploy (matching routes)

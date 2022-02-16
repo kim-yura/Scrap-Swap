@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
@@ -6,6 +6,10 @@ import { login } from '../../store/session';
 import './Auth.css';
 
 const LoginForm = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,9 +36,6 @@ const LoginForm = () => {
     setEmail('yura@aa.io');
     setPassword('password');
     const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
-    };
   };
 
   if (user) {

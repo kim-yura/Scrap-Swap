@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
@@ -6,6 +6,10 @@ import { signUp } from '../../store/session';
 import './Auth.css';
 
 const SignUpForm = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');

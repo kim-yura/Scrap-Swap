@@ -8,7 +8,7 @@ const DELETE_SCRAP = 'scraps/deleteScrap';
 // -------------------- READ -------------------- //
 
 export const loadAllScraps = () => async (dispatch) => {
-    const response = await csrfFetch('/api/scraps');
+    const response = await csrfFetch('/api/scraps/');
     const allScraps = await response.json();
     dispatch(loadAllScrapsAction(allScraps));
     return allScraps;
