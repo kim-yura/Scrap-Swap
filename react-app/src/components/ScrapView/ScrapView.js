@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { loadAllScraps } from '../../store/scraps';
 
@@ -10,6 +10,7 @@ const ScrapView = () => {
 
     const dispatch = useDispatch();
     const { scrapId } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(loadAllScraps());
@@ -27,6 +28,10 @@ const ScrapView = () => {
     });
     const selectedScrapOwnerId = selectedScrap?.id;
 
+    const handleEdit = () => {
+        history.push(`/scraps/${scrapId}/edit`);
+    };
+
     return (
         <div className='scrap-view-page'>
             <div className='scrap-view-gradient'></div>
@@ -35,7 +40,7 @@ const ScrapView = () => {
                     <img src={selectedScrap?.imageURL} />
                     {sessionUserId === selectedScrapOwnerId ?
                         <div className='scrap-view-buttons'>
-                            <button>Edit Scrap</button>
+                            <button onClick={() => handleEdit()}>Edit Scrap</button>
                             <button>Delete Scrap</button>
                         </div>
                         : ''}
