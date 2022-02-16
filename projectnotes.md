@@ -38,3 +38,4 @@
 * Scraps: DELETE API, route, store
 * Scraps: DELETE form complete with "are you sure" and "confirmation" pages, redirect
 * Scraps: EDIT and CREATE forms have cancel buttons with redirects
+* Scraps: Fixed issue where logged out users ScrapView render was bugging out

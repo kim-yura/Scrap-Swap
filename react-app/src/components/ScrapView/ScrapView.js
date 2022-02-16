@@ -24,7 +24,7 @@ const ScrapView = () => {
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
 
     const sessionUserId = useSelector(state => {
-        return state.session.user.id
+        return state.session.user?.id || ''
     });
     const selectedScrapOwnerId = selectedScrap?.user.id;
 
