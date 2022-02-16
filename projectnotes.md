@@ -21,8 +21,8 @@
 * Seed: Scraps
 * Navbar: Top and bottom styling, placeholder links
 * Homepage: Carousel
-* Scraps: READ API, route, store, render on homepage
-* Scraps: ScrapCard render on homepage complete
+* Scraps: READ API, route, store
+* Scraps: ScrapCard render on homepage
 * Scraps: POST API, route, store
 * AWS config
 * Scraps: Post Form complete with error handling, redirect to new Scrap page
@@ -31,3 +31,5 @@
 # 02/16:
 * UserView: Render of core user data
 * ScrapsView: Conditional rendering of edit/delete buttons for owned scraps
+* Scraps: EDIT API, route, store
+* Scraps: EDIT form commplete with error handling, redirect to edited Scrap page
