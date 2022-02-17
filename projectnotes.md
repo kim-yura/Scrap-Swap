@@ -51,6 +51,8 @@
 * UserEdit: Form routes and functionality
 * UserEdit: API, route, store
 * DB Model for User updated to include default profile pictures, default bios
-
-
 * Fix Heroku deploy (matching routes)
+
+# 02/17:
+* Seed: Comments
+* Seed: DB model upgrade
