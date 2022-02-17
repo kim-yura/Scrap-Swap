@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadAllComments, editComment, deleteComment } from '../../store/comments';
@@ -17,7 +17,7 @@ const CommentsView = ({ scrapId }) => {
 
     useEffect(() => {
         dispatch(loadAllComments());
-    }, []);
+    }, [dispatch]);
 
     const allComments = useSelector(state => {
         return state.comments
@@ -48,7 +48,7 @@ const CommentsView = ({ scrapId }) => {
                                             {comment.content}
                                         </div>
                                         {comment.user.id === userId ?
-                                            <EditDeleteBox allComments={allComments} commentId={comment.id} />
+                                            <EditDeleteBox scrapId={scrapId} allComments={allComments} commentId={comment.id} />
                                             : ''}
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@ const CommentsView = ({ scrapId }) => {
                                                         {reply.content}
                                                     </div>
                                                     {reply.user.id === userId ?
-                                                        <EditDeleteBox allComments={allComments} commentId={reply.id} />
+                                                        <EditDeleteBox  scrapId={scrapId} allComments={allComments} commentId={reply.id} />
                                                         : ''}
                                                 </div>
                                             </div>

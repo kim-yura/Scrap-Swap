@@ -20,10 +20,10 @@
 }
 
 .comment-profile-pic {
+    margin-top: 6px;
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    align-self: center;
 }
 
 .comment-profile-pic:active {
@@ -34,7 +34,7 @@
     display: grid;
     grid-template-columns: 50px 1fr;
     column-gap: 12px;
-    align-items: center;
+    align-items: top;
     height: 100%;
     padding-bottom: 12px;
 }
@@ -130,6 +130,10 @@
     width: 150px;
 }
 
+.edit-delete-buttons {
+    margin-left: -15px;
+}
+
 .edit-delete-buttons>button {
     border: none;
     background-color: transparent;
@@ -141,4 +145,15 @@
 .edit-delete-buttons>button:hover {
     font-weight: bold;
     cursor: pointer
+}
+
+#edit-comment-textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    resize: vertical;
+    min-height: 38px;
+    height: 38px;
+    margin-top: 4px;
 }

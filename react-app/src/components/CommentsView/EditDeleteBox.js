@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editComment, deleteComment } from '../../store/comments';
+import { Redirect } from 'react-router-dom';
+import { editComment, deleteComment, loadAllComments } from '../../store/comments';
 import './CommentsView.css';
 
-const EditDeleteBox = ({ allComments, commentId }) => {
+const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
     const dispatch = useDispatch();
     const thisComment = (Object.values(allComments).filter(theComment => theComment.id === commentId))[0].content;
     const [comment, setComment] = useState(thisComment);
     const [showForm, setShowForm] = useState(false);
     const [validationErrors, setValidationErrors] = useState([]);
+
+    useEffect(() => {
+        dispatch(loadAllComments());
+    }, [dispatch]);
 
     const handleToggleForm = () => {
         setShowForm(true);
@@ -31,7 +36,16 @@ const EditDeleteBox = ({ allComments, commentId }) => {
             setComment('');
             setShowForm(false);
         };
+    };
 
+    const handleDelete = async () => {
+        const deletedComment = {
+            id: commentId
+        };
+        const yeetedComment = await dispatch(deleteComment(deletedComment));
+        setComment('');
+        setShowForm(false);
+        <Redirect to={`/scraps/${scrapId}`} />
     };
 
     const handleCancelEdit = () => {
@@ -42,11 +56,11 @@ const EditDeleteBox = ({ allComments, commentId }) => {
         <div>
             {showForm ?
                 <>
-                    <form className='edit-comment-form'>
+                    <form className='edit-comment-textarea'>
                         <textarea
                             onChange={(e) => setComment(e.target.value)}
                             value={comment}
-                            id='new-reply-textarea'
+                            id='edit-comment-textarea'
                             placeholder='Reply to this comment...'
                         />
                     </form>
@@ -57,7 +71,7 @@ const EditDeleteBox = ({ allComments, commentId }) => {
                 :
                 <div className='edit-delete-buttons'>
                     <button onClick={handleToggleForm}>Edit Comment</button>
-                    <button>Delete Comment</button>
+                    <button onClick={handleDelete}>Delete Comment</button>
                 </div>
             }
         </div>
