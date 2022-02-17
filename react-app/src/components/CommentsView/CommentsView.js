@@ -8,7 +8,9 @@ const CommentsView = ({ scrapId }) => {
 
     const dispatch = useDispatch();
 
-    const userId = useSelector(state => state.session.user.id);
+    const userId = useSelector(state => {
+        return state.session.user?.id || ''
+    });
 
     useEffect(() => {
         dispatch(loadAllComments());
@@ -70,7 +72,7 @@ const CommentsView = ({ scrapId }) => {
                     if (comment.reply === 0) {
                         const repliesToComment = Object.values(Object.values(allComments).filter(replyComment => replyComment.reply === comment.id));
                         return (
-                            <div className='comment-block'>
+                            <div className='comment-block' key={idx}>
                                 <div className='comment'>
                                     <Link to={`/users/${comment.user.id}`}>
                                         <img className='comment-profile-pic' alt='User' src={comment.user.profilePicURL} />
@@ -103,42 +105,45 @@ const CommentsView = ({ scrapId }) => {
                                         )
                                     })
                                     : 'no replies for this comment'}
-                                <div>
-                                    <form className='new-reply-form'>
-                                        <textarea
-                                            onChange={(e) => setReply(e.target.value)}
-                                            value={reply}
-                                            id='new-reply-textarea'
-                                            placeholder='Reply to this comment...'
-                                        />
-                                    </form>
-                                    <div className='new-comment-buttons'>
-                                        <button onClick={handleSubmitReply}>Submit</button>
-                                        <button onClick={handleCancelReply}>Cancel</button>
+                                {userId ?
+                                    <div>
+                                        <form className='new-reply-form'>
+                                            <textarea
+                                                onChange={(e) => setReply(e.target.value)}
+                                                value={reply}
+                                                id='new-reply-textarea'
+                                                placeholder='Reply to this comment...'
+                                            />
+                                        </form>
+                                        <div className='new-comment-buttons'>
+                                            <button onClick={handleSubmitReply}>Submit</button>
+                                            <button onClick={handleCancelReply}>Cancel</button>
+                                        </div>
                                     </div>
-                                </div>
+                                    : ''}
                             </div>
                         )
                     }
                 })
-
-                // --- Display Empty Comment Container --- //
                 : ''}
-            <div className='comment-block'>
-                <form className='new-comment-form'>
-                    <textarea
-                        onChange={(e) => setComment(e.target.value)}
-                        value={comment}
-                        id='new-comment-textarea'
-                        placeholder='Add a new comment...'
-                    />
-                </form>
-                <div className='new-comment-buttons'>
-                    <button onClick={handleSubmitComment}>Submit</button>
-                    <button onClick={handleCancelComment}>Cancel</button>
-                </div>
-            </div>
+            {userId ?
 
+
+                <div className='comment-block'>
+                    <form className='new-comment-form'>
+                        <textarea
+                            onChange={(e) => setComment(e.target.value)}
+                            value={comment}
+                            id='new-comment-textarea'
+                            placeholder='Add a new comment...'
+                        />
+                    </form>
+                    <div className='new-comment-buttons'>
+                        <button onClick={handleSubmitComment}>Submit</button>
+                        <button onClick={handleCancelComment}>Cancel</button>
+                    </div>
+                </div>
+                : ''}
         </div>
     )
 

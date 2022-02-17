@@ -35,7 +35,7 @@ const LoginForm = () => {
   const handleDemoLogin = async () => {
     setEmail('yura@aa.io');
     setPassword('password');
-    const data = await dispatch(login(email, password));
+    await dispatch(login(email, password));
   };
 
   if (user) {
