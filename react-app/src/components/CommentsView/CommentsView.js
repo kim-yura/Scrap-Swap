@@ -22,6 +22,26 @@ const CommentsView = ({ scrapId }) => {
     const [comment, setComment] = useState('');
     const [reply, setReply] = useState('');
 
+    const handleSubmitComment = async (e) => {
+        e.preventDefault();
+
+        const newComment = {
+
+        }
+    };
+
+    const handleCancelComment = () => {
+        setComment('');
+    };
+
+    const handleSubmitReply = () => {
+
+    };
+
+    const handleCancelReply = () => {
+        setReply('');
+    };
+
 
     return (
         <div className='comment-view-body'>
@@ -66,6 +86,20 @@ const CommentsView = ({ scrapId }) => {
                                         )
                                     })
                                     : 'no replies for this comment'}
+                                <div>
+                                    <form className='new-reply-form'>
+                                        <textarea
+                                            onChange={(e) => setReply(e.target.value)}
+                                            value={reply}
+                                            id='new-reply-textarea'
+                                            placeholder='Reply to this comment...'
+                                        />
+                                    </form>
+                                    <div className='new-comment-buttons'>
+                                        <button onClick={handleSubmitReply}>Submit</button>
+                                        <button onClick={handleCancelReply}>Cancel</button>
+                                    </div>
+                                </div>
                             </div>
                         )
                     }
@@ -73,6 +107,20 @@ const CommentsView = ({ scrapId }) => {
 
                 // --- Display Empty Comment Container --- //
                 : ''}
+            <div className='comment-block'>
+                <form className='new-comment-form'>
+                    <textarea
+                        onChange={(e) => setComment(e.target.value)}
+                        value={comment}
+                        id='new-comment-textarea'
+                        placeholder='Add a new comment...'
+                    />
+                </form>
+                <div className='new-comment-buttons'>
+                    <button onClick={handleSubmitComment}>Submit</button>
+                    <button onClick={handleCancelComment}>Cancel</button>
+                </div>
+            </div>
 
         </div>
     )
