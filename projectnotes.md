@@ -57,3 +57,4 @@
 * Seed: Comments
 * Seed: DB model upgrade
 * Comments: API routes
+* Comments: Store and reducer
