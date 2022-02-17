@@ -23,6 +23,7 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    margin-top: -32px;
 }
 
 .user-view-header {
@@ -120,5 +121,5 @@
     border-radius: 6px;
     padding-top: 4px;
     padding-bottom: 4px;
-    color: #FFFEFA;
+    color: black;
 }

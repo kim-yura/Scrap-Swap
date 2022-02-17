@@ -17,6 +17,7 @@ import ScrapView from './components/ScrapView/ScrapView';
 
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UserView from './components/UserView/UserView';
+import UserEdit from './components/UserEdit/UserEdit';
 import { authenticate } from './store/session';
 
 import './index.css';
@@ -69,6 +70,9 @@ function App() {
           <ScrapView />
         </Route>
 
+        <ProtectedRoute path='/users/edit' exact={true}>
+          <UserEdit />
+        </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <UserView />
         </ProtectedRoute>

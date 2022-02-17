@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useParams } from 'react-router-dom';
+import { useHistory, Redirect, useParams } from 'react-router-dom';
 
 import { loadAllScraps } from '../../store/scraps';
 import UserScrapCard from './UserScrapCard';
@@ -11,6 +11,7 @@ function UserView() {
   const [user, setUser] = useState({});
   const { userId } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(loadAllScraps())
@@ -39,7 +40,11 @@ function UserView() {
   // TODO: MAKE THIS WORK
   if (!user) {
     return <Redirect to='/' />;
-  }
+  };
+
+  const editUser = () => {
+    history.push(`/users/edit`);
+  };
 
   return (
     <div className='user-view-page'>
@@ -61,7 +66,8 @@ function UserView() {
 
         {sessionUserId === parseInt(userId) ?
           <div className='user-options'>
-            <button className='user-option-button'>Edit Profile</button>
+            <button className='user-option-button'
+            onClick={() => editUser()}>Edit Profile</button>
           </div>
           : ''}
 
@@ -73,7 +79,6 @@ function UserView() {
                 <UserScrapCard scrap={scrap} key={idx} />
               )
             })
-
             : 'no scraps found'}
 
         </div>
