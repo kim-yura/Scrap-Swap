@@ -23,25 +23,7 @@ const CommentsView = ({ scrapId }) => {
     });
     const filteredCommentsArr = Object.values(Object.values(allComments).filter(comment => comment.scrapId === parseInt(scrapId)));
 
-    const [showCommentForm, setShowCommentForm] = useState(false);
     const [showReplyForm, setShowReplyForm] = useState(false)
-    const [comment, setComment] = useState('');
-    const [reply, setReply] = useState('');
-
-    const [validationErrors, setValidationErrors] = useState([]);
-
-    const handleCancelComment = () => {
-        setComment('');
-    };
-
-    const handleSubmitReply = () => {
-
-    };
-
-    const handleCancelReply = () => {
-        setReply('');
-    };
-
 
     return (
         <div className='comment-view-body'>
@@ -52,6 +34,7 @@ const CommentsView = ({ scrapId }) => {
                     // --- Display comments that are not replies --- //
                     if (comment.reply === 0) {
                         const repliesToComment = Object.values(Object.values(allComments).filter(replyComment => replyComment.reply === comment.id));
+                        const replyId = comment.id;
                         return (
                             <div className='comment-block' key={idx}>
                                 <div className='comment'>
@@ -87,7 +70,7 @@ const CommentsView = ({ scrapId }) => {
                                     })
                                     : 'no replies for this comment'}
                                 {userId ?
-                                    <ReplyBox />
+                                    <ReplyBox scrapId={scrapId} userId={userId} replyId={replyId} />
                                     : ''}
                             </div>
                         )

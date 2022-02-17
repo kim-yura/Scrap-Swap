@@ -31,7 +31,7 @@ const CommentBox = ({ scrapId, userId }) => {
     };
 
     const handleCancelComment = () => {
-
+        setComment('');
     };
 
     return (
