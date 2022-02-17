@@ -30,7 +30,7 @@ def post_scrap():
         db.session.commit()
         return jsonify(scrap.to_JSON())
     except:
-        return make_response({f'errors': ['Error(s) on the scrap occured']}, 400)
+        return make_response({f'errors': ['Error(s) on the scrap occurred']}, 400)
 
 @scrap_routes.route('/', methods=['PUT'])
 def put_scrap():
