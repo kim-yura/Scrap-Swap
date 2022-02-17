@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loadAllComments, createComment, editComment, deleteComment } from '../../store/comments';
+import { loadAllComments, editComment, deleteComment } from '../../store/comments';
 import CommentBox from './CommentBox';
 import ReplyBox from './ReplyBox';
 import './CommentsView.css';
@@ -22,8 +22,6 @@ const CommentsView = ({ scrapId }) => {
         return state.comments
     });
     const filteredCommentsArr = Object.values(Object.values(allComments).filter(comment => comment.scrapId === parseInt(scrapId)));
-
-    const [showReplyForm, setShowReplyForm] = useState(false)
 
     return (
         <div className='comment-view-body'>

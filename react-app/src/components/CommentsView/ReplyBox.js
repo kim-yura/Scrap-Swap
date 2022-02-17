@@ -6,7 +6,12 @@ import './CommentsView.css';
 const ReplyBox = ({ scrapId, userId, replyId }) => {
     const dispatch = useDispatch();
     const [reply, setReply] = useState('');
+    const [showReplyForm, setShowReplyForm] = useState(false)
     const [validationErrors, setValidationErrors] = useState([]);
+
+    const handleToggleReplyBox = () => {
+        setShowReplyForm(true);
+    };
 
     const handleSubmitReply = async (e) => {
         e.preventDefault();
@@ -27,27 +32,37 @@ const ReplyBox = ({ scrapId, userId, replyId }) => {
         if (!errors.length) {
             const submittedComment = await dispatch(createComment(newReply));
             setReply('');
+            setShowReplyForm(false);
         };
     };
 
     const handleCancelReply = () => {
         setReply('');
+        setShowReplyForm(false);
     };
 
     return (
         <div>
-            <form className='new-reply-form'>
-                <textarea
-                    onChange={(e) => setReply(e.target.value)}
-                    value={reply}
-                    id='new-reply-textarea'
-                    placeholder='Reply to this comment...'
-                />
-            </form>
-            <div className='new-comment-buttons'>
-                <button onClick={handleSubmitReply}>Submit</button>
-                <button onClick={handleCancelReply}>Cancel</button>
-            </div>
+            {showReplyForm ?
+                <>
+                    <form className='new-reply-form'>
+                        <textarea
+                            onChange={(e) => setReply(e.target.value)}
+                            value={reply}
+                            id='new-reply-textarea'
+                            placeholder='Reply to this comment...'
+                        />
+                    </form>
+                    <div className='new-comment-buttons'>
+                        <button onClick={handleSubmitReply}>Submit</button>
+                        <button onClick={handleCancelReply}>Cancel</button>
+                    </div>
+                </>
+                :
+                <div className='toggle-button'>
+                    <button onClick={handleToggleReplyBox}>Reply to this comment</button>
+                </div>
+                }
         </div>
     )
 

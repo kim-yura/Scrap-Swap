@@ -111,3 +111,21 @@
     font-size: 12px;
     width: 100px;
 }
+
+.toggle-button {
+    padding-top: 4px;
+    justify-content: right;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 12px;
+}
+
+.toggle-button>button {
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    width: 150px;
+}
