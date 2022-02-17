@@ -27,7 +27,7 @@ def seed_comments():
     comment_5 = Comment(
         scrap_id=2,
         user_id=1,
-        reply=5,
+        reply=4,
         content="On it!"
     )
     comment_6 = Comment(
@@ -38,13 +38,13 @@ def seed_comments():
     comment_7 = Comment(
         scrap_id=3,
         user_id=5,
-        reply=7,
+        reply=6,
         content="You could use it for weaving or maybe blend it back into a fiber for spinning?"
     )
     comment_8 = Comment(
         scrap_id=3,
         user_id=4,
-        reply=7,
+        reply=6,
         content="Oh that's a good idea! I'll have to think about it though."
     )
     comment_9 = Comment(
@@ -80,13 +80,13 @@ def seed_comments():
     comment_15 = Comment(
         scrap_id=8,
         user_id=6,
-        reply=15,
+        reply=14,
         content="Yes! Just lmk if you're able to help with postage :)"
     )
     comment_16 = Comment(
         scrap_id=8,
         user_id=1,
-        reply=15,
+        reply=14,
         content="Oops, I forgot to mention that yes! I'm happy to help with postage :)"
     )
 

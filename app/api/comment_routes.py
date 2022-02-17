@@ -7,7 +7,8 @@ comment_routes = Blueprint('comments', __name__)
 @comment_routes.route('/', methods=['GET'])
 def get_comments():
     comments = Comment.query.all()
-    return jsonify([comment.to_JSON()] for comment in comments)
+    print(comments)
+    return jsonify([comment.to_JSON() for comment in comments])
 
 @comment_routes.route('/', methods=['POST'])
 def post_comment():

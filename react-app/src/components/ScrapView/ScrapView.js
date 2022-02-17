@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
+import CommentsView from '../CommentsView/CommentsView';
+
 import { loadAllScraps } from '../../store/scraps';
 
 import './ScrapView.css';
@@ -40,7 +42,7 @@ const ScrapView = () => {
             <div className='scrap-view-gradient'></div>
             <div className='scrap-view-container'>
                 <div className='scrap-view-container-left'>
-                    <img src={selectedScrap?.imageURL} alt='User-uploaded scrap'/>
+                    <img src={selectedScrap?.imageURL} alt='User-uploaded scrap' />
                     {sessionUserId === selectedScrapOwnerId ?
                         <div className='scrap-view-buttons'>
                             <button onClick={() => handleEdit()}>Edit Scrap</button>
@@ -68,6 +70,8 @@ const ScrapView = () => {
                     <p>{selectedScrap?.textContent}</p>
                 </div>
             </div>
+
+            <CommentsView scrapId={scrapId} />
         </div>
     )
 };

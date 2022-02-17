@@ -8,7 +8,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     scrap_id = db.Column(db.Integer, db.ForeignKey('scraps.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    reply = db.Column(db.Integer)
+    reply = db.Column(db.Integer, nullable=False, default=0)
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())

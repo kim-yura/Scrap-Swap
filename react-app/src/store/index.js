@@ -2,10 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import scrapReducer from './scraps';
+import commentReducer from './comments';
 
 const rootReducer = combineReducers({
   session,
-  scraps: scrapReducer
+  scraps: scrapReducer,
+  comments: commentReducer,
 });
 
 
