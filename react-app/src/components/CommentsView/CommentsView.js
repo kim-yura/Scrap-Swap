@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loadAllComments, createComment } from '../../store/comments';
+import { loadAllComments, createComment, editComment, deleteComment } from '../../store/comments';
+import CommentBox from './CommentBox';
+import ReplyBox from './ReplyBox';
 import './CommentsView.css';
 
 const CommentsView = ({ scrapId }) => {
@@ -27,27 +29,6 @@ const CommentsView = ({ scrapId }) => {
     const [reply, setReply] = useState('');
 
     const [validationErrors, setValidationErrors] = useState([]);
-
-    const handleSubmitComment = async (e) => {
-        e.preventDefault();
-
-        const newComment = {
-            scrapId,
-            userId,
-            reply: 0,
-            content: comment
-        };
-
-        const errors = [];
-
-        if (!comment) errors.push("You can't leave an empty comment!");
-
-        setValidationErrors(errors);
-
-        if (!errors.length) {
-            const submittedComment = await dispatch(createComment(newComment));
-        };
-    };
 
     const handleCancelComment = () => {
         setComment('');
@@ -106,20 +87,7 @@ const CommentsView = ({ scrapId }) => {
                                     })
                                     : 'no replies for this comment'}
                                 {userId ?
-                                    <div>
-                                        <form className='new-reply-form'>
-                                            <textarea
-                                                onChange={(e) => setReply(e.target.value)}
-                                                value={reply}
-                                                id='new-reply-textarea'
-                                                placeholder='Reply to this comment...'
-                                            />
-                                        </form>
-                                        <div className='new-comment-buttons'>
-                                            <button onClick={handleSubmitReply}>Submit</button>
-                                            <button onClick={handleCancelReply}>Cancel</button>
-                                        </div>
-                                    </div>
+                                    <ReplyBox />
                                     : ''}
                             </div>
                         )
@@ -127,22 +95,7 @@ const CommentsView = ({ scrapId }) => {
                 })
                 : ''}
             {userId ?
-
-
-                <div className='comment-block'>
-                    <form className='new-comment-form'>
-                        <textarea
-                            onChange={(e) => setComment(e.target.value)}
-                            value={comment}
-                            id='new-comment-textarea'
-                            placeholder='Add a new comment...'
-                        />
-                    </form>
-                    <div className='new-comment-buttons'>
-                        <button onClick={handleSubmitComment}>Submit</button>
-                        <button onClick={handleCancelComment}>Cancel</button>
-                    </div>
-                </div>
+                <CommentBox scrapId={scrapId} userId={userId} />
                 : ''}
         </div>
     )
