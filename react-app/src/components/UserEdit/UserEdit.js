@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
+import { editUser } from '../../store/session';
 
 import './UserEdit.css';
 
@@ -20,7 +21,7 @@ const UserEdit = () => {
     const [profilePicURL, setProfilePicURL] = useState(sessionUser ? sessionUser.profile_pic_url : '');
     const [image, setImage] = useState(null);
     const [imageStatus, setImageStatus] = useState('Upload');
-    const [bio, setBio] = useState('');
+    const [bio, setBio] = useState(sessionUser ? sessionUser.bio : '');
 
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -46,6 +47,26 @@ const UserEdit = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const editedUser = {
+            id: sessionUser.id,
+            username,
+            profilePicURL,
+            bio
+        };
+        console.log(editedUser);
+
+        const errors = [];
+
+        if (!username) errors.push('Please enter a username.');
+        if (username.length > 40) errors.push('Usernames cannot be longer than 40 characters.');
+
+        setValidationErrors(errors);
+
+        if (!errors.length) {
+            const updatedUser = await dispatch(editUser(editedUser));
+            history.push(`/users/${updatedUser.id}`);
+        }
     }
 
     return (
@@ -91,8 +112,8 @@ const UserEdit = () => {
                                 id='bio'
                                 placeholder='Enter a fun bio!'
                             />
-                            <button className='submit-button'>Submit</button>
-                            <button className='submit-button' onClick={() => handleCancel()}>Cancel</button>
+                            <button className='submit-button' onClick={handleSubmit}>Submit</button>
+                            <button className='submit-button' onClick={handleCancel}>Cancel</button>
                         </div>
                     </div>
                 </div>

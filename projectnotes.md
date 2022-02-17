@@ -47,7 +47,10 @@
 * Reconfigured image URLs with AWS S3 links for Heroku deploy
 * Initial Heroku deploy
 * User: Render user's scraps as clickable cards
-
+* UserEdit: Form render
+* UserEdit: Form routes and functionality
+* UserEdit: API, route, store
+* DB Model for User updated to include default profile pictures, default bios
 
 
 * Fix Heroku deploy (matching routes)

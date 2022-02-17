@@ -42,6 +42,8 @@
 .user-view-bio {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .user-view-scraps-gallery {

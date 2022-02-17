@@ -61,7 +61,7 @@ function UserView() {
           Bio
         </li>
         <li className='user-view-bio'>
-          Lorem ipsum dolor sit amet.
+          {user.bio}
         </li>
 
         {sessionUserId === parseInt(userId) ?

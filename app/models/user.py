@@ -16,7 +16,8 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
-    profile_pic_url = db.Column(db.String)
+    profile_pic_url = db.Column(db.String, default='https://scrapswap.s3.amazonaws.com/logo_whitespace.png')
+    bio = db.Column(db.Text, default='Just a yarny on the internet.')
 
     follow = db.relationship('User',
                              secondary=followers,
@@ -44,7 +45,8 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'profile_pic_url': self.profile_pic_url
+            'profile_pic_url': self.profile_pic_url,
+            'bio': self.bio
         }
 
     def to_JSON(self):
@@ -52,5 +54,6 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'profilePicURL': self.profile_pic_url
+            'profilePicURL': self.profile_pic_url,
+            'bio': self.bio
         }

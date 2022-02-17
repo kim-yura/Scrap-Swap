@@ -1,6 +1,9 @@
+import { csrfFetch } from "../helpers";
+
 // constants
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
+const EDIT_USER = 'session/editUser';
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -24,7 +27,7 @@ export const authenticate = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-  
+
     dispatch(setUser(data));
   }
 }
@@ -40,8 +43,8 @@ export const login = (email, password) => async (dispatch) => {
       password
     })
   });
-  
-  
+
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -82,7 +85,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
       password,
     }),
   });
-  
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -97,12 +100,47 @@ export const signUp = (username, email, password) => async (dispatch) => {
   }
 }
 
+export const editUser = ({
+  id,
+  username,
+  profilePicURL,
+  bio
+}) => async (dispatch) => {
+  const response = await csrfFetch('/api/users/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id,
+      username,
+      profile_pic_url: profilePicURL,
+      bio
+    })
+  });
+
+  if (response.ok) {
+    const user = await response.json();
+    dispatch(editUserAction(user));
+    return user;
+  };
+};
+
+const editUserAction = (user) => ({
+  type: EDIT_USER,
+  user
+});
+
 export default function reducer(state = initialState, action) {
+  let newState = { ...state };
   switch (action.type) {
     case SET_USER:
       return { user: action.payload }
     case REMOVE_USER:
       return { user: null }
+    case EDIT_USER:
+      newState[action.user.id] = action.user;
+      return newState;
     default:
       return state;
   }
