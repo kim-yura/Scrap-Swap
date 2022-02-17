@@ -60,3 +60,5 @@
 * Comments: Store and reducer
 * Comments: CREATE function and styling
 * Comments: READ function and styling
+* Comments: EDIT function and styling
+* Comments: DELETE function and styling (but with an error message)
