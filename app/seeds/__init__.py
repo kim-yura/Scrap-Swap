@@ -4,6 +4,7 @@ from .yarn_weights import seed_yarn_weights, undo_yarn_weights
 from .swap_targets import seed_swap_targets, undo_swap_targets
 from .scraps import seed_scraps, undo_seed_scraps
 from .comments import seed_comments, undo_seed_comments
+from .likes import seed_likes, undo_seed_likes
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -18,6 +19,7 @@ def seed():
     seed_swap_targets()
     seed_scraps()
     seed_comments()
+    seed_likes()
 
 
 # Creates the `flask seed undo` command
@@ -28,3 +30,4 @@ def undo():
     undo_swap_targets()
     undo_seed_scraps()
     undo_seed_comments()
+    undo_seed_likes()
