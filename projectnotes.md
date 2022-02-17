@@ -58,3 +58,5 @@
 * Seed: DB model upgrade
 * Comments: API routes
 * Comments: Store and reducer
+* Comments: CREATE function and styling
+* Comments: READ function and styling

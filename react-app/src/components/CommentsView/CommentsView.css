@@ -68,7 +68,7 @@
     padding-top: 14px;
     padding-bottom: 14px;
     display: grid;
-    grid-template-columns: 50px 1fr 100px;
+    grid-template-columns: 50px 1fr;
     column-gap: 12px;
     align-items: center;
 }
@@ -128,4 +128,17 @@
     padding-bottom: 4px;
     font-size: 12px;
     width: 150px;
+}
+
+.edit-delete-buttons>button {
+    border: none;
+    background-color: transparent;
+    font-size: 11px;
+    color: #E7717D;
+    width: 100px;
+}
+
+.edit-delete-buttons>button:hover {
+    font-weight: bold;
+    cursor: pointer
 }

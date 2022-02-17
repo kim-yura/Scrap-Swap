@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { loadAllComments, editComment, deleteComment } from '../../store/comments';
 import CommentBox from './CommentBox';
 import ReplyBox from './ReplyBox';
+import EditDeleteBox from './EditDeleteBox';
 import './CommentsView.css';
 
 const CommentsView = ({ scrapId }) => {
@@ -46,6 +47,9 @@ const CommentsView = ({ scrapId }) => {
                                         <div className='comment-content'>
                                             {comment.content}
                                         </div>
+                                        {comment.user.id === userId ?
+                                            <EditDeleteBox allComments={allComments} commentId={comment.id} />
+                                            : ''}
                                     </div>
                                 </div>
                                 {repliesToComment ?
@@ -62,6 +66,9 @@ const CommentsView = ({ scrapId }) => {
                                                     <div className='comment-content'>
                                                         {reply.content}
                                                     </div>
+                                                    {reply.user.id === userId ?
+                                                        <EditDeleteBox allComments={allComments} commentId={reply.id} />
+                                                        : ''}
                                                 </div>
                                             </div>
                                         )
