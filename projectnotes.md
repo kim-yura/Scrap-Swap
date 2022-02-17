@@ -63,3 +63,4 @@
 * Comments: EDIT function and styling
 * Comments: DELETE function and styling (but with an error message)
 * Seed: Likes
+* Likes: API routes
