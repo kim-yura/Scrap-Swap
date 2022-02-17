@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loadAllComments } from '../../store/comments';
+import { loadAllComments, createComment } from '../../store/comments';
 import './CommentsView.css';
 
 const CommentsView = ({ scrapId }) => {
 
     const dispatch = useDispatch();
+
+    const userId = useSelector(state => state.session.user.id);
 
     useEffect(() => {
         dispatch(loadAllComments());
@@ -22,12 +24,27 @@ const CommentsView = ({ scrapId }) => {
     const [comment, setComment] = useState('');
     const [reply, setReply] = useState('');
 
+    const [validationErrors, setValidationErrors] = useState([]);
+
     const handleSubmitComment = async (e) => {
         e.preventDefault();
 
         const newComment = {
+            scrapId,
+            userId,
+            reply: 0,
+            content: comment
+        };
 
-        }
+        const errors = [];
+
+        if (!comment) errors.push("You can't leave an empty comment!");
+
+        setValidationErrors(errors);
+
+        if (!errors.length) {
+            const submittedComment = await dispatch(createComment(newComment));
+        };
     };
 
     const handleCancelComment = () => {
