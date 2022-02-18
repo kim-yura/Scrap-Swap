@@ -47,18 +47,6 @@ def seed_likes():
         scrap_id=8,
         user_id=2
     )
-    comment_like_1 = Like(
-        comment_id=1,
-        user_id=1
-    )
-    comment_like_2 = Like(
-        comment_id=2,
-        user_id=1
-    )
-    comment_like_3 = Like(
-        comment_id=3,
-        user_id=1
-    )
 
     db.session.add(scrap_like_1)
     db.session.add(scrap_like_2)
@@ -71,9 +59,6 @@ def seed_likes():
     db.session.add(scrap_like_9)
     db.session.add(scrap_like_10)
     db.session.add(scrap_like_11)
-    db.session.add(comment_like_1)
-    db.session.add(comment_like_2)
-    db.session.add(comment_like_3)
 
     db.session.commit()
 

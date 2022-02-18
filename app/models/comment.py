@@ -15,7 +15,6 @@ class Comment(db.Model):
 
     scrap = db.relationship('Scrap', back_populates='comment')
     user = db.relationship('User', back_populates='comment')
-    like = db.relationship('Like', back_populates='comment')
 
     def to_dict(self):
         return {

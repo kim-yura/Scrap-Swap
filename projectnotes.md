@@ -65,3 +65,4 @@
 * Seed: Likes
 * Likes: API routes
 * Likes: Store and reducer
+* Likes: Buttons work (but need dynamic rendering)
