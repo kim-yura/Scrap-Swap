@@ -71,9 +71,9 @@
 # 02/18:
 * Update seed data with friends' submissions
 * User Page: If no Scraps, will display so
+* Likes: Fix like icon animation
 
 * Likes: Render user's likes in their profile page
-* Likes: Fix like icon animation
 * SCRAPS THAT SLAP
 * Search bar: Simple form autopopulates bigger form
 * Search bar: Large form with more deets

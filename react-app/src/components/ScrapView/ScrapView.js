@@ -54,6 +54,7 @@ const ScrapView = () => {
 
     const handleLike = async (e) => {
         e.preventDefault();
+        animateLike();
         const newLike = {
             userId: sessionUserId,
             scrapId
@@ -63,11 +64,19 @@ const ScrapView = () => {
 
     const handleUnlike = async (e) => {
         e.preventDefault();
+        animateLike();
         const deletedLikeId = selectedLikes.filter(like => like.userId === parseInt(sessionUserId))[0].id;
         const deletedLike = {
             id: deletedLikeId
         };
         await dispatch(deleteLike(deletedLike));
+    };
+
+    const animateLike = () => {
+        document.getElementById('like-icon').className = 'bounce';
+        setTimeout(() => {
+            document.getElementById('like-icon').className = 'like-counter-icon';
+        }, 1000);
     };
 
     return (
@@ -91,10 +100,12 @@ const ScrapView = () => {
                                 <img className='like-counter-icon'
                                     src='https://scrapswap.s3.amazonaws.com/like_yes.png'
                                     alt='like-button'
+                                    id='like-icon'
                                     onClick={handleUnlike} /> :
                                 <img className='like-counter-icon'
                                     src='https://scrapswap.s3.amazonaws.com/like_no.png'
                                     alt='like-button'
+                                    id='like-icon'
                                     onClick={handleLike} />}
 
                             <div className='like-counter'>{selectedLikes.length}</div>

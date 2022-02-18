@@ -20,7 +20,7 @@
 .scrap-view-container-left>img {
     height: 400px;
     width: 400px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 12px;
 }
 
@@ -46,6 +46,8 @@
 
 .profile-pic {
     width: 50px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .profile-pic:active {
@@ -80,11 +82,18 @@
     animation-iteration-count: 1;
 }
 
-.like-counter-icon:active {
+.bounce {
     box-shadow: 0 0 2px #282828;
     animation-name: bounce-fast;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    align-self: center;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
-
 .like-counter {
     align-self: center;
     font-family: 'Montserrat', sans-serif;
