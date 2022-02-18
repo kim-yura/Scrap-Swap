@@ -32,6 +32,11 @@
     text-align: justify;
 }
 
+.scrap-view-title-like {
+    display: flex;
+    flex-direction: row;
+}
+
 .scrap-view-user-meta {
     display: flex;
     flex-direction: row;
@@ -62,4 +67,18 @@
     padding-top: 4px;
     padding-bottom: 4px;
     width: 100px;
+}
+
+.like-counter-icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    transform: scaleX(-1);
+    margin-left: 16px;
+    margin-right: 4px;
+}
+
+.like-counter {
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
 }

@@ -5,6 +5,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import CommentsView from '../CommentsView/CommentsView';
 
 import { loadAllScraps } from '../../store/scraps';
+import { loadAllLikes } from '../../store/likes';
 
 import './ScrapView.css';
 
@@ -16,6 +17,7 @@ const ScrapView = () => {
 
     useEffect(() => {
         dispatch(loadAllScraps());
+        dispatch(loadAllLikes());
         window.scrollTo(0, 0);
     }, []);
 
@@ -24,6 +26,13 @@ const ScrapView = () => {
     });
 
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
+
+    const allLikes = useSelector(state => {
+        return state.likes
+    });
+
+    // This is an array of likes
+    const selectedLikes = Object.values(Object.values(allLikes).filter(like => like.scrapId === parseInt(scrapId)));
 
     const sessionUserId = useSelector(state => {
         return state.session.user?.id || ''
@@ -51,7 +60,11 @@ const ScrapView = () => {
                         : ''}
                 </div>
                 <div className='scrap-view-text'>
-                    <h1>{selectedScrap?.title}</h1>
+                    <div className='scrap-view-title-like'>
+                        <h1>{selectedScrap?.title}</h1>
+                        <img className='like-counter-icon' src='https://scrapswap.s3.amazonaws.com/like_placeholder.png' alt='like'/>
+                        <div className='like-counter'>{selectedLikes.length}</div>
+                    </div>
                     <div className='scrap-view-user-meta'>
                         <Link to={`/users/${selectedScrap?.user.id}`}>
                             <img className='profile-pic' src={selectedScrap?.user.profilePicURL ? selectedScrap.user.profilePicURL : ''} alt='User profile pic' />
