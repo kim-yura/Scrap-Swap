@@ -154,12 +154,12 @@ const ScrapsPostForm = () => {
                             type='number'
                             placeholder='Enter the yardage of your Scrap'
                         />
-                        <input
+                        <textarea
                             onChange={(e) => setAllergens(e.target.value)}
                             value={allergens}
                             id='allergens'
                             type='text'
-                            placeholder='Are there any allergens to consider? (e.g.: cat-friendly home)'
+                            placeholder='Are there any allergens to consider? (e.g.: cat-friendly home) Please only include things that ARE in your home! (e.g.: do not write "smoke-free home")'
                         />
                         <select defaultValue={0} onChange={(e) => setSwapTargetId(e.target.value)}>
                             <option value={0}>What are you swapping for?</option>

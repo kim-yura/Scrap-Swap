@@ -98,6 +98,18 @@
     border: 1px solid #282828;
 }
 
+.form-fields>textarea {
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+}
+
+#allergens {
+    height: 74px;
+    resize: none;
+}
+
 .form-fields>h2 {
     margin-top: 0px;
 }

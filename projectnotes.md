@@ -76,11 +76,10 @@
 * Likes: Render user's likes in their profile page
 * Search: Search Form and results page
 * 404 pages for Users and Scraps
+* Search form
 
-* Search: Navbar link
 
-* Search bar: Simple form autopopulates bigger form
-* Search bar: Large form with more deets
+
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
