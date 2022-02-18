@@ -42,10 +42,10 @@ function UserView() {
     history.push(`/users/edit`);
   };
 
-  console.log(user);
   if (user.user === '') {
     return <Redirect to='/page-not-found' />
   };
+
   return (
     <div className='user-view-page'>
       <div className='scrap-view-gradient'></div>

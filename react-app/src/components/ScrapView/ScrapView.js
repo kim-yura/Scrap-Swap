@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, Redirect, useHistory, useParams } from 'react-router-dom';
 
 import CommentsView from '../CommentsView/CommentsView';
 
@@ -81,6 +81,10 @@ const ScrapView = () => {
             catch {};
         }, 1000);
     };
+
+    if (!selectedScrap) {
+        return <Redirect to='/page-not-found' />
+      };
 
     return (
         <div className='scrap-view-page'>
