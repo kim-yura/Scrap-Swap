@@ -28,6 +28,7 @@
     background: linear-gradient(rgb(118, 118, 118), rgb(133, 133, 133));
     background-color: #FFFEFA;
     box-shadow: 1px 1px 4px #282828;
+    object-fit: cover;
 }
 
 .user-view-header {
@@ -128,4 +129,18 @@
     padding-top: 4px;
     padding-bottom: 4px;
     color: black;
+}
+
+.user-view-no-scraps {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.user-view-no-scraps>img {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
 }

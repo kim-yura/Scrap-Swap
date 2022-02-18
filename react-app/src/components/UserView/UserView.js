@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 
 import { loadAllScraps } from '../../store/scraps';
+import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
 
 import './UserView.css';
@@ -67,7 +68,7 @@ function UserView() {
         {sessionUserId === parseInt(userId) ?
           <div className='user-options'>
             <button className='user-option-button'
-            onClick={() => editUser()}>Edit Profile</button>
+              onClick={() => editUser()}>Edit Profile</button>
           </div>
           : ''}
 
@@ -79,7 +80,10 @@ function UserView() {
                 <UserScrapCard scrap={scrap} key={idx} />
               )
             })
-            : 'no scraps found'}
+            : <div className='user-view-no-scraps'>
+              <img src='https://scrapswap.s3.amazonaws.com/like_no.png' alt='Gray yarn logo' />
+              This user has no Scraps!
+            </div>}
 
         </div>
       </ul>
