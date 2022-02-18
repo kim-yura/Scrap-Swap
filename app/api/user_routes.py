@@ -16,7 +16,10 @@ def users():
 @login_required
 def user(id):
     user = User.query.get(id)
-    return user.to_dict()
+    if user:
+        return user.to_dict()
+    else:
+        return {'user': ''}
 
 
 @user_routes.route('/', methods=['PUT'])

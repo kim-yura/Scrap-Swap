@@ -20,6 +20,8 @@ import UserView from './components/UserView/UserView';
 import UserEdit from './components/UserEdit/UserEdit';
 import { authenticate } from './store/session';
 
+import PageNotFound from './components/PageNotFound/PageNotFound';
+
 import './index.css';
 
 function App() {
@@ -76,6 +78,10 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <UserView />
         </ProtectedRoute>
+
+        <Route patch='/page-not-found' exact={true}>
+          <PageNotFound />
+        </Route>
       </Switch>
 
       <Footer />

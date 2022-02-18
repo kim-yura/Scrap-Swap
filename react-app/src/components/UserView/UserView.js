@@ -38,15 +38,14 @@ function UserView() {
 
   const usersScraps = Object.values(Object.values(allScraps).filter(scrap => scrap.userId === parseInt(userId)));
 
-  // TODO: MAKE THIS WORK
-  if (!user) {
-    return <Redirect to='/' />;
-  };
-
   const editUser = () => {
     history.push(`/users/edit`);
   };
 
+  console.log(user);
+  if (user.user === '') {
+    return <Redirect to='/page-not-found' />
+  };
   return (
     <div className='user-view-page'>
       <div className='scrap-view-gradient'></div>
