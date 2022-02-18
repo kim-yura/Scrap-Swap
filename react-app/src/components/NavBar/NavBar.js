@@ -36,7 +36,11 @@ const NavBar = () => {
               Post a Scrap
             </NavLink></li>
           <li>|</li>
-          <li>Search Bar placeholder</li>
+          <li>
+            <NavLink to='/search' exact={true}>
+              Search Scraps
+            </NavLink>
+          </li>
         </div>
       </ul>
     </nav>
