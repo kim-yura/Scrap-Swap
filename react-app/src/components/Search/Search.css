@@ -1,6 +1,14 @@
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ------------------------------ */
+
 .search-form-container {
     background-color: #E7717D;
-    height: calc(100vh - 87px);
+    height: calc(max-content - 87px);
+    min-height: calc(100vh - 87px);
     width: 300px;
     position: static;
     padding: 24px;
@@ -86,8 +94,27 @@
     margin-top: 8px;
 }
 
+/* ------------------------------ */
+
+.search-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
 .search-results-gradient {
     background-image: linear-gradient(#F1F1F1, transparent);
+    position: static;
     width: 100%;
     height: 60px;
 }
