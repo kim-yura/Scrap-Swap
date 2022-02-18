@@ -15,6 +15,8 @@ import ScrapDeleteConfirmation from './components/ScrapsDeleteFom/ScrapsDeleteCo
 
 import ScrapView from './components/ScrapView/ScrapView';
 
+import SearchForm from './components/Search/SearchForm';
+
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UserView from './components/UserView/UserView';
 import UserEdit from './components/UserEdit/UserEdit';
@@ -79,7 +81,11 @@ function App() {
           <UserView />
         </ProtectedRoute>
 
-        <Route patch='/page-not-found' exact={true}>
+        <Route path='/search' exact={true} >
+          <SearchForm />
+        </Route>
+
+        <Route path='/page-not-found' exact={true}>
           <PageNotFound />
         </Route>
       </Switch>

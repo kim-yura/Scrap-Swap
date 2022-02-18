@@ -1,0 +1,93 @@
+.search-form-container {
+    background-color: #E7717D;
+    height: calc(100vh - 87px);
+    width: 300px;
+    position: static;
+    padding: 24px;
+    color: #F1F1F1;
+    justify-content: center;
+    border-right: 4px solid #e76d79;
+}
+
+#search-form-header {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    text-shadow: 0 0 1px #282828;
+    margin-bottom: 8px;
+}
+
+.search-form-container>.label {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    margin-bottom: -6px;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+.search-form-container>input {
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.search-form-container>select {
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    border: 1px solid #282828;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.search-form-container>.allergen-buttons {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: 10px;
+    column-gap: 4px;
+}
+
+.search-form-container>.allergen-buttons>button {
+    background-color: #F1F1F1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 50px;
+}
+
+.search-form-container>.allergen-buttons>.toggle-yes {
+    background-color: yellow;
+}
+
+.submit-search-button {
+    background-color: #F1F1F1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.search-results-gradient {
+    background-image: linear-gradient(#F1F1F1, transparent);
+    width: 100%;
+    height: 60px;
+}
