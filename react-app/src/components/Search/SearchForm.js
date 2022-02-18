@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import ScrapCard from '../ScrapCard/ScrapCard';
 
 import { loadAllScraps } from '../../store/scraps';
@@ -9,7 +8,6 @@ import './Search.css';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
-    const { navParams } = useParams();
 
     useEffect(() => {
         dispatch(loadAllScraps());
@@ -19,7 +17,7 @@ const SearchForm = () => {
         return state.scraps
     });
 
-    const [searchParams, setSearchParams] = useState(navParams ? navParams : '');
+    const [searchParams, setSearchParams] = useState('');
     const [yarnWeightId, setYarnWeightId] = useState(0);
     const [minimumYardage, setMinimumYardage] = useState(0);
     const [swapTargetId, setSwapTargetId] = useState(0);
@@ -37,11 +35,16 @@ const SearchForm = () => {
     };
 
     const handleSearch = () => {
+
         setSearchResultsArr([]);
         let searchResultsArr = [];
         Object.values(allScraps).forEach(scrap => {
-            if (scrap.title.includes(searchParams) || scrap.textContent.includes(searchParams)) {
-                if (scrap.yardage > parseInt(minimumYardage)) {
+            if (scrap.title.toLowerCase().includes(searchParams.toLowerCase()) || scrap.textContent.toLowerCase().includes(searchParams.toLowerCase())) {
+                if (minimumYardage) {
+                    if (scrap.yardage > parseInt(minimumYardage)) {
+                        searchResultsArr.push(scrap);
+                    };
+                } else {
                     searchResultsArr.push(scrap);
                 };
             };
@@ -164,6 +167,7 @@ const SearchForm = () => {
                     placeholder='...others'
                 />
                 <button
+                    type='submit'
                     onClick={handleSearch}
                     className='submit-search-button'>
                     Gimme those Scraps!
