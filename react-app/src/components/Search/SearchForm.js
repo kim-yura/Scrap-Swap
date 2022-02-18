@@ -10,7 +10,7 @@ const SearchForm = () => {
 
     useEffect(() => {
         dispatch(loadAllScraps());
-    });
+    }, []);
 
     const allScraps = useSelector(state => {
         return state.scraps
@@ -29,6 +29,70 @@ const SearchForm = () => {
     };
     const toggleDogs = () => {
         setNoDogs(!noDogs);
+    };
+
+    const handleSearch = () => {
+        let searchResultsArr = [];
+        Object.values(allScraps).forEach(scrap => {
+            if (scrap.title.includes(searchParams) || scrap.textContent.includes(searchParams)) {
+                if (scrap.yardage > parseInt(minimumYardage)) {
+                    searchResultsArr.push(scrap);
+                };
+            };
+        });
+
+        // Yarn weight
+        if (yarnWeightId) {
+            let copyArr = searchResultsArr.slice();
+            searchResultsArr = [];
+            copyArr.forEach(scrap => {
+                if (scrap.yarnWeightId === parseInt(yarnWeightId)) {
+                    searchResultsArr.push(scrap);
+                };
+            });
+        };
+
+        // Swap id
+        if (swapTargetId) {
+            let copyArr = searchResultsArr.slice();
+            searchResultsArr = [];
+            copyArr.forEach(scrap => {
+                if (scrap.swapTargetId === parseInt(swapTargetId)) {
+                    searchResultsArr.push(scrap);
+                };
+            });
+        };
+        console.log(searchResultsArr);
+
+        // Allergens
+        if (noCats) {
+            let copyArr = searchResultsArr.slice();
+            searchResultsArr = [];
+            copyArr.forEach(scrap => {
+                if (scrap.allergens.toLowerCase().includes('cat') === false) {
+                    searchResultsArr.push(scrap);
+                };
+            });
+        };
+        if (noDogs) {
+            let copyArr = searchResultsArr.slice();
+            searchResultsArr = [];
+            copyArr.forEach(scrap => {
+                if (scrap.allergens.toLowerCase().includes('dog') === false) {
+                    searchResultsArr.push(scrap);
+                };
+            });
+        };
+        if (otherAllergens) {
+            let copyArr = searchResultsArr.slice();
+            searchResultsArr = [];
+            copyArr.forEach(scrap => {
+                if (scrap.allergens.toLowerCase().includes(otherAllergens.toLowerCase()) === false) {
+                    searchResultsArr.push(scrap);
+                };
+            });
+        };
+        console.log(searchResultsArr);
     };
 
     return (
@@ -92,7 +156,9 @@ const SearchForm = () => {
                 type='text'
                 placeholder='...others'
             />
-            <button className='submit-search-button'>
+            <button
+                onClick={handleSearch}
+                className='submit-search-button'>
                 Gimme those Scraps!
             </button>
         </div>
