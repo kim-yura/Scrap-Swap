@@ -148,6 +148,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -24px;
 }
 
 .users-likes-gallery {
@@ -157,13 +158,15 @@
     row-gap: 24px;
 }
 
+.users-likes-gallery>.card{
+    margin-right: 24px;
+}
+
 .users-likes-gallery-long {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 12px;
-    row-gap: 24px;
 }
-
-.users-likes-gallery>.card{
-    margin-right: 24px;
+.users-likes-gallery-long>.card {
+    margin-bottom: 12px;
 }
