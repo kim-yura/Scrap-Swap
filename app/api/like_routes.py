@@ -15,7 +15,6 @@ def post_like():
     like = Like(
         user_id=request.json['user_id'],
         scrap_id=request.json['scrap_id'],
-        comment_id=request.json['comment_id'],
         created_at=datetime.now()
         )
     try:

@@ -22,8 +22,7 @@ const loadAllLikesAction = (allLikes) => ({
 
 export const createLike = ({
     userId,
-    scrapId,
-    commentId
+    scrapId
 }) => async (dispatch) => {
     const response = await csrfFetch('/api/likes/', {
         method: 'POST',
@@ -32,8 +31,7 @@ export const createLike = ({
         },
         body: JSON.stringify({
             user_id: userId,
-            scrap_id: scrapId,
-            comment_id: commentId
+            scrap_id: scrapId
         })
     });
 

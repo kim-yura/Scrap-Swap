@@ -5,7 +5,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import CommentsView from '../CommentsView/CommentsView';
 
 import { loadAllScraps } from '../../store/scraps';
-import { loadAllLikes } from '../../store/likes';
+import { loadAllLikes, createLike, deleteLike } from '../../store/likes';
 
 import './ScrapView.css';
 
@@ -19,7 +19,7 @@ const ScrapView = () => {
         dispatch(loadAllScraps());
         dispatch(loadAllLikes());
         window.scrollTo(0, 0);
-    }, []);
+    }, [dispatch]);
 
     const allScraps = useSelector(state => {
         return state.scraps
@@ -31,19 +31,43 @@ const ScrapView = () => {
         return state.likes
     });
 
-    // This is an array of likes
-    const selectedLikes = Object.values(Object.values(allLikes).filter(like => like.scrapId === parseInt(scrapId)));
-
     const sessionUserId = useSelector(state => {
         return state.session.user?.id || ''
     });
     const selectedScrapOwnerId = selectedScrap?.user.id;
+
+    const selectedLikes = Object.values(Object.values(allLikes).filter(like => like.scrapId === parseInt(scrapId)));
+    const userLikesCheck = () => {
+        const found = selectedLikes.filter(like => like.userId === parseInt(sessionUserId));
+        if (found.length) {
+            return true;
+        };
+        return false;
+    };
 
     const handleEdit = () => {
         history.push(`/scraps/${scrapId}/edit`);
     };
     const handleDelete = () => {
         history.push(`/scraps/${scrapId}/delete`);
+    };
+
+    const handleLike = async (e) => {
+        e.preventDefault();
+        const newLike = {
+            userId: sessionUserId,
+            scrapId
+        };
+        await dispatch(createLike(newLike));
+    };
+
+    const handleUnlike = async (e) => {
+        e.preventDefault();
+        const deletedLikeId = selectedLikes.filter(like => like.userId === parseInt(sessionUserId))[0].id;
+        const deletedLike = {
+            id: deletedLikeId
+        };
+        await dispatch(deleteLike(deletedLike));
     };
 
     return (
@@ -62,8 +86,19 @@ const ScrapView = () => {
                 <div className='scrap-view-text'>
                     <div className='scrap-view-title-like'>
                         <h1>{selectedScrap?.title}</h1>
-                        <img className='like-counter-icon' src='https://scrapswap.s3.amazonaws.com/like_placeholder.png' alt='like'/>
-                        <div className='like-counter'>{selectedLikes.length}</div>
+                        <div className='like-icon-and-counter'>
+                            {userLikesCheck() ?
+                                <img className='like-counter-icon'
+                                    src='https://scrapswap.s3.amazonaws.com/like_yes.png'
+                                    alt='like-button'
+                                    onClick={handleUnlike} /> :
+                                <img className='like-counter-icon'
+                                    src='https://scrapswap.s3.amazonaws.com/like_no.png'
+                                    alt='like-button'
+                                    onClick={handleLike} />}
+
+                            <div className='like-counter'>{selectedLikes.length}</div>
+                        </div>
                     </div>
                     <div className='scrap-view-user-meta'>
                         <Link to={`/users/${selectedScrap?.user.id}`}>

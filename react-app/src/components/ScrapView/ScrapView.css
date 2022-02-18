@@ -70,15 +70,52 @@
 }
 
 .like-counter-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     align-self: center;
-    transform: scaleX(-1);
-    margin-left: 16px;
-    margin-right: 4px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    /* -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; */
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.like-counter-icon:active {
+    animation-name: bounce-fast;
 }
 
 .like-counter {
     align-self: center;
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.like-icon-and-counter {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 16px;
+}
+
+/* --------------- ANIMATION --------------- */
+
+@keyframes bounce-fast {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+        transform: translateY(-8px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
 }

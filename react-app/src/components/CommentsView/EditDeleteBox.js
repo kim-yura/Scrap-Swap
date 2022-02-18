@@ -45,7 +45,6 @@ const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
         const yeetedComment = await dispatch(deleteComment(deletedComment));
         setComment('');
         setShowForm(false);
-        <Redirect to={`/scraps/${scrapId}`} />
     };
 
     const handleCancelEdit = () => {
