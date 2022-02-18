@@ -9,6 +9,8 @@
     border-radius: 12px;
     background-color: #FFFEFA;
     box-shadow: 1px 1px 4px #282828;
+    text-align: center;
+    margin-bottom: 48px;
 }
 
 .card:active {

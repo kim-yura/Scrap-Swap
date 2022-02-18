@@ -84,8 +84,11 @@ function UserView() {
               <img src='https://scrapswap.s3.amazonaws.com/like_no.png' alt='Gray yarn logo' />
               This user has no Scraps!
             </div>}
-
         </div>
+
+        {sessionUserId === parseInt(userId) ?
+          <UserLikes user={user} userId={userId} />
+          : ''}
       </ul>
 
     </div>

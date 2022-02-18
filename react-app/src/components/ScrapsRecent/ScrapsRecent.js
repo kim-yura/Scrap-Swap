@@ -31,9 +31,6 @@ function ScrapsRecent() {
                     )
                 })}
             </div>
-            <div className='home-container'>
-                Hello
-            </div>
         </div>
     )
 };

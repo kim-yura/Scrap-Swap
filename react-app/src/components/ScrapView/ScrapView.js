@@ -75,7 +75,10 @@ const ScrapView = () => {
     const animateLike = () => {
         document.getElementById('like-icon').className = 'bounce';
         setTimeout(() => {
-            document.getElementById('like-icon').className = 'like-counter-icon';
+            try {
+                document.getElementById('like-icon').className = 'like-counter-icon';
+            }
+            catch {};
         }, 1000);
     };
 
