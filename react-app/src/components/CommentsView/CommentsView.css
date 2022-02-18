@@ -24,6 +24,11 @@
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    border-width: 1px;
+    background: linear-gradient(rgb(118, 118, 118), rgb(133, 133, 133));
+    background-color: #FFFEFA;
+    box-shadow: 0 0 2px #282828;
+
 }
 
 .comment-profile-pic:active {

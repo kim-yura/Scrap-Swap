@@ -19,7 +19,7 @@ function ScrapsRecent() {
     });
 
     const allScrapsArr = Object.values(allScraps);
-    const recentScraps = (allScrapsArr.slice(-5)).reverse();
+    const recentScraps = (allScrapsArr.slice(-7)).reverse();
 
     return (
         <div className='home-container'>

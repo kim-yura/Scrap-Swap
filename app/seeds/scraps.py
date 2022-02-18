@@ -91,6 +91,39 @@ def seed_scraps():
         allergens='Non-smoking home',
         text_content="Leftover from knitting a shawl. It's super fuzzy and warm and soft, and I'll happily send it your way if you help me with postage!"
     )
+    scrap_9 = Scrap(
+        user_id=8,
+        title='Bulky Yarn perfect for warm projects!',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_9.jpg',
+        yarn_weight_id=9,
+        fiber_content='100% Wool',
+        yardage=53,
+        swap_target_id=1,
+        allergens='From a home with a cat',
+        text_content=''
+    )
+    scrap_10 = Scrap(
+        user_id=8,
+        title='Mohair leftovers',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_10.jpg',
+        yarn_weight_id=8,
+        fiber_content='100% Wool',
+        yardage=124,
+        swap_target_id=1,
+        allergens='From a home with a cat',
+        text_content=''
+    )
+    scrap_11 = Scrap(
+        user_id=8,
+        title='Little Blue Scraps',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_11.jpg',
+        yarn_weight_id=7,
+        fiber_content='97%% cotton, 3% nylon',
+        yardage=174,
+        swap_target_id=1,
+        allergens='From a home with a cat',
+        text_content=''
+    )
 
     db.session.add(scrap_1)
     db.session.add(scrap_2)
@@ -100,6 +133,9 @@ def seed_scraps():
     db.session.add(scrap_6)
     db.session.add(scrap_7)
     db.session.add(scrap_8)
+    db.session.add(scrap_9)
+    db.session.add(scrap_10)
+    db.session.add(scrap_11)
 
     db.session.commit()
 

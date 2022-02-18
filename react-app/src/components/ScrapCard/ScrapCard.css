@@ -1,6 +1,6 @@
 .card {
-    height: 340px;
-    width: 260px;
+    height: 248px;
+    width: 180px;
     display: flex;
     flex-direction: column;
     border-width: 2px;
@@ -16,8 +16,8 @@
 }
 
 .card-image {
-    height: 240px;
-    width: 256px;
+    height: 160px;
+    width: 176px;
     object-fit: cover;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -46,15 +46,15 @@
 }
 
 .card-user {
-    margin-top: 0px;
-    margin-left: 6px;
-    margin-right: 6px;
-    font-size: 12px;
-}
-
-.card-target {
     margin-top: -4px;
     margin-left: 6px;
     margin-right: 6px;
-    font-size: 13px;
+    font-size: 11px;
+}
+
+.card-target {
+    margin-top: -8px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
 }

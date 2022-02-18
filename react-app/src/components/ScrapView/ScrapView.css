@@ -70,18 +70,18 @@
 }
 
 .like-counter-icon {
+    border-radius: 50%;
     width: 36px;
     height: 36px;
     align-self: center;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
-    /* -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out; */
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
 
 .like-counter-icon:active {
+    box-shadow: 0 0 2px #282828;
     animation-name: bounce-fast;
 }
 

@@ -66,3 +66,15 @@
 * Likes: API routes
 * Likes: Store and reducer
 * Likes: Buttons work (but need dynamic rendering)
+* Likes: Dynamic rendering complete, store refactor
+
+# 02/18:
+* Update seed data with friends' submissions
+
+* Likes: Render user's likes in their profile page
+* Likes: Fix like icon animation
+* SCRAPS THAT SLAP
+* Search bar: Simple form autopopulates bigger form
+* Search bar: Large form with more deets
+* Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
+* Scrap Cards: Image width needs adjustment

@@ -39,6 +39,18 @@ def seed_users():
         password='password',
         profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_6.jpg'
         )
+    beary_warm = User(
+        username='beary_warm',
+        email='joonie@scraps.com',
+        password='gomB1234',
+        profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_7.jpeg'
+    )
+    lucky_scrapper = User(
+        username='TheLuckyScrapper',
+        email='luckyscrapper@iloveknitting.com',
+        password='lovemyleftovers1',
+        profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_8.jpg'
+    )
 
 
     db.session.add(demo)
@@ -47,6 +59,8 @@ def seed_users():
     db.session.add(knithappens)
     db.session.add(stitchcraft)
     db.session.add(comingunraveled)
+    db.session.add(beary_warm)
+    db.session.add(lucky_scrapper)
 
     db.session.commit()
 
