@@ -7,7 +7,8 @@ def seed_users():
         username='DemoYuRa',
         email='yura@aa.io',
         password='password',
-        profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_1.jpg'
+        profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_1.jpg',
+        bio="Just a yarny on the internet. I'm also the dev for this awesome website! Please consider hiring me. :)"
         )
     knittywitty = User(
         username='knittywitty',

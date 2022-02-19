@@ -79,7 +79,7 @@ const ScrapView = () => {
                 document.getElementById('like-icon').className = 'like-counter-icon';
             }
             catch {};
-        }, 1000);
+        }, 500);
     };
 
     if (!selectedScrap) {

@@ -10,7 +10,7 @@ def seed_scraps():
         yarn_weight_id=4,
         fiber_content='Merino Cashmere',
         yardage=264,
-        allergens='Non-smoking, cat-friendly home',
+        allergens='Cat-friendly home',
         swap_target_id=1,
         text_content="I've decided that pink is no longer my color, lol! Looking to trade for a similar amount of blue-colored yarn. Fingering weight or light fingering weight preferred. I am based in the US, and can only trade domestically (sorry!)."
     )
@@ -21,7 +21,7 @@ def seed_scraps():
         yarn_weight_id=6,
         fiber_content='75% Cotton, 15% Yak',
         yardage=148,
-        allergens='Non-smoking, cat-friendly home',
+        allergens='Cat-friendly home',
         swap_target_id=1,
         text_content="I've decided that pink is no longer my color, lol! I'm looking to trade for a similar amount of blue-colored yarn. I am based in the US, and can only trade domestically (sorry!)."
     )
@@ -32,7 +32,7 @@ def seed_scraps():
         yarn_weight_id=10,
         fiber_content='Merino wool',
         yardage=28,
-        allergens='Non-smoking, dog-friendly home',
+        allergens='Dog-friendly home',
         swap_target_id=2,
         text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!"
     )
@@ -43,7 +43,7 @@ def seed_scraps():
         yarn_weight_id=3,
         fiber_content='80% Merino, 10% Nylon, 10% Cashmere',
         yardage=172,
-        allergens='Non-smoking, dog-friendly home',
+        allergens='Dog-friendly home',
         swap_target_id=2,
         text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!"
     )
@@ -77,7 +77,7 @@ def seed_scraps():
         fiber_content='52% Bamboo Rayon, 43% Merino, 5% Silk',
         yardage=193,
         swap_target_id=2,
-        allergens='Non-smoking home',
+        allergens='',
         text_content="I got this as a gift, but I don't really know what to do with it, LOL. It's discontinued, but if you want to help me with postage, I'll send it your way for free!"
     )
     scrap_8 = Scrap(
@@ -88,7 +88,7 @@ def seed_scraps():
         fiber_content='65% Alpaca, 35% Rayon',
         yardage=138,
         swap_target_id=2,
-        allergens='Non-smoking home',
+        allergens='',
         text_content="Leftover from knitting a shawl. It's super fuzzy and warm and soft, and I'll happily send it your way if you help me with postage!"
     )
     scrap_9 = Scrap(

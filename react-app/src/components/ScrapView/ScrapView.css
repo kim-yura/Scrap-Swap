@@ -76,8 +76,8 @@
     width: 36px;
     height: 36px;
     align-self: center;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.65s;
+    animation-duration: 0.65s;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
@@ -89,8 +89,8 @@
     width: 36px;
     height: 36px;
     align-self: center;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.65s;
+    animation-duration: 0.65s;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }

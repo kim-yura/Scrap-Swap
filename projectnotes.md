@@ -77,9 +77,10 @@
 * Search: Search Form and results page
 * 404 pages for Users and Scraps
 * Search form
-
+* Modified allergen box in ScrapsPost and ScrapsEdit to be more explicit about search function
 
 
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
+* User: Editing profile in one page render doesn't autopopulate bio field correctly
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
