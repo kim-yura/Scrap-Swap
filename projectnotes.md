@@ -78,6 +78,7 @@
 * 404 pages for Users and Scraps
 * Search form
 * Modified allergen box in ScrapsPost and ScrapsEdit to be more explicit about search function
+* Heroku: Daily Deploy
 
 
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form

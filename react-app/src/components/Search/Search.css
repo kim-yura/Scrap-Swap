@@ -7,7 +7,7 @@
 
 .search-form-container {
     background-color: #E7717D;
-    height: calc(max-content - 87px);
+    height: max-content;
     min-height: calc(100vh - 87px);
     width: 300px;
     position: static;
