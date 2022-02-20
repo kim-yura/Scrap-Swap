@@ -7,8 +7,8 @@
 
 .search-form-container {
     background-color: #E7717D;
-    height: max-content;
-    min-height: calc(100vh - 87px);
+    height: auto;
+    min-height: calc(100 - 87px);
     width: 300px;
     position: static;
     padding: 24px;
@@ -23,6 +23,25 @@
     font-size: 18px;
     text-shadow: 0 0 1px #282828;
     margin-bottom: 8px;
+}
+
+.colors-buttons-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8px;
+}
+
+.colors-buttons-search>button {
+    font-size: 11px;
+    width: 103px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 1px;
+    border-radius: 6px;
+}
+
+.yes-color-search {
+    background-color: #5e5e5e;
+    color: #F1F1F1;
 }
 
 .search-form-container>.label {

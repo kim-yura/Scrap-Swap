@@ -85,12 +85,8 @@ function App() {
           <SearchForm />
         </Route>
 
-        <Route path='/page-not-found' exact={true}>
-          <PageNotFound />
-        </Route>
+        <PageNotFound />
       </Switch>
-
-      <PageNotFound />
 
       <Footer />
     </BrowserRouter>
