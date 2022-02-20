@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-repeat: no-repeat;
     object-position: center;
 }
 
@@ -142,7 +141,9 @@
 };
 
 .colors-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: auto;
 }
 
 .colors-buttons>button {
