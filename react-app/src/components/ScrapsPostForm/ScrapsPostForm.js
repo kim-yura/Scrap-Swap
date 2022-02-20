@@ -23,7 +23,6 @@ const ScrapsPostForm = () => {
     const [allergens, setAllergens] = useState('');
     const [swapTargetId, setSwapTargetId] = useState(0);
     const [textContent, setTextContent] = useState('');
-    const [colors, setColors] = useState('');
 
     const [isRed, setIsRed] = useState(false);
     const [isRedOrange, setIsRedOrange] = useState(false);

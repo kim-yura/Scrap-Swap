@@ -94,7 +94,6 @@ const ScrapView = () => {
     if (selectedScrap) {
         colorsArr = (selectedScrap.colors.split(' ')).filter(ele => (ele !== ''));
     };
-    console.log(colorsArr);
 
     return (
         <>
