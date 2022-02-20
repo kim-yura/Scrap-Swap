@@ -107,6 +107,27 @@
     margin-left: 16px;
 }
 
+.scrap-colors {
+    display: flex;
+}
+
+.scrap-color {
+    text-align: center;
+    background-color: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 120px;
+    border-width: 2px;
+    border-style: outset;
+    margin: 1px;
+    flex-wrap: wrap;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+
+}
+
 /* --------------- ANIMATION --------------- */
 
 @keyframes bounce-fast {

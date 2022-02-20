@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import CommentsView from '../CommentsView/CommentsView';
 
@@ -72,73 +72,121 @@ const ScrapView = () => {
         await dispatch(deleteLike(deletedLike));
     };
 
+    const handleHome = () => {
+        history.push('/');
+    };
+
     const animateLike = () => {
         document.getElementById('like-icon').className = 'bounce';
         setTimeout(() => {
             try {
                 document.getElementById('like-icon').className = 'like-counter-icon';
             }
-            catch {};
+            catch { };
         }, 500);
     };
 
-    if (!selectedScrap) {
-        return <Redirect to='/page-not-found' />
-      };
+    // if (!selectedScrap) {
+    //     return <Redirect to='/page-not-found' />
+    //   };
+
+    let colorsArr = [];
+    if (selectedScrap) {
+        colorsArr = (selectedScrap.colors.split(' ')).filter(ele => (ele !== ''));
+    };
+    console.log(colorsArr);
 
     return (
-        <div className='scrap-view-page'>
-            <div className='scrap-view-gradient'></div>
-            <div className='scrap-view-container'>
-                <div className='scrap-view-container-left'>
-                    <img src={selectedScrap?.imageURL} alt='User-uploaded scrap' />
-                    {sessionUserId === selectedScrapOwnerId ?
-                        <div className='scrap-view-buttons'>
-                            <button onClick={() => handleEdit()}>Edit Scrap</button>
-                            <button onClick={() => handleDelete()}>Delete Scrap</button>
-                        </div>
-                        : ''}
-                </div>
-                <div className='scrap-view-text'>
-                    <div className='scrap-view-title-like'>
-                        <h1>{selectedScrap?.title}</h1>
-                        <div className='like-icon-and-counter'>
-                            {userLikesCheck() ?
-                                <img className='like-counter-icon'
-                                    src='https://scrapswap.s3.amazonaws.com/like_yes.png'
-                                    alt='like-button'
-                                    id='like-icon'
-                                    onClick={handleUnlike} /> :
-                                <img className='like-counter-icon'
-                                    src='https://scrapswap.s3.amazonaws.com/like_no.png'
-                                    alt='like-button'
-                                    id='like-icon'
-                                    onClick={handleLike} />}
+        <>
+            {selectedScrap ?
 
-                            <div className='like-counter'>{selectedLikes.length}</div>
+                <div className='scrap-view-page'>
+                    <div className='scrap-view-gradient'></div>
+                    <div className='scrap-view-container'>
+                        <div className='scrap-view-container-left'>
+                            <img src={selectedScrap?.imageURL} alt='User-uploaded scrap' />
+                            {sessionUserId === selectedScrapOwnerId ?
+                                <div className='scrap-view-buttons'>
+                                    <button onClick={() => handleEdit()}>Edit Scrap</button>
+                                    <button onClick={() => handleDelete()}>Delete Scrap</button>
+                                </div>
+                                : ''}
+                        </div>
+                        <div className='scrap-view-text'>
+                            <div className='scrap-view-title-like'>
+                                <h1>{selectedScrap?.title}</h1>
+                                <div className='like-icon-and-counter'>
+                                    {userLikesCheck() ?
+                                        <img className='like-counter-icon'
+                                            src='https://scrapswap.s3.amazonaws.com/like_yes.png'
+                                            alt='like-button'
+                                            id='like-icon'
+                                            onClick={handleUnlike} /> :
+                                        <img className='like-counter-icon'
+                                            src='https://scrapswap.s3.amazonaws.com/like_no.png'
+                                            alt='like-button'
+                                            id='like-icon'
+                                            onClick={handleLike} />}
+
+                                    <div className='like-counter'>{selectedLikes.length}</div>
+                                </div>
+                            </div>
+                            <div className='scrap-view-user-meta'>
+                                <Link to={`/users/${selectedScrap?.user.id}`}>
+                                    <img className='profile-pic' src={selectedScrap?.user.profilePicURL ? selectedScrap.user.profilePicURL : ''} alt='User profile pic' />
+                                </Link>
+                                <p>Posted by <Link to={`/users/${selectedScrap?.user.id}`}>{selectedScrap?.user.username}</Link></p>
+
+                            </div>
+                            <p>Yarn Weight: {selectedScrap?.yarnWeight.name} Weight</p>
+                            <p>Fiber Content: {selectedScrap?.fiberContent}</p>
+                            <p>Yardage: {selectedScrap?.yardage} yards</p>
+                            <p>Allergens: {selectedScrap?.allergens}</p>
+                            <p>{selectedScrap?.swapTargetId === 1 ? <>Looking to Trade</>
+                                : selectedScrap?.swapTargetId === 2 ? <>Free with Postage</>
+                                    : selectedScrap?.swapTargetId === 3 ? <>Free</> :
+                                        <>Unknown Type of Trade</>}</p>
+                            <p>{selectedScrap?.textContent}</p>
+                            <div className='scrap-colors'>
+                                {colorsArr.map(color =>
+                                    <div className='scrap-color'>
+                                        {color === 'red' ? 'Red' :
+                                            color === 'redorange' ? 'Red-orange' :
+                                                color === 'orange' ? 'Orange' :
+                                                    color === 'orangeyellow' ? 'Orange-yellow' :
+                                                        color === 'yellow' ? 'Yellow' :
+                                                            color === 'yellowgreen' ? 'Yellow-green' :
+                                                                color === 'green' ? 'Green' :
+                                                                    color === 'bluegreen' ? 'Blue-green' :
+                                                                        color === 'blue' ? 'Blue' :
+                                                                            color === 'bluepurple' ? 'Blue-purple' :
+                                                                                color === 'purple' ? 'Purple' :
+                                                                                    color === 'pink' ? 'Pink' :
+                                                                                        color === 'white' ? 'White' :
+                                                                                            color === 'gray' ? 'Gray' :
+                                                                                                color === 'black' ? 'Black' :
+                                                                                                    color === 'natural' ? 'Natural' :
+                                                                                                        color === 'multicolored' ? 'Multicolored' :
+                                                                                                            color === 'rainbow' ? 'Rainbow' : ''}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
-                    <div className='scrap-view-user-meta'>
-                        <Link to={`/users/${selectedScrap?.user.id}`}>
-                            <img className='profile-pic' src={selectedScrap?.user.profilePicURL ? selectedScrap.user.profilePicURL : ''} alt='User profile pic' />
-                        </Link>
-                        <p>Posted by <Link to={`/users/${selectedScrap?.user.id}`}>{selectedScrap?.user.username}</Link></p>
 
-                    </div>
-                    <p>Yarn Weight: {selectedScrap?.yarnWeight.name} Weight</p>
-                    <p>Fiber Content: {selectedScrap?.fiberContent}</p>
-                    <p>Yardage: {selectedScrap?.yardage} yards</p>
-                    <p>Allergens: {selectedScrap?.allergens}</p>
-                    <p>{selectedScrap?.swapTargetId === 1 ? <>Looking to Trade</>
-                        : selectedScrap?.swapTargetId === 2 ? <>Free with Postage</>
-                            : selectedScrap?.swapTargetId === 3 ? <>Free</> :
-                                <>Unknown Type of Trade</>}</p>
-                    <p>{selectedScrap?.textContent}</p>
+                    <CommentsView scrapId={scrapId} />
                 </div>
-            </div>
-
-            <CommentsView scrapId={scrapId} />
-        </div>
+                :
+                <div className='pnf-page'>
+                    <div className='pnf-gradient' />
+                    <div className='pnf-content'>
+                        <img src='https://scrapswap.s3.amazonaws.com/like_no.png' alt='gray-logo' />
+                        <h1>Page not found</h1>
+                        <h3>Oops! The selected resource doesn't exist or can't be located.</h3>
+                        <button onClick={handleHome}>Back to Home</button>
+                    </div>
+                </div>}
+        </>
     )
 };
 

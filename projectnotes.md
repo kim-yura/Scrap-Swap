@@ -82,6 +82,9 @@
 
 # 02/19:
 * Scrap: Update DB model and seed to include color field
+* Scrap: ScrapsPostForm includes color fields
+* 404 Page: reconfigured display for non-existent ScrapView
+* ScrapView: Updated render to include colors selected
 
 * Scrap: Update ScrapsPostForm and ScrapsEditForm to include color fields
 
