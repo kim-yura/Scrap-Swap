@@ -15,6 +15,7 @@ class Scrap(db.Model):
     allergens = db.Column(db.Text)
     swap_target_id = db.Column(db.Integer, db.ForeignKey('swap_targets.id'), nullable=False)
     text_content = db.Column(db.Text)
+    colors = db.Column(db.Text)
 
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
@@ -37,6 +38,7 @@ class Scrap(db.Model):
             'allergens': self.allergens,
             'text_content': self.text_content,
             'swap_target_id': self.swap_target_id,
+            'colors': self.colors,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
@@ -55,6 +57,7 @@ class Scrap(db.Model):
             'swapTargetId': self.swap_target_id,
             'user': self.user.to_JSON(),
             'yarnWeight': self.yarn_weight.to_JSON(),
+            'colors': self.colors,
             'createdAt': self.created_at,
             'updatedAt': self.updated_at
         }

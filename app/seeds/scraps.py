@@ -12,7 +12,8 @@ def seed_scraps():
         yardage=264,
         allergens='Cat-friendly home',
         swap_target_id=1,
-        text_content="I've decided that pink is no longer my color, lol! Looking to trade for a similar amount of blue-colored yarn. Fingering weight or light fingering weight preferred. I am based in the US, and can only trade domestically (sorry!)."
+        text_content="I've decided that pink is no longer my color, lol! Looking to trade for a similar amount of blue-colored yarn. Fingering weight or light fingering weight preferred. I am based in the US, and can only trade domestically (sorry!).",
+        colors='pink yellow green multicolored '
     )
     scrap_2 = Scrap(
         user_id=1,
@@ -23,7 +24,8 @@ def seed_scraps():
         yardage=148,
         allergens='Cat-friendly home',
         swap_target_id=1,
-        text_content="I've decided that pink is no longer my color, lol! I'm looking to trade for a similar amount of blue-colored yarn. I am based in the US, and can only trade domestically (sorry!)."
+        text_content="I've decided that pink is no longer my color, lol! I'm looking to trade for a similar amount of blue-colored yarn. I am based in the US, and can only trade domestically (sorry!).",
+        colors='pink '
     )
     scrap_3 = Scrap(
         user_id=2,
@@ -34,7 +36,8 @@ def seed_scraps():
         yardage=28,
         allergens='Dog-friendly home',
         swap_target_id=2,
-        text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!"
+        text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!",
+        colors='blue green '
     )
     scrap_4 = Scrap(
         user_id=2,
@@ -45,7 +48,8 @@ def seed_scraps():
         yardage=172,
         allergens='Dog-friendly home',
         swap_target_id=2,
-        text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!"
+        text_content="Clearing out bits of my stash, free to good homes but please help me cover shipping, thanks!",
+        colors='blue gray '
     )
     scrap_5 = Scrap(
         user_id=3,
@@ -56,7 +60,8 @@ def seed_scraps():
         yardage=250,
         swap_target_id=3,
         allergens='',
-        text_content="I'm clearing out my mother's estate and I know she would want her yarn stash to go to somebody who will enjoy using it. All the yarns I've listed are free to good homes."
+        text_content="I'm clearing out my mother's estate and I know she would want her yarn stash to go to somebody who will enjoy using it. All the yarns I've listed are free to good homes.",
+        colors='blue '
     )
     scrap_6 = Scrap(
         user_id=3,
@@ -67,7 +72,8 @@ def seed_scraps():
         yardage=250,
         swap_target_id=3,
         allergens='',
-        text_content="I'm clearing out my mother's estate and I know she would want her yarn stash to go to somebody who will enjoy using it. All the yarns I've listed are free to good homes."
+        text_content="I'm clearing out my mother's estate and I know she would want her yarn stash to go to somebody who will enjoy using it. All the yarns I've listed are free to good homes.",
+        colors='green '
     )
     scrap_7 = Scrap(
         user_id=4,
@@ -78,7 +84,8 @@ def seed_scraps():
         yardage=193,
         swap_target_id=2,
         allergens='',
-        text_content="I got this as a gift, but I don't really know what to do with it, LOL. It's discontinued, but if you want to help me with postage, I'll send it your way for free!"
+        text_content="I got this as a gift, but I don't really know what to do with it, LOL. It's discontinued, but if you want to help me with postage, I'll send it your way for free!",
+        colors='purple orange multicolored'
     )
     scrap_8 = Scrap(
         user_id=6,
@@ -89,7 +96,8 @@ def seed_scraps():
         yardage=138,
         swap_target_id=2,
         allergens='',
-        text_content="Leftover from knitting a shawl. It's super fuzzy and warm and soft, and I'll happily send it your way if you help me with postage!"
+        text_content="Leftover from knitting a shawl. It's super fuzzy and warm and soft, and I'll happily send it your way if you help me with postage!",
+        colors='yellow '
     )
     scrap_9 = Scrap(
         user_id=8,
@@ -100,7 +108,8 @@ def seed_scraps():
         yardage=53,
         swap_target_id=1,
         allergens='From a home with a cat',
-        text_content=''
+        text_content='',
+        colors='yellow '
     )
     scrap_10 = Scrap(
         user_id=8,
@@ -111,7 +120,8 @@ def seed_scraps():
         yardage=124,
         swap_target_id=1,
         allergens='From a home with a cat',
-        text_content=''
+        text_content='',
+        colors='orange '
     )
     scrap_11 = Scrap(
         user_id=8,
@@ -122,7 +132,8 @@ def seed_scraps():
         yardage=174,
         swap_target_id=1,
         allergens='From a home with a cat',
-        text_content=''
+        text_content='',
+        colors='blue '
     )
 
     db.session.add(scrap_1)
