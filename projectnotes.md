@@ -87,6 +87,7 @@
 * ScrapView: Updated render to include colors selected
 * Scrap: ScrapsEditForm includes color fields (also pre-filled)
 * Scrap: SearchForm includes color fields
+* CSS: ScrapsCreate background img tiling fix
 
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
 * User: Editing profile in one page render doesn't autopopulate bio field correctly
