@@ -83,7 +83,10 @@
 # 02/19:
 * Scrap: Update DB model and seed to include color field
 
+* Scrap: Update ScrapsPostForm and ScrapsEditForm to include color fields
+
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
 * User: Editing profile in one page render doesn't autopopulate bio field correctly
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
+* Display errors for empty comments

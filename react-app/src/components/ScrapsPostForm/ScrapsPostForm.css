@@ -137,6 +137,24 @@
     background-color: #282828;
 }
 
+.colors-label {
+    margin-bottom: -2px;
+};
+
+.colors-buttons {
+    display: flex;
+}
+
+.colors-buttons>button {
+    width: 120px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 1px;
+    border-radius: 6px;
+}
+
+.yes-color {
+    background-color: #E7717D;
+}
 
 /* --------------- ERRORS --------------- */
 .form-errors {
