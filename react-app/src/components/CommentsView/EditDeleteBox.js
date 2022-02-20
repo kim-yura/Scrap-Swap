@@ -36,6 +36,7 @@ const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
             setComment('');
             setShowForm(false);
         };
+        setComment(comment);
     };
 
     const handleDelete = async () => {
