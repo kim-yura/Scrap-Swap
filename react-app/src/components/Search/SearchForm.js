@@ -25,6 +25,25 @@ const SearchForm = () => {
     const [noDogs, setNoDogs] = useState(false);
     const [otherAllergens, setOtherAllergens] = useState('');
 
+    const [isRed, setIsRed] = useState(false);
+    const [isRedOrange, setIsRedOrange] = useState(false);
+    const [isOrange, setIsOrange] = useState(false);
+    const [isOrangeYellow, setIsOrangeYellow] = useState(false);
+    const [isYellow, setIsYellow] = useState(false);
+    const [isYellowGreen, setIsYellowGreen] = useState(false);
+    const [isGreen, setIsGreen] = useState(false);
+    const [isBlueGreen, setIsBlueGreen] = useState(false);
+    const [isBlue, setIsBlue] = useState(false);
+    const [isBluePurple, setIsBluePurple] = useState(false);
+    const [isPurple, setIsPurple] = useState(false);
+    const [isPink, setIsPink] = useState(false);
+    const [isWhite, setIsWhite] = useState(false);
+    const [isGray, setIsGray] = useState(false);
+    const [isBlack, setIsBlack] = useState(false);
+    const [isNatural, setIsNatural] = useState(false);
+    const [isMulticolored, setIsMulticolored] = useState(false);
+    const [isRainbow, setIsRainbow] = useState(false);
+
     const [searchResultsArr, setSearchResultsArr] = useState([]);
 
     const toggleCats = () => {
@@ -100,8 +119,198 @@ const SearchForm = () => {
                 };
             });
         };
+
         setSearchResultsArr(searchResultsArr);
+
+        if (isRed || isRedOrange || isOrange || isOrangeYellow || isYellow || isYellowGreen || isGreen || isBlueGreen || isBlue || isBluePurple || isPurple || isPink || isWhite || isGray || isBlack || isNatural || isMulticolored || isRainbow) {
+            let inclusiveColorSearch = new Set();
+
+            if (isRed) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' red ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isRedOrange) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' redorange ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isOrange) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' orange ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isOrangeYellow) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' orangeyellow ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isYellow) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' yellow ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isYellowGreen) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' yellowgreen ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isGreen) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' green ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isBlueGreen) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' bluegreen ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isBlue) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' blue ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isBluePurple) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' bluepurple ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isPurple) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' purple ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isPink) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' pink ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isWhite) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' white ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isGray) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' gray ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isBlack) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' black ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isNatural) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' natural ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isMulticolored) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' multicolored ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+            if (isRainbow) {
+                searchResultsArr.forEach(scrap => {
+                    if (scrap.colors.includes(' rainbow ')) {
+                        inclusiveColorSearch.add(scrap);
+                    };
+                });
+            };
+
+            setSearchResultsArr(Array.from(inclusiveColorSearch));
+        };
         window.scrollTo(0, 0);
+    };
+
+    // --------------- COLOR BUTTONS --------------- //
+    const handleRed = () => {
+        setIsRed(!isRed);
+    };
+    const handleIsRedOrange = () => {
+        setIsRedOrange(!isRedOrange);
+    };
+    const handleIsOrange = () => {
+        setIsOrange(!isOrange);
+    };
+    const handleIsOrangeYellow = () => {
+        setIsOrangeYellow(!isOrangeYellow);
+    };
+    const handleIsYellow = () => {
+        setIsYellow(!isYellow);
+    };
+    const handleIsYellowGreen = () => {
+        setIsYellowGreen(!isYellowGreen);
+    };
+    const handleIsGreen = () => {
+        setIsGreen(!isGreen);
+    };
+    const handleIsBlueGreen = () => {
+        setIsBlueGreen(!isBlueGreen);
+    };
+    const handleIsBlue = () => {
+        setIsBlue(!isBlue);
+    };
+    const handleIsBluePurple = () => {
+        setIsBluePurple(!isBluePurple);
+    };
+    const handleIsPurple = () => {
+        setIsPurple(!isPurple);
+    };
+    const handleIsPink = () => {
+        setIsPink(!isPink);
+    };
+    const handleIsWhite = () => {
+        setIsWhite(!isWhite);
+    };
+    const handleIsGray = () => {
+        setIsGray(!isGray);
+    };
+    const handleIsBlack = () => {
+        setIsBlack(!isBlack);
+    };
+    const handleIsNatural = () => {
+        setIsNatural(!isNatural);
+    };
+    const handleIsMulticolored = () => {
+        setIsMulticolored(!isMulticolored);
+    };
+    const handleIsRainbow = () => {
+        setIsRainbow(!isRainbow);
     };
 
     return (
@@ -131,6 +340,83 @@ const SearchForm = () => {
                     <option value={10} required>Super Bulky</option>
                     <option value={11} required>Jumbo</option>
                 </select>
+                <p className='label'>
+                    I'm looking for these colors...
+                </p>
+                <div className='colors-buttons-search'>
+                    <button
+                        type='button'
+                        className={isRed ? 'yes-color-search' : ''}
+                        onClick={handleRed}>Red</button>
+                    <button
+                        type='button'
+                        className={isRedOrange ? 'yes-color-search' : ''}
+                        onClick={handleIsRedOrange}>Red-orange</button>
+                    <button
+                        type='button'
+                        className={isOrange ? 'yes-color-search' : ''}
+                        onClick={handleIsOrange}>Orange</button>
+                    <button
+                        type='button'
+                        className={isOrangeYellow ? 'yes-color-search' : ''}
+                        onClick={handleIsOrangeYellow}>Orange-yellow</button>
+                    <button
+                        type='button'
+                        className={isYellow ? 'yes-color-search' : ''}
+                        onClick={handleIsYellow}>Yellow</button>
+                    <button
+                        type='button'
+                        className={isYellowGreen ? 'yes-color-search' : ''}
+                        onClick={handleIsYellowGreen}>Yellow-green</button>
+                    <button
+                        type='button'
+                        className={isGreen ? 'yes-color-search' : ''}
+                        onClick={handleIsGreen}>Green</button>
+                    <button
+                        type='button'
+                        className={isBlueGreen ? 'yes-color-search' : ''}
+                        onClick={handleIsBlueGreen}>Blue-green</button>
+                    <button
+                        type='button'
+                        className={isBlue ? 'yes-color-search' : ''}
+                        onClick={handleIsBlue}>Blue</button>
+                    <button
+                        type='button'
+                        className={isBluePurple ? 'yes-color-search' : ''}
+                        onClick={handleIsBluePurple}>Blue-purple</button>
+                    <button
+                        type='button'
+                        className={isPurple ? 'yes-color-search' : ''}
+                        onClick={handleIsPurple}>Purple</button>
+                    <button
+                        type='button'
+                        className={isPink ? 'yes-color-search' : ''}
+                        onClick={handleIsPink}>Pink</button>
+                    <button
+                        type='button'
+                        className={isWhite ? 'yes-color-search' : ''}
+                        onClick={handleIsWhite}>White</button>
+                    <button
+                        type='button'
+                        className={isGray ? 'yes-color-search' : ''}
+                        onClick={handleIsGray}>Gray</button>
+                    <button
+                        type='button'
+                        className={isBlack ? 'yes-color-search' : ''}
+                        onClick={handleIsBlack}>Black</button>
+                    <button
+                        type='button'
+                        className={isNatural ? 'yes-color-search' : ''}
+                        onClick={handleIsNatural}>Natural/Undyed</button>
+                    <button
+                        type='button'
+                        className={isMulticolored ? 'yes-color-search' : ''}
+                        onClick={handleIsMulticolored}>Multicolored</button>
+                    <button
+                        type='button'
+                        className={isRainbow ? 'yes-color-search' : ''}
+                        onClick={handleIsRainbow}>Rainbow</button>
+                </div>
                 <p className='label'>
                     I need at least this many yards...
                 </p>

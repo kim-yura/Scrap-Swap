@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-repeat: no-repeat;
     object-position: center;
 }
 
@@ -137,6 +136,26 @@
     background-color: #282828;
 }
 
+.colors-label {
+    margin-bottom: -2px;
+};
+
+.colors-buttons {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: auto;
+}
+
+.colors-buttons>button {
+    width: 120px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 1px;
+    border-radius: 6px;
+}
+
+.yes-color {
+    background-color: #E7717D;
+}
 
 /* --------------- ERRORS --------------- */
 .form-errors {

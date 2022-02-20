@@ -22,6 +22,7 @@ def post_scrap():
         allergens=request.json['allergens'],
         swap_target_id=request.json['swap_target_id'],
         text_content=request.json['text_content'],
+        colors=request.json['colors'],
         created_at=datetime.now(),
         updated_at=datetime.now()
         )
@@ -43,6 +44,7 @@ def put_scrap():
         'allergens': request.json['allergens'],
         'swap_target_id': request.json['swap_target_id'],
         'text_content': request.json['text_content'],
+        'colors': request.json['colors'],
         'updated_at': datetime.now()
     }, synchronize_session='fetch')
     db.session.commit()

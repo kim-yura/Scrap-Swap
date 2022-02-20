@@ -27,6 +27,11 @@ const ScrapsEditForm = () => {
 
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
 
+    let colorsArr = [];
+    if (selectedScrap) {
+        colorsArr = (selectedScrap.colors.split(' ')).filter(ele => (ele !== ''));
+    };
+
     const [title, setTitle] = useState(selectedScrap ? selectedScrap.title : '');
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState(selectedScrap ? selectedScrap.imageURL : '');
@@ -37,6 +42,25 @@ const ScrapsEditForm = () => {
     const [allergens, setAllergens] = useState(selectedScrap ? selectedScrap.allergens : '');
     const [swapTargetId, setSwapTargetId] = useState(selectedScrap ? selectedScrap.swapTargetId : 0);
     const [textContent, setTextContent] = useState(selectedScrap ? selectedScrap.textContent : '');
+
+    const [isRed, setIsRed] = useState(colorsArr.includes('red'));
+    const [isRedOrange, setIsRedOrange] = useState(colorsArr.includes('redorange'));
+    const [isOrange, setIsOrange] = useState(colorsArr.includes('orange'));
+    const [isOrangeYellow, setIsOrangeYellow] = useState(colorsArr.includes('orangeyellow'));
+    const [isYellow, setIsYellow] = useState(colorsArr.includes('yellow'));
+    const [isYellowGreen, setIsYellowGreen] = useState(colorsArr.includes('yellowgreen'));
+    const [isGreen, setIsGreen] = useState(colorsArr.includes('green'));
+    const [isBlueGreen, setIsBlueGreen] = useState(colorsArr.includes('bluegreen'));
+    const [isBlue, setIsBlue] = useState(colorsArr.includes('blue'));
+    const [isBluePurple, setIsBluePurple] = useState(colorsArr.includes('bluepurple'));
+    const [isPurple, setIsPurple] = useState(colorsArr.includes('purple'));
+    const [isPink, setIsPink] = useState(colorsArr.includes('pink'));
+    const [isWhite, setIsWhite] = useState(colorsArr.includes('white'));
+    const [isGray, setIsGray] = useState(colorsArr.includes('gray'));
+    const [isBlack, setIsBlack] = useState(colorsArr.includes('black'));
+    const [isNatural, setIsNatural] = useState(colorsArr.includes('natural'));
+    const [isMulticolored, setIsMulticolored] = useState(colorsArr.includes('multicolored'));
+    const [isRainbow, setIsRainbow] = useState(colorsArr.includes('rainbow'));
 
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -63,7 +87,29 @@ const ScrapsEditForm = () => {
     };
 
     const handleSubmit = async (e) => {
+        window.scrollTo(0, 0);
         e.preventDefault();
+
+        let allColors = ' ';
+
+        if (isRed) allColors += 'red ';
+        if (isRedOrange) allColors += 'redorange ';
+        if (isOrange) allColors += 'orange ';
+        if (isOrangeYellow) allColors += 'orangeyellow ';
+        if (isYellow) allColors += 'yellow ';
+        if (isYellowGreen) allColors += 'yellowgreen ';
+        if (isGreen) allColors += 'green ';
+        if (isBlueGreen) allColors += 'bluegreen ';
+        if (isBlue) allColors += 'blue ';
+        if (isBluePurple) allColors += 'bluepurple ';
+        if (isPurple) allColors += 'purple ';
+        if (isPink) allColors += 'pink ';
+        if (isWhite) allColors += 'white ';
+        if (isGray) allColors += 'gray ';
+        if (isBlack) allColors += 'black ';
+        if (isNatural) allColors += 'natural ';
+        if (isMulticolored) allColors += 'multicolored ';
+        if (isRainbow) allColors += 'rainbow ';
 
         const editedScrap = {
             id: scrapId,
@@ -74,7 +120,8 @@ const ScrapsEditForm = () => {
             yardage,
             allergens,
             swapTargetId,
-            textContent
+            textContent,
+            colors: allColors
         };
 
         const errors = [];
@@ -94,13 +141,71 @@ const ScrapsEditForm = () => {
 
         if (swapTargetId === 0) errors.push('Please select a swap target.');
 
+        if (allColors === ' ') errors.push('Please select at least one color.');
+
         setValidationErrors(errors);
 
         if (!errors.length) {
             const updatedScap = await dispatch(editScrap(editedScrap));
             history.push(`/scraps/${updatedScap.id}`);
         };
-    }
+    };
+
+    // --------------- COLOR BUTTONS --------------- //
+    const handleRed = () => {
+        setIsRed(!isRed);
+    };
+    const handleIsRedOrange = () => {
+        setIsRedOrange(!isRedOrange);
+    };
+    const handleIsOrange = () => {
+        setIsOrange(!isOrange);
+    };
+    const handleIsOrangeYellow = () => {
+        setIsOrangeYellow(!isOrangeYellow);
+    };
+    const handleIsYellow = () => {
+        setIsYellow(!isYellow);
+    };
+    const handleIsYellowGreen = () => {
+        setIsYellowGreen(!isYellowGreen);
+    };
+    const handleIsGreen = () => {
+        setIsGreen(!isGreen);
+    };
+    const handleIsBlueGreen = () => {
+        setIsBlueGreen(!isBlueGreen);
+    };
+    const handleIsBlue = () => {
+        setIsBlue(!isBlue);
+    };
+    const handleIsBluePurple = () => {
+        setIsBluePurple(!isBluePurple);
+    };
+    const handleIsPurple = () => {
+        setIsPurple(!isPurple);
+    };
+    const handleIsPink = () => {
+        setIsPink(!isPink);
+    };
+    const handleIsWhite = () => {
+        setIsWhite(!isWhite);
+    };
+    const handleIsGray = () => {
+        setIsGray(!isGray);
+    };
+    const handleIsBlack = () => {
+        setIsBlack(!isBlack);
+    };
+    const handleIsNatural = () => {
+        setIsNatural(!isNatural);
+    };
+    const handleIsMulticolored = () => {
+        setIsMulticolored(!isMulticolored);
+    };
+    const handleIsRainbow = () => {
+        setIsRainbow(!isRainbow);
+    };
 
     return (
         <div className='edit-scrap-background'>
@@ -154,6 +259,81 @@ const ScrapsEditForm = () => {
                             <option value={10} required>Super Bulky</option>
                             <option value={11} required>Jumbo</option>
                         </select>
+                        <p className='colors-label'>Select colors for your Scrap:</p>
+                        <div className='colors-buttons'>
+                            <button
+                                type='button'
+                                className={isRed ? 'yes-color' : ''}
+                                onClick={handleRed}>Red</button>
+                            <button
+                                type='button'
+                                className={isRedOrange ? 'yes-color' : ''}
+                                onClick={handleIsRedOrange}>Red-orange</button>
+                            <button
+                                type='button'
+                                className={isOrange ? 'yes-color' : ''}
+                                onClick={handleIsOrange}>Orange</button>
+                            <button
+                                type='button'
+                                className={isOrangeYellow ? 'yes-color' : ''}
+                                onClick={handleIsOrangeYellow}>Orange-yellow</button>
+                            <button
+                                type='button'
+                                className={isYellow ? 'yes-color' : ''}
+                                onClick={handleIsYellow}>Yellow</button>
+                            <button
+                                type='button'
+                                className={isYellowGreen ? 'yes-color' : ''}
+                                onClick={handleIsYellowGreen}>Yellow-green</button>
+                            <button
+                                type='button'
+                                className={isGreen ? 'yes-color' : ''}
+                                onClick={handleIsGreen}>Green</button>
+                            <button
+                                type='button'
+                                className={isBlueGreen ? 'yes-color' : ''}
+                                onClick={handleIsBlueGreen}>Blue-green</button>
+                            <button
+                                type='button'
+                                className={isBlue ? 'yes-color' : ''}
+                                onClick={handleIsBlue}>Blue</button>
+                            <button
+                                type='button'
+                                className={isBluePurple ? 'yes-color' : ''}
+                                onClick={handleIsBluePurple}>Blue-purple</button>
+                            <button
+                                type='button'
+                                className={isPurple ? 'yes-color' : ''}
+                                onClick={handleIsPurple}>Purple</button>
+                            <button
+                                type='button'
+                                className={isPink ? 'yes-color' : ''}
+                                onClick={handleIsPink}>Pink</button>
+                            <button
+                                type='button'
+                                className={isWhite ? 'yes-color' : ''}
+                                onClick={handleIsWhite}>White</button>
+                            <button
+                                type='button'
+                                className={isGray ? 'yes-color' : ''}
+                                onClick={handleIsGray}>Gray</button>
+                            <button
+                                type='button'
+                                className={isBlack ? 'yes-color' : ''}
+                                onClick={handleIsBlack}>Black</button>
+                            <button
+                                type='button'
+                                className={isNatural ? 'yes-color' : ''}
+                                onClick={handleIsNatural}>Natural/Undyed</button>
+                            <button
+                                type='button'
+                                className={isMulticolored ? 'yes-color' : ''}
+                                onClick={handleIsMulticolored}>Multicolored</button>
+                            <button
+                                type='button'
+                                className={isRainbow ? 'yes-color' : ''}
+                                onClick={handleIsRainbow}>Rainbow</button>
+                        </div>
                         <input
                             onChange={(e) => setFiberContent(e.target.value)}
                             value={fiberContent}

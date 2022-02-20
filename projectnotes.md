@@ -80,8 +80,17 @@
 * Modified allergen box in ScrapsPost and ScrapsEdit to be more explicit about search function
 * Heroku: Daily Deploy
 
+# 02/19:
+* Scrap: Update DB model and seed to include color field
+* Scrap: ScrapsPostForm includes color fields
+* 404 Page: reconfigured display for non-existent ScrapView
+* ScrapView: Updated render to include colors selected
+* Scrap: ScrapsEditForm includes color fields (also pre-filled)
+* Scrap: SearchForm includes color fields
+* CSS: ScrapsCreate background img tiling fix
 
 * Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
 * User: Editing profile in one page render doesn't autopopulate bio field correctly
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
+* Display errors for empty comments

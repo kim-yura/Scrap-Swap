@@ -32,6 +32,7 @@ export const createScrap = ({
     allergens,
     textContent,
     swapTargetId,
+    colors,
     user
 }) => async (dispatch) => {
     const response = await csrfFetch('/api/scraps/', {
@@ -49,6 +50,7 @@ export const createScrap = ({
             allergens,
             text_content: textContent,
             swap_target_id: swapTargetId,
+            colors,
             user
         })
     });
@@ -76,6 +78,7 @@ export const editScrap = ({
     yardage,
     allergens,
     textContent,
+    colors,
     swapTargetId
 }) => async (dispatch) => {
     const response = await csrfFetch('/api/scraps/', {
@@ -92,7 +95,8 @@ export const editScrap = ({
             yardage,
             allergens,
             text_content: textContent,
-            swap_target_id: swapTargetId
+            swap_target_id: swapTargetId,
+            colors
         })
     });
 
