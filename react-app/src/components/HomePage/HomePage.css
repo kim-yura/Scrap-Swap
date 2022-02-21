@@ -2,6 +2,7 @@
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 48px;
+    height: calc(100% - 87px);
 }
 
 .home-container-row {
