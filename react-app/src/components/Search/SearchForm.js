@@ -42,7 +42,7 @@ const SearchForm = () => {
     const [isWhite, setIsWhite] = useState(false);
     const [isGray, setIsGray] = useState(false);
     const [isBlack, setIsBlack] = useState(false);
-    const [isNatural, setIsNatural] = useState(false);
+    const [isCream, setIsCream] = useState(false);
     const [isMulticolored, setIsMulticolored] = useState(false);
     const [isRainbow, setIsRainbow] = useState(false);
 
@@ -124,7 +124,7 @@ const SearchForm = () => {
 
         setSearchResultsArr(searchResultsArr.reverse());
 
-        if (isRed || isRedOrange || isOrange || isOrangeYellow || isYellow || isYellowGreen || isGreen || isBlueGreen || isBlue || isBluePurple || isPurple || isPink || isWhite || isGray || isBlack || isNatural || isMulticolored || isRainbow) {
+        if (isRed || isRedOrange || isOrange || isOrangeYellow || isYellow || isYellowGreen || isGreen || isBlueGreen || isBlue || isBluePurple || isPurple || isPink || isWhite || isGray || isBlack || isCream || isMulticolored || isRainbow) {
             let inclusiveColorSearch = new Set();
 
             if (isRed) {
@@ -232,9 +232,9 @@ const SearchForm = () => {
                     };
                 });
             };
-            if (isNatural) {
+            if (isCream) {
                 searchResultsArr.forEach(scrap => {
-                    if (scrap.colors.includes(' natural ')) {
+                    if (scrap.colors.includes(' cream ')) {
                         inclusiveColorSearch.add(scrap);
                     };
                 });
@@ -305,8 +305,8 @@ const SearchForm = () => {
     const handleIsBlack = () => {
         setIsBlack(!isBlack);
     };
-    const handleIsNatural = () => {
-        setIsNatural(!isNatural);
+    const handleIsCream = () => {
+        setIsCream(!isCream);
     };
     const handleIsMulticolored = () => {
         setIsMulticolored(!isMulticolored);
@@ -408,8 +408,8 @@ const SearchForm = () => {
                         onClick={handleIsBlack}>Black</button>
                     <button
                         type='button'
-                        className={isNatural ? 'yes-color-search' : ''}
-                        onClick={handleIsNatural}>Natural/Undyed</button>
+                        className={isCream ? 'yes-color-search' : ''}
+                        onClick={handleIsCream}>Undyed/Cream</button>
                     <button
                         type='button'
                         className={isMulticolored ? 'yes-color-search' : ''}

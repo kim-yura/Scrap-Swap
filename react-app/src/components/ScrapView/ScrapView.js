@@ -166,7 +166,7 @@ const ScrapView = () => {
                                                                                         color === 'white' ? 'White' :
                                                                                             color === 'gray' ? 'Gray' :
                                                                                                 color === 'black' ? 'Black' :
-                                                                                                    color === 'natural' ? 'Natural' :
+                                                                                                    color === 'cream' ? 'Natural/Cream' :
                                                                                                         color === 'multicolored' ? 'Multicolored' :
                                                                                                             color === 'rainbow' ? 'Rainbow' : ''}
                                     </div>

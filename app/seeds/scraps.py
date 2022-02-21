@@ -13,7 +13,7 @@ def seed_scraps():
         allergens='Cat-friendly home',
         swap_target_id=1,
         text_content="I've decided that pink is no longer my color, lol! Looking to trade for a similar amount of blue-colored yarn. Fingering weight or light fingering weight preferred. I am based in the US, and can only trade domestically (sorry!).",
-        colors=' pink yellow green multicolored '
+        colors=' pink yellow green '
     )
     scrap_2 = Scrap(
         user_id=1,
@@ -85,7 +85,7 @@ def seed_scraps():
         swap_target_id=2,
         allergens='',
         text_content="I got this as a gift, but I don't really know what to do with it, LOL. It's discontinued, but if you want to help me with postage, I'll send it your way for free!",
-        colors=' purple orange multicolored'
+        colors=' purple orange '
     )
     scrap_8 = Scrap(
         user_id=6,
@@ -169,7 +169,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='Cat, Dog',
         text_content='',
-        colors=' natural '
+        colors=' cream '
     )
     scrap_15 = Scrap(
         user_id=9,
@@ -181,7 +181,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='Cat, Dog',
         text_content='',
-        colors= ' natural '
+        colors= ' cream '
     )
     scrap_16 = Scrap(
         user_id=9,
@@ -193,7 +193,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='Cat, Dog',
         text_content='',
-        colors=' natural '
+        colors=' cream '
     )
     scrap_17 = Scrap(
         user_id=9,
@@ -265,7 +265,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' green red white multicolored '
+        colors = ' green red white '
     )
     scrap_23 = Scrap(
         user_id=10,
@@ -277,7 +277,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' multicolored yellow white purple '
+        colors = ' yellow white purple '
     )
     scrap_24 = Scrap(
         user_id=10,
@@ -301,7 +301,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' natural orange '
+        colors = ' cream orange '
     )
     scrap_26 = Scrap(
         user_id=10,
@@ -325,7 +325,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' multicolored natural pink '
+        colors = ' cream pink '
     )
     scrap_28 = Scrap(
         user_id=10,
@@ -337,7 +337,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' multicolored yellow blue green '
+        colors = ' yellow blue green '
     )
     scrap_29 = Scrap(
         user_id=10,

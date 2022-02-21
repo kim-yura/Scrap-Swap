@@ -58,7 +58,7 @@ const ScrapsEditForm = () => {
     const [isWhite, setIsWhite] = useState(colorsArr.includes('white'));
     const [isGray, setIsGray] = useState(colorsArr.includes('gray'));
     const [isBlack, setIsBlack] = useState(colorsArr.includes('black'));
-    const [isNatural, setIsNatural] = useState(colorsArr.includes('natural'));
+    const [isCream, setIsCream] = useState(colorsArr.includes('cream'));
     const [isMulticolored, setIsMulticolored] = useState(colorsArr.includes('multicolored'));
     const [isRainbow, setIsRainbow] = useState(colorsArr.includes('rainbow'));
 
@@ -107,7 +107,7 @@ const ScrapsEditForm = () => {
         if (isWhite) allColors += 'white ';
         if (isGray) allColors += 'gray ';
         if (isBlack) allColors += 'black ';
-        if (isNatural) allColors += 'natural ';
+        if (isCream) allColors += 'cream ';
         if (isMulticolored) allColors += 'multicolored ';
         if (isRainbow) allColors += 'rainbow ';
 
@@ -197,8 +197,8 @@ const ScrapsEditForm = () => {
     const handleIsBlack = () => {
         setIsBlack(!isBlack);
     };
-    const handleIsNatural = () => {
-        setIsNatural(!isNatural);
+    const handleIsCream = () => {
+        setIsCream(!isCream);
     };
     const handleIsMulticolored = () => {
         setIsMulticolored(!isMulticolored);
@@ -323,8 +323,8 @@ const ScrapsEditForm = () => {
                                 onClick={handleIsBlack}>Black</button>
                             <button
                                 type='button'
-                                className={isNatural ? 'yes-color' : ''}
-                                onClick={handleIsNatural}>Natural/Undyed</button>
+                                className={isCream ? 'yes-color' : ''}
+                                onClick={handleIsCream}>Natural/Cream</button>
                             <button
                                 type='button'
                                 className={isMulticolored ? 'yes-color' : ''}
