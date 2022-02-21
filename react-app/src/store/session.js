@@ -152,7 +152,6 @@ export const createFollow = ({
 
   if (response.ok) {
     const follower = await response.json();
-    console.log(follower);
     dispatch(createFollowAction(follower));
     return follower;
   }
@@ -205,7 +204,7 @@ export default function reducer(state = initialState, action) {
       newState.user = action.follower;
       return newState;
     case DELETE_FOLLOW:
-      newState.user.following = action.following.id;
+      newState.user = action.follower;
       return newState;
     default:
       return state;

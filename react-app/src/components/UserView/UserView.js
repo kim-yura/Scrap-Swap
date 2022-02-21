@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 
-import { createFollow } from '../../store/session';
+import { createFollow, deleteFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
 import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
@@ -33,6 +33,10 @@ function UserView() {
     return state.scraps;
   });
 
+  const sessionUser = useSelector(state => {
+    return state.session.user
+  });
+
   const sessionUserId = useSelector(state => {
     return state.session.user?.id || ''
   });
@@ -53,7 +57,15 @@ function UserView() {
       followingId: userId
     };
     await dispatch(createFollow(follow));
-  }
+  };
+
+  const unfollowUser = async () => {
+    const unfollow = {
+      followerId: sessionUserId,
+      followingId: userId
+    };
+    await dispatch(deleteFollow(unfollow));
+  };
 
   return (
     <div className='user-view-page'>
@@ -81,11 +93,33 @@ function UserView() {
           : ''}
 
         {sessionUserId !== parseInt(userId) ?
-          <div className='follow-options'>
-            <button className='follow-button'
-              onClick={followUser}>
-              Follow User</button></div>
+          sessionUser.following.includes(parseInt(userId)) ?
+            <div className='follow-options'>
+              <button className='follow-button'
+                onClick={unfollowUser}>
+                Unfollow User
+              </button>
+            </div>
+            :
+            <div className='follow-options'>
+              <button className='follow-button'
+                onClick={followUser}>
+                Follow User
+              </button>
+            </div>
+
           : ''}
+
+        {/* {sessionUserId !== parseInt(userId) ?
+          {sessionUser.following.includes(userId) ?
+              < div className='follow-options'>
+                <button className='follow-button'
+                  onClick={followUser}>
+                  Follow User</button></div>
+              : ''
+          }
+          : ''
+        } */}
 
         <h3>{user.username}'s Scraps</h3>
         <div className={usersScraps.length > 5 ? 'user-view-scraps-gallery-long' : 'user-view-scraps-gallery'}>
@@ -101,12 +135,14 @@ function UserView() {
             </div>}
         </div>
 
-        {sessionUserId === parseInt(userId) ?
-          <UserLikes user={user} userId={userId} />
-          : ''}
-      </ul>
+        {
+          sessionUserId === parseInt(userId) ?
+            <UserLikes user={user} userId={userId} />
+            : ''
+        }
+      </ul >
 
-    </div>
+    </div >
   );
 }
 export default UserView;

@@ -183,3 +183,12 @@
     margin-right: auto;
     font-family: 'Open Sans', sans-serif;
 }
+
+.follow-button {
+    margin-top: 12px;
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: black;}
