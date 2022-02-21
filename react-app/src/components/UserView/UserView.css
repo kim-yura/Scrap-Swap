@@ -176,3 +176,10 @@
 .users-likes-gallery-long>.card {
     margin-bottom: 12px;
 }
+
+.missing-likes {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Open Sans', sans-serif;
+}

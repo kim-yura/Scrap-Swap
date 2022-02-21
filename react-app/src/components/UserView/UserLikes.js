@@ -37,9 +37,9 @@ const UserLikes = ({ user, userId }) => {
                             <UserSlapCard scrap={scrap} key={idx} />
                         )
                     })
-                    : <>
+                    : <div className='missing-likes'>
                         You don't have any likes!
-                    </>}
+                    </div>}
             </div>
         </div>
     )
