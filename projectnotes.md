@@ -98,6 +98,9 @@
 * User View: Added another class for longer list of Scraps (grid view)
 * User Seed: Added Kate's data
 * User Seed: Added Melanie's data
+* Username no longer than 24 characters
+* Default profile pics
+* CSS for no-likes in user page
 
 
 

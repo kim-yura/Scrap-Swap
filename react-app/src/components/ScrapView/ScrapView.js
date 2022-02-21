@@ -148,7 +148,7 @@ const ScrapView = () => {
                             <p>{selectedScrap?.textContent}</p>
                             <div className='scrap-colors'>
                                 {colorsArr.map(color =>
-                                    <div className='scrap-color'>
+                                    <div className='scrap-color' key={color}>
                                         {color === 'red' ? 'Red' :
                                             color === 'redorange' ? 'Red-orange' :
                                                 color === 'orange' ? 'Orange' :
