@@ -37,7 +37,7 @@ def put_user():
         return make_response({'errors': ['Edit on non-existant user']}, 404)
 
 
-@user_routes.route('/<int:id>/follow', methods=['POST'])
+@user_routes.route('/follow', methods=['POST'])
 @login_required
 def follow_user():
     follower_id=request.json['follower_id']
@@ -45,5 +45,16 @@ def follow_user():
     follower = User.query.get(follower_id)
     following = User.query.get(following_id)
     follower.following.append(following)
+    db.session.commit()
+    return jsonify(follower.to_JSON())
+
+@user_routes.route('/unfollow', methods=['DELETE'])
+@login_required
+def unfollow_user():
+    follower_id=request.json['follower_id']
+    following_id=request.json['following_id']
+    follower = User.query.get(follower_id)
+    following = User.query.get(following_id)
+    follower.following.remove(following)
     db.session.commit()
     return jsonify(follower.to_JSON())
