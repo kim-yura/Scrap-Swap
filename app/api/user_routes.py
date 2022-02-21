@@ -35,3 +35,15 @@ def put_user():
         return jsonify(user.to_JSON())
     else:
         return make_response({'errors': ['Edit on non-existant user']}, 404)
+
+
+@user_routes.route('/<int:id>/follow', methods=['POST'])
+@login_required
+def follow_user():
+    follower_id=request.json['follower_id']
+    following_id=request.json['following_id']
+    follower = User.query.get(follower_id)
+    following = User.query.get(following_id)
+    follower.following.append(following)
+    db.session.commit()
+    return jsonify(follower.to_JSON())

@@ -50,8 +50,8 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
             'bio': self.bio,
-            'followers': [follower.f_to_dict() for follower in self.followers],
-            'following': [follow.f_to_dict() for follow in self.following],
+            'followers': [follower.id for follower in self.followers],
+            'following': [follow.id for follow in self.following],
         }
 
     def to_JSON(self):
