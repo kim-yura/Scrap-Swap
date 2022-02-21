@@ -4,6 +4,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100%;
 }
 
 .new-scrap-form {
@@ -16,7 +17,6 @@
     padding-bottom: 60px;
     background-color: rgba(255, 255, 255, 85%);
     text-align: center;
-    height: calc(100vh - 87px);
 }
 
 .form-inputs {
