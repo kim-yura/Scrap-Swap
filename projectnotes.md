@@ -103,6 +103,7 @@
 * CSS for no-likes in user page
 * Added keys to ScrapView colors
 * Comments: Error validation and display for empty comments
+* Like button: Signed out users can no longer click the like button and trigger animation
 
 
 

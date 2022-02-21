@@ -77,13 +77,15 @@ const ScrapView = () => {
     };
 
     const animateLike = () => {
-        document.getElementById('like-icon').className = 'bounce';
-        setTimeout(() => {
-            try {
-                document.getElementById('like-icon').className = 'like-counter-icon';
-            }
-            catch { };
-        }, 500);
+        if (sessionUserId) {
+            document.getElementById('like-icon').className = 'bounce';
+            setTimeout(() => {
+                try {
+                    document.getElementById('like-icon').className = 'like-counter-icon';
+                }
+                catch { };
+            }, 500);
+        };
     };
 
     // if (!selectedScrap) {
