@@ -95,6 +95,8 @@
 * BackgroundImage: reconfigured for all screen sizes
 * Search: Changed icons for allergen buttons
 * User View: BugFix for page height
+* User View: Added another class for longer list of Scraps (grid view)
+* User Seed: Added Kate's data
 
 
 

@@ -63,6 +63,11 @@
     column-gap: 24px;
 }
 
+.user-view-scraps-gallery-long {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 24px;
+}
 
 .user-view-card {
     height: 320px;

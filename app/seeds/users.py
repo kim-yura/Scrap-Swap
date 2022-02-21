@@ -52,6 +52,12 @@ def seed_users():
         password='lovemyleftovers1',
         profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_8.jpg'
     )
+    yarnaddict92 = User(
+        username='yarnaddict92',
+        email='knittingforbrains@gmail.com',
+        password='Scraps*Pass',
+        profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_9.jpg'
+    )
 
 
     db.session.add(demo)
@@ -62,6 +68,7 @@ def seed_users():
     db.session.add(comingunraveled)
     db.session.add(beary_warm)
     db.session.add(lucky_scrapper)
+    db.session.add(yarnaddict92)
 
     db.session.commit()
 

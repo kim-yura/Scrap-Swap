@@ -135,6 +135,78 @@ def seed_scraps():
         text_content='',
         colors=' blue '
     )
+    scrap_12 = Scrap(
+        user_id=9,
+        title='Abundant Earth Fiber Botanical Sweets',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_12.JPG',
+        yarn_weight_id=2,
+        fiber_content='87%% Merino, 13%% Naturally dyed silk',
+        yardage=105,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors=' orange '
+    )
+    scrap_13 = Scrap(
+        user_id=9,
+        title='Knitted Wit Sock Colorway',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_13.JPG',
+        yarn_weight_id=4,
+        fiber_content='80%% Merino, 20%% Nylon',
+        yardage=227,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors=' pink '
+    )
+    scrap_14 = Scrap(
+        user_id=9,
+        title='Shalimar Yarns Enzo Sport',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_14.JPG',
+        yarn_weight_id=5,
+        fiber_content='70%% Merino, 20%% Cashmere, 10%% Nylon',
+        yardage=148,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors=' natural '
+    )
+    scrap_15 = Scrap(
+        user_id=9,
+        title='West Yorkshire Spinners Colour Lab DK',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_15.JPG',
+        yarn_weight_id=6,
+        fiber_content='100%% British Wool',
+        yardage=115,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors= ' natural '
+    )
+    scrap_16 = Scrap(
+        user_id=9,
+        title='Knit Pick Wool of the Andes',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_16.JPG',
+        yarn_weight_id=7,
+        fiber_content='100%% Peruvian Highland Wool',
+        yardage=64,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors=' natural '
+    )
+    scrap_17 = Scrap(
+        user_id=9,
+        title='Plymouth Galway Chunky',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_17.JPG',
+        yarn_weight_id=9,
+        fiber_content='100%% Wool',
+        yardage=110,
+        swap_target_id=1,
+        allergens='Cat, Dog',
+        text_content='',
+        colors=' pink '
+    )
 
     db.session.add(scrap_1)
     db.session.add(scrap_2)
@@ -147,6 +219,12 @@ def seed_scraps():
     db.session.add(scrap_9)
     db.session.add(scrap_10)
     db.session.add(scrap_11)
+    db.session.add(scrap_12)
+    db.session.add(scrap_13)
+    db.session.add(scrap_14)
+    db.session.add(scrap_15)
+    db.session.add(scrap_16)
+    db.session.add(scrap_17)
 
     db.session.commit()
 

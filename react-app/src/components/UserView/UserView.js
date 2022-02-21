@@ -72,7 +72,7 @@ function UserView() {
           : ''}
 
         <h3>{user.username}'s Scraps</h3>
-        <div className='user-view-scraps-gallery'>
+        <div className={usersScraps.length > 5 ? 'user-view-scraps-gallery-long' : 'user-view-scraps-gallery'}>
           {usersScraps.length ?
             usersScraps.map((scrap, idx) => {
               return (
