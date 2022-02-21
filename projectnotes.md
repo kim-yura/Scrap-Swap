@@ -97,6 +97,7 @@
 * User View: BugFix for page height
 * User View: Added another class for longer list of Scraps (grid view)
 * User Seed: Added Kate's data
+* User Seed: Added Melanie's data
 
 
 

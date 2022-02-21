@@ -58,6 +58,11 @@ def seed_users():
         password='Scraps*Pass',
         profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_9.jpg'
     )
+    howinternet = User(
+        username='HowDoesTheInternetEvenWorkTho',
+        email='0jl34sdXxc@whatevenislife.com',
+        password='1G3$ndy2'
+    )
 
 
     db.session.add(demo)
@@ -69,6 +74,7 @@ def seed_users():
     db.session.add(beary_warm)
     db.session.add(lucky_scrapper)
     db.session.add(yarnaddict92)
+    db.session.add(howinternet)
 
     db.session.commit()
 

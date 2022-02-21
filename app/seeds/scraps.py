@@ -207,6 +207,210 @@ def seed_scraps():
         text_content='',
         colors=' pink '
     )
+    scrap_18 = Scrap(
+        user_id=10,
+        title='Something Blue',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_18.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' blue white '
+    )
+    scrap_19 = Scrap(
+        user_id=10,
+        title='Pin Pricks',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_19.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink white '
+    )
+    scrap_20 = Scrap(
+        user_id=10,
+        title='Apologies Untold',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_20.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' purple white '
+    )
+    scrap_21 = Scrap(
+        user_id=10,
+        title='Dirty Secrets',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_21.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink '
+    )
+    scrap_22 = Scrap(
+        user_id=10,
+        title='Haunted',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_22.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' green red white multicolored '
+    )
+    scrap_23 = Scrap(
+        user_id=10,
+        title='Frolicking',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_23.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' multicolored yellow white purple '
+    )
+    scrap_24 = Scrap(
+        user_id=10,
+        title="Rose's Necklace",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_24.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' blue '
+    )
+    scrap_25 = Scrap(
+        user_id=10,
+        title='Tortoiseshell',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_25.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' natural orange '
+    )
+    scrap_26 = Scrap(
+        user_id=10,
+        title='Cheeto Dust',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_26.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' orange '
+    )
+    scrap_27 = Scrap(
+        user_id=10,
+        title='Peppermint Mocha',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_27.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' multicolored natural pink '
+    )
+    scrap_28 = Scrap(
+        user_id=10,
+        title='Marsh',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_28.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' multicolored yellow blue green '
+    )
+    scrap_29 = Scrap(
+        user_id=10,
+        title='Whispers',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_29.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' white green '
+    )
+    scrap_30 = Scrap(
+        user_id=10,
+        title='Spruce',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_30.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' green '
+    )
+    scrap_31 = Scrap(
+        user_id=10,
+        title='Come Again?',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_31.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink white '
+    )
+    scrap_32 = Scrap(
+        user_id=10,
+        title='Brush with Death',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_32.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink '
+    )
+    scrap_33 = Scrap(
+        user_id=10,
+        title='Does Anyone Earnestly Want a Corset?',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_33.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink '
+    )
+    scrap_34 = Scrap(
+        user_id=10,
+        title='Treasure Trove',
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_34.jpg',
+        yarn_weight_id=4,
+        fiber_content='100%% Wool',
+        yardage=100,
+        swap_target_id=1,
+        allergens='',
+        text_content='',
+        colors = ' pink '
+    )
 
     db.session.add(scrap_1)
     db.session.add(scrap_2)
@@ -225,6 +429,23 @@ def seed_scraps():
     db.session.add(scrap_15)
     db.session.add(scrap_16)
     db.session.add(scrap_17)
+    db.session.add(scrap_18)
+    db.session.add(scrap_19)
+    db.session.add(scrap_20)
+    db.session.add(scrap_21)
+    db.session.add(scrap_22)
+    db.session.add(scrap_23)
+    db.session.add(scrap_24)
+    db.session.add(scrap_25)
+    db.session.add(scrap_26)
+    db.session.add(scrap_27)
+    db.session.add(scrap_28)
+    db.session.add(scrap_29)
+    db.session.add(scrap_30)
+    db.session.add(scrap_31)
+    db.session.add(scrap_32)
+    db.session.add(scrap_33)
+    db.session.add(scrap_34)
 
     db.session.commit()
 
