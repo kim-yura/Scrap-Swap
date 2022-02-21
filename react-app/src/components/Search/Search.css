@@ -97,6 +97,15 @@
     width: 50px;
 }
 
+.allergen-buttons>img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.allergen-buttons>.selected {
+    box-shadow: 0 0 8px #282828;
+}
+
 .search-form-container>.allergen-buttons>.toggle-yes {
     background-color: yellow;
 }

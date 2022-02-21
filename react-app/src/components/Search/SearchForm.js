@@ -69,7 +69,6 @@ const SearchForm = () => {
             };
         });
 
-        // Yarn weight
         if (parseInt(yarnWeightId) !== 0) {
             let copyArr = searchResultsArr.slice();
             searchResultsArr = [];
@@ -80,7 +79,6 @@ const SearchForm = () => {
             });
         };
 
-        // Swap id
         if (parseInt(swapTargetId) !== 0) {
             let copyArr = searchResultsArr.slice();
             searchResultsArr = [];
@@ -91,7 +89,6 @@ const SearchForm = () => {
             });
         };
 
-        // Allergens
         if (noCats) {
             let copyArr = searchResultsArr.slice();
             searchResultsArr = [];
@@ -439,12 +436,14 @@ const SearchForm = () => {
                     I'm allergic to...
                 </p>
                 <div className='allergen-buttons'>
-                    <button
-                        className={noCats ? 'toggle-yes' : ''}
-                        onClick={toggleCats}>Cats</button>
-                    <button
-                        className={noDogs ? 'toggle-yes' : ''}
-                        onClick={toggleDogs}>Dogs</button>
+                    <img src={noCats ? 'https://scrapswap.s3.amazonaws.com/cat-no.png' : 'https://scrapswap.s3.amazonaws.com/cat-yes2.png'}
+                        className={noCats ? 'selected' : ''}
+                        onClick={toggleCats}
+                        alt='Button to toggle cats' />
+                    <img src={noDogs ? 'https://scrapswap.s3.amazonaws.com/dog-no.png' : 'https://scrapswap.s3.amazonaws.com/dog-yes2.png'}
+                        className={noDogs ? 'selected' : ''}
+                        onClick={toggleDogs}
+                        alt='Button to toggle dogs' />
                 </div>
                 <input
                     onChange={(e) => setOtherAllergens(e.target.value)}

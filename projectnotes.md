@@ -93,6 +93,7 @@
 # 02/21:
 * User Edit: BugFix where editing profile in one page render didn't auto-populate fields correctly
 * BackgroundImage: reconfigured for all screen sizes
+* Search: Changed icons for allergen buttons
 
 
 
