@@ -342,7 +342,7 @@ const SearchForm = () => {
                     <option value={11} required>Jumbo</option>
                 </select>
                 <p className='label'>
-                    I'm looking for these colors...
+                    I'm looking for any of these colors...
                 </p>
                 <div className='colors-buttons-search'>
                     <button
