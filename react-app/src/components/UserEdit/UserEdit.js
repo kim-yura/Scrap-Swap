@@ -58,7 +58,7 @@ const UserEdit = () => {
         const errors = [];
 
         if (!username) errors.push('Please enter a username.');
-        if (username.length > 40) errors.push('Usernames cannot be longer than 40 characters.');
+        if (username.length > 24) errors.push('Usernames cannot be longer than 24 characters.');
 
         setValidationErrors(errors);
 

@@ -59,7 +59,7 @@ def seed_users():
         profile_pic_url='https://scrapswap.s3.amazonaws.com/profilepic_9.jpg'
     )
     howinternet = User(
-        username='HowDoesTheInternetEvenWorkTho',
+        username='HowDoesTheInternetEvenWork',
         email='0jl34sdXxc@whatevenislife.com',
         password='1G3$ndy2'
     )

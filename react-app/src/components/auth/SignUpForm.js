@@ -32,6 +32,7 @@ const SignUpForm = () => {
     if (password !== repeatPassword) {
       errors.push('Passwords must match.');
     };
+    if (username.length > 24) errors.push('Usernames cannot be longer than 24 characters.');
 
     if (password === repeatPassword && emailRegex.test(email)) {
       const data = await dispatch(signUp(username, email, password));
