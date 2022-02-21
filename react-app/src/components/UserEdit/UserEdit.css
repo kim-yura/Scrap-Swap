@@ -1,10 +1,9 @@
 .edit-profile-background {
-    background-image: url('https://scrapswap.s3.amazonaws.com/splash_4.jpg');
-    width: 100%;
-    height: 100%;
-    object-fit: stretch;
-    background-repeat:no-repeat;
-    object-position: center;
+    background: url('https://scrapswap.s3.amazonaws.com/splash_6.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .profile-image-form {

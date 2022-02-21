@@ -1,8 +1,9 @@
 .delete-scrap-background {
-    background-image: url('https://scrapswap.s3.amazonaws.com/splash_3.jpg');
-    object-fit: cover;
-    object-position: center;
-    height: calc(100vh - 87px);
+    background: url('https://scrapswap.s3.amazonaws.com/splash_3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .delete-form {
