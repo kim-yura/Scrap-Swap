@@ -59,7 +59,7 @@ const ScrapsEditForm = () => {
     const [isGray, setIsGray] = useState(colorsArr.includes('gray'));
     const [isBlack, setIsBlack] = useState(colorsArr.includes('black'));
     const [isCream, setIsCream] = useState(colorsArr.includes('cream'));
-    const [isMulticolored, setIsMulticolored] = useState(colorsArr.includes('multicolored'));
+    const [isBrown, setIsBrown] = useState(colorsArr.includes('brown'));
     const [isRainbow, setIsRainbow] = useState(colorsArr.includes('rainbow'));
 
     const [validationErrors, setValidationErrors] = useState([]);
@@ -108,7 +108,7 @@ const ScrapsEditForm = () => {
         if (isGray) allColors += 'gray ';
         if (isBlack) allColors += 'black ';
         if (isCream) allColors += 'cream ';
-        if (isMulticolored) allColors += 'multicolored ';
+        if (isBrown) allColors += 'brown ';
         if (isRainbow) allColors += 'rainbow ';
 
         const editedScrap = {
@@ -200,8 +200,8 @@ const ScrapsEditForm = () => {
     const handleIsCream = () => {
         setIsCream(!isCream);
     };
-    const handleIsMulticolored = () => {
-        setIsMulticolored(!isMulticolored);
+    const handleIsBrown = () => {
+        setIsBrown(!isBrown);
     };
     const handleIsRainbow = () => {
         setIsRainbow(!isRainbow);
@@ -324,11 +324,11 @@ const ScrapsEditForm = () => {
                             <button
                                 type='button'
                                 className={isCream ? 'yes-color' : ''}
-                                onClick={handleIsCream}>Natural/Cream</button>
+                                onClick={handleIsCream}>Undyed/Cream</button>
                             <button
                                 type='button'
-                                className={isMulticolored ? 'yes-color' : ''}
-                                onClick={handleIsMulticolored}>Multicolored</button>
+                                className={isBrown ? 'yes-color' : ''}
+                                onClick={handleIsBrown}>Brown</button>
                             <button
                                 type='button'
                                 className={isRainbow ? 'yes-color' : ''}

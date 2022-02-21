@@ -40,7 +40,7 @@ const ScrapsPostForm = () => {
     const [isGray, setIsGray] = useState(false);
     const [isBlack, setIsBlack] = useState(false);
     const [isCream, setIsCream] = useState(false);
-    const [isMulticolored, setIsMulticolored] = useState(false);
+    const [isBrown, setIsBrown] = useState(false);
     const [isRainbow, setIsRainbow] = useState(false);
 
     const [validationErrors, setValidationErrors] = useState([]);
@@ -89,7 +89,7 @@ const ScrapsPostForm = () => {
         if (isGray) allColors += 'gray ';
         if (isBlack) allColors += 'black ';
         if (isCream) allColors += 'cream ';
-        if (isMulticolored) allColors += 'multicolored ';
+        if (isBrown) allColors += 'brown ';
         if (isRainbow) allColors += 'rainbow ';
 
         const newScrap = {
@@ -181,8 +181,8 @@ const ScrapsPostForm = () => {
     const handleIsCream = () => {
         setIsCream(!isCream);
     };
-    const handleIsMulticolored = () => {
-        setIsMulticolored(!isMulticolored);
+    const handleIsBrown = () => {
+        setIsBrown(!isBrown);
     };
     const handleIsRainbow = () => {
         setIsRainbow(!isRainbow);
@@ -307,8 +307,8 @@ const ScrapsPostForm = () => {
                                 onClick={handleIsCream}>Undyed/Cream</button>
                             <button
                                 type='button'
-                                className={isMulticolored ? 'yes-color' : ''}
-                                onClick={handleIsMulticolored}>Multicolored</button>
+                                className={isBrown ? 'yes-color' : ''}
+                                onClick={handleIsBrown}>Brown</button>
                             <button
                                 type='button'
                                 className={isRainbow ? 'yes-color' : ''}
