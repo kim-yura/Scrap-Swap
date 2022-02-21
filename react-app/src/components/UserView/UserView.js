@@ -110,17 +110,6 @@ function UserView() {
 
           : ''}
 
-        {/* {sessionUserId !== parseInt(userId) ?
-          {sessionUser.following.includes(userId) ?
-              < div className='follow-options'>
-                <button className='follow-button'
-                  onClick={followUser}>
-                  Follow User</button></div>
-              : ''
-          }
-          : ''
-        } */}
-
         <h3>{user.username}'s Scraps</h3>
         <div className={usersScraps.length > 5 ? 'user-view-scraps-gallery-long' : 'user-view-scraps-gallery'}>
           {usersScraps.length ?

@@ -110,6 +110,9 @@
 * Search: Submit now works with enter key
 * Colors: Changed Natural to Undyed/Cream, changed Multicolored to Brown
 * Seed: Updated seed for Scraps with new color schema
+* Follows: API routes and store
+* Follows: Seed
+* Follows: Users can follow and unfollow other users, complete with CSS
 
 
 * Scrap Cards: Image width needs adjustment
