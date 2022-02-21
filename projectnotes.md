@@ -101,9 +101,10 @@
 * Username no longer than 24 characters
 * Default profile pics
 * CSS for no-likes in user page
+* Added keys to ScrapView colors
+* Comments: Error validation and display for empty comments
 
 
 
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
-* Display errors for empty comments

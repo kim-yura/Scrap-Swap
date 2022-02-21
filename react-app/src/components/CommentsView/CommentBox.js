@@ -41,7 +41,7 @@ const CommentBox = ({ scrapId, userId }) => {
                     onChange={(e) => setComment(e.target.value)}
                     value={comment}
                     id='new-comment-textarea'
-                    placeholder='Add a new comment...'
+                    placeholder={validationErrors[0] ? validationErrors[0] : 'Add a new comment...'}
                 />
             </form>
             <div className='new-comment-buttons'>

@@ -61,7 +61,7 @@ const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
                             onChange={(e) => setComment(e.target.value)}
                             value={comment}
                             id='edit-comment-textarea'
-                            placeholder='Reply to this comment...'
+                            placeholder={validationErrors[0] ? validationErrors[0] : 'Reply to this comment...'}
                         />
                     </form>
                     <div className='new-comment-buttons'>
