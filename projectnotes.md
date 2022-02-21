@@ -107,6 +107,7 @@
 * Search: First render displays all Scraps in reverse chronological order
 * Search: Search params return Scraps in reverse chronological order
 * Search: Clarified that looking for ANY of these colors
+* Search: Submit now works with enter key
 
 
 

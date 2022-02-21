@@ -57,7 +57,8 @@ const SearchForm = () => {
         setNoDogs(!noDogs);
     };
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();
 
         setSearchResultsArr([]);
         let searchResultsArr = [];
@@ -316,7 +317,7 @@ const SearchForm = () => {
 
     return (
         <div className='search'>
-            <div className='search-form-container'>
+            <form className='search-form-container' onSubmit={handleSearch}>
                 <div id='search-form-header'>
                     Search for...
                 </div>
@@ -461,7 +462,7 @@ const SearchForm = () => {
                     className='submit-search-button'>
                     Gimme those Scraps!
                 </button>
-            </div>
+            </form>
             <div className='search-page'>
                 <div className='search-results-gradient' />
                 <div className='search-container'>
