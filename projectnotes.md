@@ -90,9 +90,11 @@
 * CSS: ScrapsCreate background img tiling fix
 * BugFix: Second+ edit on comment now populates automatically
 
+# 02/21:
+* User Edit: BugFix where editing profile in one page render didn't auto-populate fields correcctly
 
-* Comments: Editing the same comment more than once on one refresh doesn't auto-fill the form
-* User: Editing profile in one page render doesn't autopopulate bio field correctly
+
+
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
 * Display errors for empty comments

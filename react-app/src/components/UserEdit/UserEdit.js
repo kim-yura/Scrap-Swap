@@ -54,7 +54,6 @@ const UserEdit = () => {
             profilePicURL,
             bio
         };
-        console.log(editedUser);
 
         const errors = [];
 

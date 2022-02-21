@@ -139,7 +139,7 @@ export default function reducer(state = initialState, action) {
     case REMOVE_USER:
       return { user: null }
     case EDIT_USER:
-      newState[action.user.id] = action.user;
+      newState.user = action.user;
       return newState;
     default:
       return state;
