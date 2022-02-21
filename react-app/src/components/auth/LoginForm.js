@@ -34,7 +34,7 @@ const LoginForm = () => {
 
   const handleDemoLogin = async () => {
     setEmail('yura@aa.io');
-    setPassword('password');
+    setPassword('HelloIAmTheDev123');
     await dispatch(login(email, password));
   };
 
