@@ -104,6 +104,8 @@
 * Added keys to ScrapView colors
 * Comments: Error validation and display for empty comments
 * Like button: Signed out users can no longer click the like button and trigger animation
+* Search: First render displays all Scraps in reverse chronological order
+* Search: Search params return Scraps in reverse chronological order
 
 
 

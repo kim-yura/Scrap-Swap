@@ -25,6 +25,8 @@ const SearchForm = () => {
     const [noDogs, setNoDogs] = useState(false);
     const [otherAllergens, setOtherAllergens] = useState('');
 
+    const [searchResultsArr, setSearchResultsArr] = useState([]);
+
     const [isRed, setIsRed] = useState(false);
     const [isRedOrange, setIsRedOrange] = useState(false);
     const [isOrange, setIsOrange] = useState(false);
@@ -44,7 +46,9 @@ const SearchForm = () => {
     const [isMulticolored, setIsMulticolored] = useState(false);
     const [isRainbow, setIsRainbow] = useState(false);
 
-    const [searchResultsArr, setSearchResultsArr] = useState([]);
+    useEffect(() => {
+        setSearchResultsArr(Object.values(allScraps).reverse());
+    }, [allScraps]);
 
     const toggleCats = () => {
         setNoCats(!noCats);
@@ -117,7 +121,7 @@ const SearchForm = () => {
             });
         };
 
-        setSearchResultsArr(searchResultsArr);
+        setSearchResultsArr(searchResultsArr.reverse());
 
         if (isRed || isRedOrange || isOrange || isOrangeYellow || isYellow || isYellowGreen || isGreen || isBlueGreen || isBlue || isBluePurple || isPurple || isPink || isWhite || isGray || isBlack || isNatural || isMulticolored || isRainbow) {
             let inclusiveColorSearch = new Set();
