@@ -67,7 +67,7 @@ const followReducer = (state = {}, action) => {
 
     switch (action.type) {
         case CREATE_FOLLOW:
-            newState[action.follower] = action.follower;
+            newState.user = action.follower;
             return newState;
         case DELETE_FOLLOW:
             newState[action.follower] = action.follower;

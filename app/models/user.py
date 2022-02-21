@@ -61,5 +61,6 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
             'bio': self.bio,
-            'followers': [follower.to_dict() for follower in self.followers]
+            'followers': [follower.id for follower in self.followers],
+            'following': [following.id for following in self.following]
         }

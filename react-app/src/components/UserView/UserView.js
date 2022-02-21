@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 
+import { createFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
 import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
@@ -46,6 +47,14 @@ function UserView() {
     return <Redirect to='/page-not-found' />
   };
 
+  const followUser = async () => {
+    const follow = {
+      followerId: sessionUserId,
+      followingId: userId
+    };
+    await dispatch(createFollow(follow));
+  }
+
   return (
     <div className='user-view-page'>
       <div className='scrap-view-gradient'></div>
@@ -69,6 +78,13 @@ function UserView() {
             <button className='user-option-button'
               onClick={() => editUser()}>Edit Profile</button>
           </div>
+          : ''}
+
+        {sessionUserId !== parseInt(userId) ?
+          <div className='follow-options'>
+            <button className='follow-button'
+              onClick={followUser}>
+              Follow User</button></div>
           : ''}
 
         <h3>{user.username}'s Scraps</h3>
