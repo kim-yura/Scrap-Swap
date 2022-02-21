@@ -193,7 +193,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='Cat, Dog',
         text_content='',
-        colors=' cream '
+        colors=' brown '
     )
     scrap_17 = Scrap(
         user_id=9,
@@ -301,7 +301,7 @@ def seed_scraps():
         swap_target_id=1,
         allergens='',
         text_content='',
-        colors = ' cream orange '
+        colors = ' cream orange brown '
     )
     scrap_26 = Scrap(
         user_id=10,

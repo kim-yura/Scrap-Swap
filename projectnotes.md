@@ -108,7 +108,8 @@
 * Search: Search params return Scraps in reverse chronological order
 * Search: Clarified that looking for ANY of these colors
 * Search: Submit now works with enter key
-
+* Colors: Changed Natural to Undyed/Cream, changed Multicolored to Brown
+* Seed: Updated seed for Scraps with new color schema
 
 
 * Scrap Cards: Image width needs adjustment
