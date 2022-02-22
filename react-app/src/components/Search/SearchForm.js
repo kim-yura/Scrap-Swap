@@ -57,6 +57,17 @@ const SearchForm = () => {
         setNoDogs(!noDogs);
     };
 
+    const backToTop = () => {
+        window.scrollTo(0, 0);
+        document.getElementById('back-to-top').className = 'bounce';
+        setTimeout(() => {
+            try {
+                document.getElementById('back-to-top').classList.remove('bounce');
+            }
+            catch { };
+        }, 500);
+    };
+
     const handleSearch = (e) => {
         e.preventDefault();
 
@@ -328,7 +339,7 @@ const SearchForm = () => {
                     type='text'
                     placeholder='Search for anything'
                 />
-                <select defaultValue={0} onChange={(e) => setYarnWeightId(e.target.value)}>
+                <select id='yarn-weight-selector' defaultValue={0} onChange={(e) => setYarnWeightId(e.target.value)}>
                     <option value={0}>Choose a yarn weight</option>
                     <option value={1} required>Thread</option>
                     <option value={2} required>Lace</option>
@@ -471,6 +482,10 @@ const SearchForm = () => {
                             <ScrapCard scrap={scrap} key={idx} />
                         )}
                 </div>
+                <img onClick={backToTop}
+                    id='back-to-top'
+                    src={'https://scrapswap.s3.amazonaws.com/Scroll.png'}
+                    alt='Scroll up icon' />
             </div>
         </div>
     )
