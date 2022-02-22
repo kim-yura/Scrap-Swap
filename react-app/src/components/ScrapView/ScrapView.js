@@ -134,7 +134,7 @@ const ScrapView = () => {
                             </div>
                             <div className='scrap-view-user-meta'>
                                 <Link to={`/users/${selectedScrap?.user.id}`}>
-                                    <img className='profile-pic' src={selectedScrap?.user.profilePicURL ? selectedScrap.user.profilePicURL : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} alt='User profile pic' />
+                                    <img className='profile-pic' src={selectedScrap?.user.profile_pic_url ? selectedScrap.user.profile_pic_url : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} alt='User profile pic' />
                                 </Link>
                                 <p>Posted by <Link to={`/users/${selectedScrap?.user.id}`}>{selectedScrap?.user.username}</Link></p>
 

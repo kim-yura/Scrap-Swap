@@ -40,7 +40,7 @@ const CommentsView = ({ scrapId }) => {
                             <div className='comment-block' key={idx}>
                                 <div className='comment'>
                                     <Link to={`/users/${comment.user.id}`}>
-                                        <img className='comment-profile-pic' alt='User' src={comment.user.profilePicURL ? comment.user.profilePicURL : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} />
+                                        <img className='comment-profile-pic' alt='User' src={comment.user.profile_pic_url ? comment.user.profile_pic_url : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} />
                                     </Link>
                                     <div className='comment-text'>
                                         <div className='comment-user'>
@@ -59,7 +59,7 @@ const CommentsView = ({ scrapId }) => {
                                         return (
                                             <div className='reply' key={idx}>
                                                 <Link to={`/users/${reply.user.id}`}>
-                                                    <img className='comment-profile-pic' alt='User' src={reply.user.profilePicURL ? reply.user.profilePicURL : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} />
+                                                    <img className='comment-profile-pic' alt='User' src={reply.user.profile_pic_url ? reply.user.profile_pic_url : 'https://scrapswap.s3.amazonaws.com/logo_whitespace.png'} />
                                                 </Link>
                                                 <div className='comment-text'>
                                                     <div className='comment-user'>
