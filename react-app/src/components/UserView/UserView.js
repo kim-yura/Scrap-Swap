@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, Redirect, useParams } from 'react-router-dom';
+import { Link, useHistory, Redirect, useParams } from 'react-router-dom';
 
 import { createFollow, deleteFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
@@ -100,17 +100,21 @@ function UserView() {
 
         <div className='follows-section'>
           <div className='followers'>
-            <p className='follow-count'>{user.followers?.length}</p>
-            <p>Followers</p>
+            <Link to={`/users/${userId}/followers`}>
+              <p className='follow-count'>{user.followers?.length}</p>
+              <p className='follow-section-header'>Followers</p>
+            </Link>
           </div>
           <div className='following'>
-            <p className='follow-count'>{user.following?.length}</p>
-            <p>Following</p>
+            <Link to={`/users/${userId}/followings`}>
+              <p className='follow-count'>{user.following?.length}</p>
+              <p className='follow-section-header'>Following</p>
+            </Link>
           </div>
         </div>
 
         {sessionUserId !== parseInt(userId) ?
-          sessionUser.following_id.includes(parseInt(userId)) ?
+        sessionUser.following.some(e => e.id === parseInt(userId)) ?
             <div className='follow-options'>
               <button className='follow-button'
                 onClick={unfollowUser}>

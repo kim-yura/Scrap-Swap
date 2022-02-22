@@ -1,5 +1,6 @@
 .scrap-view-page {
-    height: calc(100% - 87px);
+    min-height: calc(100vh - 87px);
+    height: 100%;
 }
 
 .scrap-view-gradient {

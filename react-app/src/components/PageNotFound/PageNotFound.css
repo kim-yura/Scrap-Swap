@@ -4,7 +4,8 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    height: calc(100vh - 87px);
+    min-height: calc(100vh - 87px);
+    height: 100%;
 }
 
 .pnf-gradient {

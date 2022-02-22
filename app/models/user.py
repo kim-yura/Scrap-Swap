@@ -56,7 +56,6 @@ class User(db.Model, UserMixin):
             'following': [{'id': follow.id,
                            'username': follow.username,
                            'profile_pic_url': follow.profile_pic_url,} for follow in self.following],
-            'following_id': [follow.id for follow in self.following]
         }
 
     def to_JSON(self):
@@ -72,5 +71,4 @@ class User(db.Model, UserMixin):
             'following': [{'id': following.id,
                            'username': following.username,
                            'profile_pic_url': following.profile_pic_url,} for following in self.following],
-            'following_id': [follow.id for follow in self.following]
         }

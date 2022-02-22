@@ -117,6 +117,8 @@
 
 # 02/22:
 * ScrapsPost: Form now just says "Upload an image for your Scrap"
+* Follows: Following/unfollowing a user now dynamically renders their follow counts
+* Follows: User can now see follows and followers in other user pages
 
 
 * Scrap Cards: Image width needs adjustment
