@@ -113,6 +113,7 @@
 * Follows: API routes and store
 * Follows: Seed
 * Follows: Users can follow and unfollow other users, complete with CSS
+* ScrapsEdit: Form now just says "Upload an image for your Scrap"
 
 
 * Scrap Cards: Image width needs adjustment

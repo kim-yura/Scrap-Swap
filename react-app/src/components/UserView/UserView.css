@@ -102,7 +102,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 34px;
-    margin-bottom:6px;
+    margin-bottom: 6px;
     margin-top: 0px;
     padding-left: 6px;
     padding-right: 8px;
@@ -164,7 +164,7 @@
     row-gap: 24px;
 }
 
-.users-likes-gallery>.card{
+.users-likes-gallery>.card {
     margin-right: 24px;
 }
 
@@ -173,6 +173,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 12px;
 }
+
 .users-likes-gallery-long>.card {
     margin-bottom: 12px;
 }
@@ -191,4 +192,39 @@
     border-radius: 6px;
     padding-top: 4px;
     padding-bottom: 4px;
-    color: black;}
+    color: black;
+}
+
+.follows-sections {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    column-gap: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 36px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.follows-section {
+    width: 300px;
+}
+
+.follows-gallery {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+}
+
+/* // TODO: FIX ME! */
+.follows-user-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #282828;
+}
+
+.follows-user-profile:active {
+    box-shadow: 0 0 2px #282828;
+}

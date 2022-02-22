@@ -6,6 +6,7 @@ import { createFollow, deleteFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
 import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
+import UsersFollows from './UsersFollows';
 
 import './UserView.css';
 
@@ -62,8 +63,9 @@ function UserView() {
   const unfollowUser = async () => {
     const unfollow = {
       followerId: sessionUserId,
-      followingId: userId
+      followingId: parseInt(userId)
     };
+    console.log(unfollow);
     await dispatch(deleteFollow(unfollow));
   };
 
@@ -92,8 +94,15 @@ function UserView() {
           </div>
           : ''}
 
+        {sessionUserId === parseInt(userId) ?
+          <>
+            <UsersFollows user={user} />
+          </>
+          : ''
+        }
+
         {sessionUserId !== parseInt(userId) ?
-          sessionUser.following.includes(parseInt(userId)) ?
+          sessionUser.following_id.includes(parseInt(userId)) ?
             <div className='follow-options'>
               <button className='follow-button'
                 onClick={unfollowUser}>
@@ -124,10 +133,11 @@ function UserView() {
             </div>}
         </div>
 
-        {
-          sessionUserId === parseInt(userId) ?
+        {sessionUserId === parseInt(userId) ?
+          <>
             <UserLikes user={user} userId={userId} />
-            : ''
+          </>
+          : ''
         }
       </ul >
 

@@ -50,8 +50,13 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
             'bio': self.bio,
-            'followers': [follower.id for follower in self.followers],
-            'following': [follow.id for follow in self.following],
+            'followers': [{'id': follower.id,
+                           'username': follower.username,
+                           'profile_pic_url': follower.profile_pic_url,} for follower in self.followers],
+            'following': [{'id': follow.id,
+                           'username': follow.username,
+                           'profile_pic_url': follow.profile_pic_url,} for follow in self.following],
+            'following_id': [follow.id for follow in self.following]
         }
 
     def to_JSON(self):
@@ -61,6 +66,11 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
             'bio': self.bio,
-            'followers': [follower.id for follower in self.followers],
-            'following': [following.id for following in self.following]
+            'followers': [{'id': follower.id,
+                           'username': follower.username,
+                           'profile_pic_url': follower.profile_pic_url,} for follower in self.followers],
+            'following': [{'id': following.id,
+                           'username': following.username,
+                           'profile_pic_url': following.profile_pic_url,} for following in self.following],
+            'following_id': [follow.id for follow in self.following]
         }
