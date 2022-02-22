@@ -115,6 +115,9 @@
 * Follows: Users can follow and unfollow other users, complete with CSS
 * ScrapsEdit: Form now just says "Upload an image for your Scrap"
 
+# 02/22:
+* ScrapsPost: Form now just says "Upload an image for your Scrap"
+
 
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky

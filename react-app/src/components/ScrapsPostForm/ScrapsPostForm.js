@@ -204,7 +204,7 @@ const ScrapsPostForm = () => {
 
                 <div className='form-inputs'>
                     <div className='image-form'>
-                        {imageURL ? 'Image successfully uploaded!' : 'Upload an image for your Scrap'}
+                        Upload an image for your Scrap
                         {imageURL ? <img className='image' src={imageURL} alt='Scrap' /> : ''}
                         <input
                             type='file'
