@@ -63,6 +63,11 @@ def seed_users():
         email='0jl34sdXxc@whatevenislife.com',
         password='1G3$ndy2'
     )
+    bellebarnes = User(
+        username='BelleBarnes',
+        email='belle@aa.io.com',
+        password='password'
+    )
 
 
     db.session.add(demo)
@@ -75,10 +80,12 @@ def seed_users():
     db.session.add(lucky_scrapper)
     db.session.add(yarnaddict92)
     db.session.add(howinternet)
+    db.session.add(bellebarnes)
 
     knittywitty.followers.append(demo)
     purlsofwisdom.followers.append(demo)
     knithappens.followers.append(demo)
+    howinternet.followers.append(demo)
     demo.followers.append(stitchcraft)
     demo.followers.append(comingunraveled)
 

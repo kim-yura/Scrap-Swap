@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { loadAllScraps } from '../../store/scraps';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import ScrapCard from '../ScrapCard/ScrapCard';
 
 import './ScrapsRecent.css';
 
 function ScrapsRecent() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(loadAllScraps())
-    }, []);
 
     const allScraps = useSelector(state => {
         return state.scraps

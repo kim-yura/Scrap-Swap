@@ -411,6 +411,198 @@ def seed_scraps():
         text_content='',
         colors = ' pink '
     )
+    scrap_35 = Scrap(
+        user_id=1,
+        title="Jo Shrp Silkroad Aran Tweed",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_35.jpg',
+        yarn_weight_id='8',
+        fiber_content='85%% Wool, 10%% Silk, 5%% Cashmere',
+        yardage='35',
+        swap_target_id='1',
+        allergens='Cat-friendly home',
+        text_content='I have a little bit of this super squishy yarn left over from knitting a hat. Looking to trade for any blue yarns! I am based in the US, and can only trade domestically (sorry!).',
+        colors = ' brown '
+    )
+    scrap_36 = Scrap(
+        user_id=11,
+        title="Shepherd’s Wool Crazy, Stonehedge Fiber Mills",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_36.jpg',
+        yarn_weight_id='5',
+        fiber_content='100%% Merino',
+        yardage='120',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' red blue pink gray '
+    )
+    scrap_37 = Scrap(
+        user_id=11,
+        title="Edition 3, Schoppel, Tante Emma (Aunty Emma)",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_37.jpg',
+        yarn_weight_id='5',
+        fiber_content='100%% Merino (superwash)',
+        yardage='164',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' red pink orange redorange brown '
+    )
+    scrap_38 = Scrap(
+        user_id=11,
+        title="Mechita, Malabrigo, Azul Profundo",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_38.jpg',
+        yarn_weight_id='4',
+        fiber_content='100%% Merino (superwash)',
+        yardage='54',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' blue '
+    )
+    scrap_39 = Scrap(
+        user_id=11,
+        title="Mechita, Malabrigo, Poipu",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_39.jpg',
+        yarn_weight_id='4',
+        fiber_content='100%% Merino (superwash)',
+        yardage='54',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' blue white bluegreen '
+    )
+    scrap_40 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_40.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='46',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' blue '
+    )
+    scrap_41 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_41.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='20',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' green '
+    )
+    scrap_42 = Scrap(
+        user_id=11,
+        title="Stumptown DK, Polka Dot Sheep, Moose Meadow",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_42.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='231',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' green '
+    )
+    scrap_43 = Scrap(
+        user_id=11,
+        title="Tosh Sport, MadTosh, Coquette Deaux",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_43.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='270',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' pink '
+    )
+    scrap_44 = Scrap(
+        user_id=11,
+        title="Como, Lamana, M",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_44.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino',
+        yardage='524',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' gray '
+    )
+    scrap_45 = Scrap(
+        user_id=11,
+        title="Deluxe Tradition, Navia, White",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_45.jpg',
+        yarn_weight_id='8',
+        fiber_content='100%% Faroese Wool',
+        yardage='219',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' white cream '
+    )
+    scrap_46 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn, Red",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_46.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='20',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' red '
+    )
+    scrap_47 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_47.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='20',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' green '
+    )
+    scrap_48 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_48.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='10',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' green '
+    )
+    scrap_49 = Scrap(
+        user_id=11,
+        title="Smart, Sandnes Garn",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_49.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino (superwash)',
+        yardage='18',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' white '
+    )
+    scrap_50 = Scrap(
+        user_id=11,
+        title="Arbor, Brooklyn Tweed",
+        image_url='https://scrapswap.s3.amazonaws.com/scrap_50.jpg',
+        yarn_weight_id='6',
+        fiber_content='100%% Merino',
+        yardage='40',
+        swap_target_id='1',
+        allergens='Dog and Cat friendly home',
+        text_content='',
+        colors = ' red '
+    )
 
     db.session.add(scrap_1)
     db.session.add(scrap_2)
@@ -446,6 +638,22 @@ def seed_scraps():
     db.session.add(scrap_32)
     db.session.add(scrap_33)
     db.session.add(scrap_34)
+    db.session.add(scrap_35)
+    db.session.add(scrap_36)
+    db.session.add(scrap_37)
+    db.session.add(scrap_38)
+    db.session.add(scrap_39)
+    db.session.add(scrap_40)
+    db.session.add(scrap_41)
+    db.session.add(scrap_42)
+    db.session.add(scrap_43)
+    db.session.add(scrap_44)
+    db.session.add(scrap_45)
+    db.session.add(scrap_46)
+    db.session.add(scrap_47)
+    db.session.add(scrap_48)
+    db.session.add(scrap_49)
+    db.session.add(scrap_50)
 
     db.session.commit()
 
