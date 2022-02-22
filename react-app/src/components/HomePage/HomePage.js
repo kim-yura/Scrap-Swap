@@ -15,14 +15,14 @@ const HomePage = () => {
     });
 
     return (
-        <>
+        <div className='home-body'>
             <ImageCarousel />
             <ScrapsRecent />
             {sessionUser ?
                 <ScrapsRecentFromFollows sessionUser={sessionUser} />
                 : ''
             }
-        </>
+        </div>
     )
 };
 
