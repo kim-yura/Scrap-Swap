@@ -195,36 +195,23 @@
     color: black;
 }
 
-.follows-sections {
+.follows-section {
     display: flex;
     flex-direction: row;
-    text-align: center;
-    column-gap: 120px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 36px;
-    font-family: 'Montserrat', sans-serif;
+    column-gap: 100px;
 }
 
-.follows-section {
-    width: 300px;
+.follows-section>div {
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
 
-.follows-gallery {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 8px;
+.follows-section>div>p {
+    margin-bottom: -12px;
 }
 
-/* // TODO: FIX ME! */
-.follows-user-profile {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    box-shadow: 0 0 2px #282828;
-}
-
-.follows-user-profile:active {
-    box-shadow: 0 0 2px #282828;
+.follow-count {
+    font-weight: bold;
 }

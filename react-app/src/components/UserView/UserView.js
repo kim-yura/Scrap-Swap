@@ -6,7 +6,6 @@ import { createFollow, deleteFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
 import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
-import UsersFollows from './UsersFollows';
 
 import './UserView.css';
 
@@ -17,7 +16,7 @@ function UserView() {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(loadAllScraps())
+    dispatch(loadAllScraps());
     window.scrollTo(0, 0);
 
     if (!userId) {
@@ -28,7 +27,7 @@ function UserView() {
       const user = await response.json();
       setUser(user);
     })();
-  }, [userId]);
+  }, [userId, dispatch]);
 
   const allScraps = useSelector(state => {
     return state.scraps;
@@ -58,6 +57,9 @@ function UserView() {
       followingId: userId
     };
     await dispatch(createFollow(follow));
+    const response = await fetch(`/api/users/${userId}`);
+    const user = await response.json();
+    setUser(user);
   };
 
   const unfollowUser = async () => {
@@ -65,8 +67,10 @@ function UserView() {
       followerId: sessionUserId,
       followingId: parseInt(userId)
     };
-    console.log(unfollow);
     await dispatch(deleteFollow(unfollow));
+    const response = await fetch(`/api/users/${userId}`);
+    const user = await response.json();
+    setUser(user);
   };
 
   return (
@@ -94,12 +98,16 @@ function UserView() {
           </div>
           : ''}
 
-        {sessionUserId === parseInt(userId) ?
-          <>
-            <UsersFollows user={user} />
-          </>
-          : ''
-        }
+        <div className='follows-section'>
+          <div className='followers'>
+            <p className='follow-count'>{user.followers?.length}</p>
+            <p>Followers</p>
+          </div>
+          <div className='following'>
+            <p className='follow-count'>{user.following?.length}</p>
+            <p>Following</p>
+          </div>
+        </div>
 
         {sessionUserId !== parseInt(userId) ?
           sessionUser.following_id.includes(parseInt(userId)) ?
