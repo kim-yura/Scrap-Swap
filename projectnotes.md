@@ -110,6 +110,16 @@
 * Search: Submit now works with enter key
 * Colors: Changed Natural to Undyed/Cream, changed Multicolored to Brown
 * Seed: Updated seed for Scraps with new color schema
+* Follows: API routes and store
+* Follows: Seed
+* Follows: Users can follow and unfollow other users, complete with CSS
+* ScrapsEdit: Form now just says "Upload an image for your Scrap"
+
+# 02/22:
+* ScrapsPost: Form now just says "Upload an image for your Scrap"
+* Follows: Following/unfollowing a user now dynamically renders their follow counts
+* Follows: User can now see follows and followers in other user pages
+* Follows: Home page now displays recent scraps from users sessionUser follows
 
 
 * Scrap Cards: Image width needs adjustment

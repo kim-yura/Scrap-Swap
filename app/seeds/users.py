@@ -76,6 +76,12 @@ def seed_users():
     db.session.add(yarnaddict92)
     db.session.add(howinternet)
 
+    knittywitty.followers.append(demo)
+    purlsofwisdom.followers.append(demo)
+    knithappens.followers.append(demo)
+    demo.followers.append(stitchcraft)
+    demo.followers.append(comingunraveled)
+
     db.session.commit()
 
 

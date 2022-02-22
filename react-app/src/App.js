@@ -22,6 +22,9 @@ import UserView from './components/UserView/UserView';
 import UserEdit from './components/UserEdit/UserEdit';
 import { authenticate } from './store/session';
 
+import Followers from './components/UserView/Followers';
+import Followings from './components/UserView/Followings';
+
 import PageNotFound from './components/PageNotFound/PageNotFound';
 
 import './index.css';
@@ -79,6 +82,13 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <UserView />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/users/:userId/followers' exact={true} >
+          <Followers />
+        </ProtectedRoute>
+        <ProtectedRoute path='/users/:userId/followings' exact={true} >
+          <Followings />
         </ProtectedRoute>
 
         <Route path='/search' exact={true} >

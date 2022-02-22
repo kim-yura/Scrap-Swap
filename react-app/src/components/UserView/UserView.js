@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, Redirect, useParams } from 'react-router-dom';
+import { Link, useHistory, Redirect, useParams } from 'react-router-dom';
 
+import { createFollow, deleteFollow } from '../../store/session';
 import { loadAllScraps } from '../../store/scraps';
 import UserLikes from './UserLikes';
 import UserScrapCard from './UserScrapCard';
@@ -15,7 +16,7 @@ function UserView() {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(loadAllScraps())
+    dispatch(loadAllScraps());
     window.scrollTo(0, 0);
 
     if (!userId) {
@@ -26,10 +27,14 @@ function UserView() {
       const user = await response.json();
       setUser(user);
     })();
-  }, [userId]);
+  }, [userId, dispatch]);
 
   const allScraps = useSelector(state => {
     return state.scraps;
+  });
+
+  const sessionUser = useSelector(state => {
+    return state.session.user
   });
 
   const sessionUserId = useSelector(state => {
@@ -44,6 +49,28 @@ function UserView() {
 
   if (user.user === '') {
     return <Redirect to='/page-not-found' />
+  };
+
+  const followUser = async () => {
+    const follow = {
+      followerId: sessionUserId,
+      followingId: userId
+    };
+    await dispatch(createFollow(follow));
+    const response = await fetch(`/api/users/${userId}`);
+    const user = await response.json();
+    setUser(user);
+  };
+
+  const unfollowUser = async () => {
+    const unfollow = {
+      followerId: sessionUserId,
+      followingId: parseInt(userId)
+    };
+    await dispatch(deleteFollow(unfollow));
+    const response = await fetch(`/api/users/${userId}`);
+    const user = await response.json();
+    setUser(user);
   };
 
   return (
@@ -71,6 +98,39 @@ function UserView() {
           </div>
           : ''}
 
+        <div className='follows-section'>
+          <div className='followers'>
+            <Link to={`/users/${userId}/followers`}>
+              <p className='follow-count'>{user.followers?.length}</p>
+              <p className='follow-section-header'>Followers</p>
+            </Link>
+          </div>
+          <div className='following'>
+            <Link to={`/users/${userId}/followings`}>
+              <p className='follow-count'>{user.following?.length}</p>
+              <p className='follow-section-header'>Following</p>
+            </Link>
+          </div>
+        </div>
+
+        {sessionUserId !== parseInt(userId) ?
+        sessionUser.following.some(e => e.id === parseInt(userId)) ?
+            <div className='follow-options'>
+              <button className='follow-button'
+                onClick={unfollowUser}>
+                Unfollow User
+              </button>
+            </div>
+            :
+            <div className='follow-options'>
+              <button className='follow-button'
+                onClick={followUser}>
+                Follow User
+              </button>
+            </div>
+
+          : ''}
+
         <h3>{user.username}'s Scraps</h3>
         <div className={usersScraps.length > 5 ? 'user-view-scraps-gallery-long' : 'user-view-scraps-gallery'}>
           {usersScraps.length ?
@@ -86,11 +146,14 @@ function UserView() {
         </div>
 
         {sessionUserId === parseInt(userId) ?
-          <UserLikes user={user} userId={userId} />
-          : ''}
-      </ul>
+          <>
+            <UserLikes user={user} userId={userId} />
+          </>
+          : ''
+        }
+      </ul >
 
-    </div>
+    </div >
   );
 }
 export default UserView;

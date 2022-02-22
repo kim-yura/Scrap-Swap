@@ -441,11 +441,11 @@ const SearchForm = () => {
                     I'm allergic to...
                 </p>
                 <div className='allergen-buttons'>
-                    <img src={noCats ? 'https://scrapswap.s3.amazonaws.com/cat-no.png' : 'https://scrapswap.s3.amazonaws.com/cat-yes2.png'}
+                    <img src={noCats ? 'https://scrapswap.s3.amazonaws.com/cat-yes2.png' : 'https://scrapswap.s3.amazonaws.com/cat-no.png'}
                         className={noCats ? 'selected' : ''}
                         onClick={toggleCats}
                         alt='Button to toggle cats' />
-                    <img src={noDogs ? 'https://scrapswap.s3.amazonaws.com/dog-no.png' : 'https://scrapswap.s3.amazonaws.com/dog-yes2.png'}
+                    <img src={noDogs ? 'https://scrapswap.s3.amazonaws.com/dog-yes2.png' : 'https://scrapswap.s3.amazonaws.com/dog-no.png'}
                         className={noDogs ? 'selected' : ''}
                         onClick={toggleDogs}
                         alt='Button to toggle dogs' />

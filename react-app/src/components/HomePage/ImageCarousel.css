@@ -3,7 +3,7 @@
 .carousel {
     display: flex;
     justify-content: center;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -12,7 +12,7 @@
 .overlay {
     position: absolute;
     left: 100px;
-    top: 100px;
+    top: 50px;
     width: 600px;
     color: #FFFEFA;
     border-top: 2px solid #FFFEFA;

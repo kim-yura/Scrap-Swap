@@ -4,6 +4,8 @@ import { csrfFetch } from "../helpers";
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 const EDIT_USER = 'session/editUser';
+const CREATE_FOLLOW = 'follows/createFollow';
+const DELETE_FOLLOW = 'follows/deleteFollow';
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -131,6 +133,63 @@ const editUserAction = (user) => ({
   user
 });
 
+// -------------------- CREATE FOLLOW -------------------- //
+
+export const createFollow = ({
+  followerId,
+  followingId
+}) => async (dispatch) => {
+  const response = await csrfFetch('/api/users/follow', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      follower_id: followerId,
+      following_id: followingId
+    })
+  });
+
+  if (response.ok) {
+    const follower = await response.json();
+    dispatch(createFollowAction(follower));
+    return follower;
+  }
+};
+
+const createFollowAction = (follower) => ({
+  type: CREATE_FOLLOW,
+  follower
+});
+
+// -------------------- DELETE FOLLOW -------------------- //
+
+export const deleteFollow = ({
+  followerId,
+  followingId
+}) => async (dispatch) => {
+  const response = await csrfFetch('/api/users/unfollow', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      follower_id: followerId,
+      following_id: followingId
+    })
+  });
+
+  const follower = await response.json();
+  dispatch(deleteFollowAction(follower));
+};
+
+const deleteFollowAction = (follower) => {
+  return {
+    type: DELETE_FOLLOW,
+    follower
+  };
+};
+
 export default function reducer(state = initialState, action) {
   let newState = { ...state };
   switch (action.type) {
@@ -140,6 +199,12 @@ export default function reducer(state = initialState, action) {
       return { user: null }
     case EDIT_USER:
       newState.user = action.user;
+      return newState;
+    case CREATE_FOLLOW:
+      newState.user = action.follower;
+      return newState;
+    case DELETE_FOLLOW:
+      newState.user = action.follower;
       return newState;
     default:
       return state;

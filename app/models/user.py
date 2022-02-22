@@ -3,10 +3,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 
-followers = db.Table(
-    'followers',
-    db.Column('following_id', db.Integer, db.ForeignKey('users.id')),
-    db.Column('follower_id', db.Integer, db.ForeignKey('users.id'))
+follows = db.Table(
+    "follows",
+    db.Column("follower_id", db.Integer, db.ForeignKey("users.id")),
+    db.Column("following_id", db.Integer, db.ForeignKey("users.id"))
 )
 
 class User(db.Model, UserMixin):
@@ -19,12 +19,15 @@ class User(db.Model, UserMixin):
     profile_pic_url = db.Column(db.String, default='https://scrapswap.s3.amazonaws.com/logo_whitespace.png')
     bio = db.Column(db.Text, default='Just a yarny on the internet.')
 
-    follow = db.relationship('User',
-                             secondary=followers,
-                             primaryjoin=(followers.c.following_id == id),
-                             secondaryjoin=(followers.c.follower_id == id),
-                             backref='user')
-    # follow = db.relationship('Follow', back_populates='user')
+    followers = db.relationship(
+        "User",
+        secondary=follows,
+        primaryjoin=(follows.c.follower_id == id),
+        secondaryjoin=(follows.c.following_id == id),
+        backref=db.backref("following", lazy="dynamic"),
+        lazy="dynamic"
+    )
+
     scrap = db.relationship('Scrap', back_populates='user')
     comment = db.relationship('Comment', back_populates='user')
     like = db.relationship('Like', back_populates='user')
@@ -46,7 +49,13 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
-            'bio': self.bio
+            'bio': self.bio,
+            'followers': [{'id': follower.id,
+                           'username': follower.username,
+                           'profile_pic_url': follower.profile_pic_url,} for follower in self.followers],
+            'following': [{'id': follow.id,
+                           'username': follow.username,
+                           'profile_pic_url': follow.profile_pic_url,} for follow in self.following],
         }
 
     def to_JSON(self):
@@ -55,5 +64,11 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profile_pic_url': self.profile_pic_url,
-            'bio': self.bio
+            'bio': self.bio,
+            'followers': [{'id': follower.id,
+                           'username': follower.username,
+                           'profile_pic_url': follower.profile_pic_url,} for follower in self.followers],
+            'following': [{'id': following.id,
+                           'username': following.username,
+                           'profile_pic_url': following.profile_pic_url,} for following in self.following],
         }

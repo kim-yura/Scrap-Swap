@@ -102,7 +102,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 34px;
-    margin-bottom:6px;
+    margin-bottom: 6px;
     margin-top: 0px;
     padding-left: 6px;
     padding-right: 8px;
@@ -164,7 +164,7 @@
     row-gap: 24px;
 }
 
-.users-likes-gallery>.card{
+.users-likes-gallery>.card {
     margin-right: 24px;
 }
 
@@ -173,6 +173,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 12px;
 }
+
 .users-likes-gallery-long>.card {
     margin-bottom: 12px;
 }
@@ -182,4 +183,108 @@
     margin-left: auto;
     margin-right: auto;
     font-family: 'Open Sans', sans-serif;
+}
+
+.follow-button {
+    margin-top: 12px;
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: black;
+}
+
+.follows-section {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 100px;
+}
+
+.follows-section>div {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.follow-section-header {
+    margin-top: -12px;
+}
+
+.follow-count {
+    font-weight: bold;
+}
+
+.follow-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: calc(100vh - 87px);
+    height: 100%;
+    background: url('https://scrapswap.s3.amazonaws.com/splash_7.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.follow-content {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 60px;
+    background-color: rgba(255, 255, 255, 85%);
+    min-height: calc(100vh - 87px);
+    height: 100%;
+}
+
+.follow-single-user {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    align-content: center;
+    text-align: justify;
+    column-gap: 24px;
+}
+
+.follower-profile-pic {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #282828;
+}
+
+.follower-profile-pic:active {
+    box-shadow: 0 0 8px #282828;
+}
+
+.follow-text {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.follow-none-found {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.follow-content>button{
+    background-color: #E7717D;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 48px;
 }
