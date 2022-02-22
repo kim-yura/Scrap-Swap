@@ -1,134 +1,75 @@
-# Flask React Project
+# ScrapSwap
 
-This is the starter for the Flask React project.
+Scrap Swap is a social hub for yarny crafters to meet up and swap scraps! Sometimes, we just need a few yards or meters of a certain color, certain fiber content, or yarn weight. This is the place for you!
 
-## Getting started
+As my App Academy capstone project, this application will showcase the skills developed in the previous 20 weeks, and will utilize HTML & CSS, React, Redux, JavaScript, Python, SQLAlchemy, PostgreSQL, JSON API, and Git for a fully functional self-contained web-app.
 
-1. Clone this repository (only this branch)
+| [Live Site](https://scrapswap.herokuapp.com/)
+| [MVP Feature List](https://github.com/kim-yura/Scrap-Swap/wiki/MVP-List)
+| [Database Schema](https://github.com/kim-yura/Scrap-Swap/wiki/Database-Schema)
+| [API Documentation](https://github.com/kim-yura/Scrap-Swap/wiki/API-Documentation)
+| [Frontend Routes](https://github.com/kim-yura/Scrap-Swap/wiki/Frontend-Routes)
+| [User Stores](https://github.com/kim-yura/Scrap-Swap/wiki/User-Stories)
+|
+<br/><br/>
 
+# Technologies Used
+
+Scrap Swap is built on a React / Redux frontend, a Python / Flask backend, and a PostgreSQL database. Additionally, AWS S3 is implemented for image uploads.
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" height=40 />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" height=40/>
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"  height=40/>
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"  height=40/>
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"  height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" height=40/>
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"  height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height=40/>
+<img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"  height=40/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" height=40 />
+<br/><br/>
+
+# How to Get Started
+
+1. Clone this repository
    ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
+   git clone https://github.com/kim-yura/Scrap-Swap.git
    ```
 
-2. Install dependencies
+2. Install dependencies in the root directory
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+   ```bash
+   pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+   ```
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+3. `CD` into the `/react-app` directory and install dependencies
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+   ```bash
+   npm install
+   ```
+
+4. Create a **.env** file based on the example with proper settings for your
+   development environment, including an AWS S3 account for image uploads
+
+5. Setup a PostgreSQL user based on your **.env** file
+
+6. Setup a PostgreSQL database based on your **.env** file
+
+7. Start your shell, migrate your database, seed your database, and run the flask app
 
    ```bash
    pipenv shell
-   ```
-
-   ```bash
    flask db upgrade
-   ```
-
-   ```bash
    flask seed all
-   ```
-
-   ```bash
    flask run
    ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+8. In a new terminal, `CD` into `/react-app` and run the React app
 
    ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
+   npm start
    ```
