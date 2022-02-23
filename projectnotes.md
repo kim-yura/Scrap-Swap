@@ -134,6 +134,7 @@
 * Followings: Changed language for users that aren't following anyone
 * ScrapView: Padding adjusted for comment block
 * CommentsView: Styling for Scraps with no comments, only render for unauthenticated users (since authenticated users have the New Comment box)
+* ScrapsDeleteConfirmation: Styling page height for confirmation page
 
 
 // TO-DO //
