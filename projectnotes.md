@@ -138,11 +138,10 @@
 * UserEdit: Error messages styling, "Uploading" blank image or invalid image type now has error handling
 * Wiki - Frontend Routes
 * SearchForm: Search results with no applicable Scraps now displays message
-
+* Wiki - MVP List
 
 
 // TO-DO //
-* MVP List
 * User Stories
 * BugFix: Users should not be able to search for negative amounts of Scraps
 
