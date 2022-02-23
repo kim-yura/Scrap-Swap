@@ -66,9 +66,11 @@ Scrap Swap is built on a React / Redux frontend, a Python / Flask backend, and a
 
 ## Scraps (Full CRUD)
 Scraps are the primary feature of Scrap Swap. Users may browse Scraps posted by other users or upload their own Scraps, which may be edited or deleted. Scraps are used to communicate yarn scraps users may wish to swap, and an extensive data collection form ensures robust searchability.
+![Screenshot of Scraps Create form](https://user-images.githubusercontent.com/89601983/155240051-dbf9cecc-825c-4e76-a5aa-c2fa82cd72c8.png)
 
 ## Comments (Full CRUD)
 Users may leave comments on Scrap posts. Comments may mark the start of a new comment thread, or may be nested underneath other comments. Dynamic rendering of comments extends to Edit / Delete functions for owned comments.
+![Screenshot of Comments section](https://user-images.githubusercontent.com/89601983/155240159-f9c13bb4-cbc2-4d04-aea1-a52a60e0cf49.png)
 
 ## Likes (Create, Delete)
 Users may like or unlike Scraps. Liked Scraps will be displayed to the user in a private gallery on their user page.
@@ -78,12 +80,14 @@ Users may follow or unfollow other users. Lists of both followers and accounts f
 
 ## User Profile (Create, Read, Delete)
 Upon signing up as a user, users may further customize their user profiles through changing their usernames, profile pictures, or profile bios. This information is visible on all user profiles for all authenticated users.
+![Screenshot of user edit page](https://user-images.githubusercontent.com/89601983/155239824-adda6cbc-9f80-452a-9f79-fb1a7a94c002.png)
 
 ## Image Uploading with AWS S3
 AWS S3 is used for uploading images of Scraps, editing stored images of Scraps, or changing the user's profile picture.
 
 ## Search Feature
 Users may search existing Scraps for Scraps that best fit their needs. An extensive search bar allows users to narrow their search using parameters including yarn weight, inclusive color search, minimum yardage, household allergens, and more.
+![Screenshot of search feature](https://user-images.githubusercontent.com/89601983/155240466-4d375cd4-c3e4-4808-9000-d5c9bd8c7148.png)
 <br></br>
 
 # Database Schema

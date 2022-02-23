@@ -122,6 +122,17 @@
 * Follows: Home page now displays recent scraps from users sessionUser follows
 * Search Bar: Scroll Up button added
 
+### DOCUMENTATION:
+* README.md
+* Wiki - API
+* Wiki - Database Schema
+
+
+// TO-DO //
+* Wiki - Frontend Routes
+* MVP List
+* User Stories
+
 
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky
