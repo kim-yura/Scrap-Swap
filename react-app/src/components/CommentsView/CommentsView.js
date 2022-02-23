@@ -29,7 +29,7 @@ const CommentsView = ({ scrapId }) => {
     return (
         <div className='comment-view-body'>
             <h3 className='comment-view-header'>Comments</h3>
-            {filteredCommentsArr ?
+            {filteredCommentsArr.length ?
                 // --- Display Comments --- //
                 filteredCommentsArr.map((comment, idx) => {
                     // --- Display comments that are not replies --- //
@@ -69,7 +69,7 @@ const CommentsView = ({ scrapId }) => {
                                                         {reply.content}
                                                     </div>
                                                     {reply.user.id === userId ?
-                                                        <EditDeleteBox  scrapId={scrapId} allComments={allComments} commentId={reply.id} />
+                                                        <EditDeleteBox scrapId={scrapId} allComments={allComments} commentId={reply.id} />
                                                         : ''}
                                                 </div>
                                             </div>
@@ -83,7 +83,10 @@ const CommentsView = ({ scrapId }) => {
                         )
                     }
                 })
-                : ''}
+                : userId ? ''
+                    : <div className='empty-home-container-row'>
+                        No Comments on this Scrap yet!
+                    </div>}
             {userId ?
                 <CommentBox scrapId={scrapId} userId={userId} />
                 : ''}

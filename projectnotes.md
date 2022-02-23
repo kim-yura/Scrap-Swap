@@ -133,6 +133,7 @@
 * UserLikes: Changed language for no liked Scraps
 * Followings: Changed language for users that aren't following anyone
 * ScrapView: Padding adjusted for comment block
+* CommentsView: Styling for Scraps with no comments, only render for unauthenticated users (since authenticated users have the New Comment box)
 
 
 // TO-DO //
