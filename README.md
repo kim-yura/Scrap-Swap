@@ -9,7 +9,7 @@ As my App Academy capstone project, this application will showcase the skills de
 | [Database Schema](https://github.com/kim-yura/Scrap-Swap/wiki/Database-Schema)
 | [API Documentation](https://github.com/kim-yura/Scrap-Swap/wiki/API-Documentation)
 | [Frontend Routes](https://github.com/kim-yura/Scrap-Swap/wiki/Frontend-Routes)
-| [User Stores](https://github.com/kim-yura/Scrap-Swap/wiki/User-Stories)
+| [User Stories](https://github.com/kim-yura/Scrap-Swap/wiki/User-Stories)
 |
 <br/><br/>
 
