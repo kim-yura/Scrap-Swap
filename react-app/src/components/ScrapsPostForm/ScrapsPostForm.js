@@ -56,10 +56,12 @@ const ScrapsPostForm = () => {
             method: "POST",
             body: formData
         });
-        statusSetter("Uploaded!");
         if (res.ok) {
             let data = await res.json();
             setter(data.url);
+            statusSetter("Uploaded!");
+        } else {
+            statusSetter("Image not found / Invalid Image!");
         }
     };
 

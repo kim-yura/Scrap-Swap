@@ -127,6 +127,9 @@
 * Wiki - API
 * Wiki - Database Schema
 
+# 02/23:
+* BugFix: "Uploading" blank image or invalid image type now has error message
+
 
 // TO-DO //
 * Wiki - Frontend Routes
