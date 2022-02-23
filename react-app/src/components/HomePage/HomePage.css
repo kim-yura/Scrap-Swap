@@ -14,6 +14,31 @@
     height: 260px;
 }
 
+.empty-home-container-row {
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-radius: 12px;
+    box-shadow: 1px 1px 4px #282828;
+    border-radius: 6px;
+}
+
+.empty-home-container-row>img {
+    width: 75px;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
 .home-body {
     min-height: calc(100vh - 87px);
 }

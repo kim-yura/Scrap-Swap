@@ -129,6 +129,7 @@
 
 # 02/23:
 * BugFix: "Uploading" blank image or invalid image type now has error message
+* Recent Scraps from Users You Follow: Styling for accounts with no followings
 
 
 // TO-DO //
@@ -136,6 +137,7 @@
 * MVP List
 * User Stories
 
+* BugFix: Users should not be able to search for negative amounts of Scraps
 
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky

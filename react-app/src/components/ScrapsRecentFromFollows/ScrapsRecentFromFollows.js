@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ScrapCard from '../ScrapCard/ScrapCard';
 
 
-function ScrapsRecentFromFollows({sessionUser}) {
+function ScrapsRecentFromFollows({ sessionUser }) {
 
     const allScraps = useSelector(state => {
         return state.scraps
@@ -22,13 +22,18 @@ function ScrapsRecentFromFollows({sessionUser}) {
     return (
         <div className='home-container'>
             <h2 className='home-container-header'>Recent Scraps From Users You Follow</h2>
-            <div className='home-container-row'>
-                {recentScraps.map((scrap, idx) => {
-                    return (
-                        <ScrapCard scrap={scrap} key={idx}/>
-                    )
-                })}
-            </div>
+            {recentScraps.length ?
+                <div className='home-container-row'>
+                    {recentScraps.map((scrap, idx) => {
+                        return (
+                            <ScrapCard scrap={scrap} key={idx} />
+                        )
+                    })}
+                </div>
+                : <div className='empty-home-container-row'>
+                    Oops, you aren't following any users!
+                    <img src='https://scrapswap.s3.amazonaws.com/like_no.png' alt='Gray yarn icon' />
+                </div>}
         </div>
     )
 };
