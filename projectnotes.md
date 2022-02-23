@@ -135,7 +135,7 @@
 * ScrapView: Padding adjusted for comment block
 * CommentsView: Styling for Scraps with no comments, only render for unauthenticated users (since authenticated users have the New Comment box)
 * ScrapsDeleteConfirmation: Styling page height for confirmation page
-
+* UserEdit: Error messages styling, "Uploading" blank image or invalid image type now has error handling
 
 // TO-DO //
 * Wiki - Frontend Routes

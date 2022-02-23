@@ -34,10 +34,12 @@ const UserEdit = () => {
             method: "POST",
             body: formData
         });
-        statusSetter("Uploaded!");
         if (res.ok) {
             let data = await res.json();
             setter(data.url);
+            statusSetter("Uploaded!");
+        } else {
+            statusSetter("Image not found / Invalid Image!");
         }
     };
 
@@ -73,7 +75,7 @@ const UserEdit = () => {
             <form className='edit-profile-form' onSubmit={handleSubmit}>
 
                 {validationErrors.length ?
-                    <div className='form-errors'>
+                    <div className='user-form-errors'>
                         {validationErrors.length > 0 &&
                             validationErrors.map(error =>
                                 <p className='form-error' key={error}>
