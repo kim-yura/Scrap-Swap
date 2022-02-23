@@ -26,8 +26,6 @@
     border-radius: 50%;
     margin-top: -32px;
     border-width: 2px;
-    background: linear-gradient(rgb(118, 118, 118), rgb(133, 133, 133));
-    background-color: #FFFEFA;
     box-shadow: 1px 1px 4px #282828;
     object-fit: cover;
 }
