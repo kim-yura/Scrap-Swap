@@ -139,6 +139,7 @@
 * Wiki - Frontend Routes
 * SearchForm: Search results with no applicable Scraps now displays message
 * Wiki - MVP List
+* Wiki - User Stories
 
 
 // TO-DO //
