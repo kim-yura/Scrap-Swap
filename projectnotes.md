@@ -132,6 +132,7 @@
 * Recent Scraps from Users You Follow: Styling for accounts with no followings
 * UserLikes: Changed language for no liked Scraps
 * Followings: Changed language for users that aren't following anyone
+* ScrapView: Padding adjusted for comment block
 
 
 // TO-DO //
