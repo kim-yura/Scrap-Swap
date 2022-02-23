@@ -38,7 +38,7 @@ const UserLikes = ({ user, userId }) => {
                         )
                     })
                     : <div className='missing-likes'>
-                        You don't have any likes!
+                        You haven't liked any Scraps!
                     </div>}
             </div>
         </div>

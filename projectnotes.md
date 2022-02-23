@@ -130,6 +130,8 @@
 # 02/23:
 * BugFix: "Uploading" blank image or invalid image type now has error message
 * Recent Scraps from Users You Follow: Styling for accounts with no followings
+* UserLikes: Changed language for no liked Scraps
+* Followings: Changed language for users that aren't following anyone
 
 
 // TO-DO //

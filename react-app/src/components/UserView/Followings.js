@@ -49,7 +49,7 @@ function Followings() {
                         )
                     })
                     : <div className='follow-none-found'>
-                        This user has no followers!
+                        This user isn't following anyone!
                     </div>
                 }
                 <button onClick={handleBack}>Back to User</button>
