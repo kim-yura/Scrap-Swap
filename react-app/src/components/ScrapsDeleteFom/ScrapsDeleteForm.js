@@ -26,7 +26,7 @@ const ScrapDeleteForm = () => {
     const selectedScrap = Object.values(Object.values(allScraps).filter(scrap => scrap.id === parseInt(scrapId)))[0];
 
     const handleDelete = () => {
-        const deletedScrap = dispatch(deleteScrap(scrapId));
+        dispatch(deleteScrap(scrapId));
         history.push('/scraps/delete/confirm');
     };
 

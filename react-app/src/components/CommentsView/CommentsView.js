@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { loadAllComments, editComment, deleteComment } from '../../store/comments';
+import { loadAllComments } from '../../store/comments';
 
 import CommentBox from './CommentBox';
 import ReplyBox from './ReplyBox';

@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import './ScrapsDeleteForm.css';
 
 const ScrapDeleteConfirmation = () => {
 
-    const dispatch = useDispatch();
     const history = useHistory();
 
     useEffect(() => {

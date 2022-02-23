@@ -25,7 +25,7 @@ const CommentBox = ({ scrapId, userId }) => {
         setValidationErrors(errors);
 
         if (!errors.length) {
-            const submittedComment = await dispatch(createComment(newComment));
+            dispatch(createComment(newComment));
             setComment('');
         };
     };

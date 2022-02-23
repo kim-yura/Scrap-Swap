@@ -140,6 +140,7 @@
 * SearchForm: Search results with no applicable Scraps now displays message
 * Wiki - MVP List
 * Wiki - User Stories
+* Resolved some console errors
 
 
 // TO-DO //

@@ -30,7 +30,7 @@ const ReplyBox = ({ scrapId, userId, replyId }) => {
         setValidationErrors(errors);
 
         if (!errors.length) {
-            const submittedComment = await dispatch(createComment(newReply));
+            await dispatch(createComment(newReply));
             setReply('');
             setShowReplyForm(false);
         };

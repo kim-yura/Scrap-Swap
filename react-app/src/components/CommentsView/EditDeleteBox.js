@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { editComment, deleteComment, loadAllComments } from '../../store/comments';
 import './CommentsView.css';
 
@@ -32,7 +31,7 @@ const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
         setValidationErrors(errors);
 
         if (!errors.length) {
-            const submittedComment = await dispatch(editComment(editedComment));
+            await dispatch(editComment(editedComment));
             setComment('');
             setShowForm(false);
         };
@@ -43,7 +42,7 @@ const EditDeleteBox = ({ scrapId, allComments, commentId }) => {
         const deletedComment = {
             id: commentId
         };
-        const yeetedComment = await dispatch(deleteComment(deletedComment));
+        await dispatch(deleteComment(deletedComment));
         setComment('');
         setShowForm(false);
     };
