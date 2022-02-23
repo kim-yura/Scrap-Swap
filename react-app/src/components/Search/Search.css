@@ -165,3 +165,18 @@
 #back-to-top:active {
     box-shadow: 0 0 2px #282828;
 }
+
+.no-scraps-found {
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-radius: 12px;
+    box-shadow: 1px 1px 4px #282828;
+    border-radius: 6px;
+    padding-top: 36px;
+}

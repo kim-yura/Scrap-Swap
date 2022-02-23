@@ -477,10 +477,13 @@ const SearchForm = () => {
             <div className='search-page'>
                 <div className='search-results-gradient' />
                 <div className='search-container'>
-                    {searchResultsArr.length > 0 &&
+                    {searchResultsArr.length ?
                         searchResultsArr.map((scrap, idx) =>
-                            <ScrapCard scrap={scrap} key={idx} />
-                        )}
+                            <ScrapCard scrap={scrap} key={idx} />)
+                        : <div className='no-scraps-found'>
+                            No Scraps Found!
+                            <p>Try a different search</p>
+                        </div>}
                 </div>
                 <img onClick={backToTop}
                     id='back-to-top'
