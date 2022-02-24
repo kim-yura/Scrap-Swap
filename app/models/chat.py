@@ -20,7 +20,8 @@ class Chat(db.Model):
             'convo_id': self.convo_id,
             'user_id': self.user_id,
             'message': self.message,
-            'created_at': self.created_at
+            'user': self.user.to_dict(),
+            'created_at': created_at
         }
 
     def to_JSON(self):
@@ -31,5 +32,6 @@ class Chat(db.Model):
             'convoId': self.convo_id,
             'userId': self.user_id,
             'message': self.message,
-            'createdAt': self.created_at
+            'user': self.user.to_JSON(),
+            'createdAt': created_at
         }

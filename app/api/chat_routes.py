@@ -7,7 +7,6 @@ chat_routes = Blueprint('chats', __name__)
 @chat_routes.route('/', methods=['GET'])
 def get_chats():
     chats = Chat.query.all()
-    print(chats)
     return {'chats': [chat.to_dict() for chat in chats]}
 
 @chat_routes.route('/<int:id>', methods=['GET'])

@@ -1,0 +1,102 @@
+.chat-page {
+    min-height: calc(100vh - 230px);
+    height: calc(100vh - 230px);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.chat-sidebar-container {
+    background-color: #E7717D;
+    height: auto;
+    min-height: calc(100vh - 230px);
+    width: 300px;
+    position: static;
+    padding: 24px;
+    color: #F1F1F1;
+    justify-content: center;
+}
+
+.active-chat-window {
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    width: 100%;
+    height: calc(100vh - 270px);
+    background-color: #F1F1F1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.active-chat-messages {
+    height: calc(100vh - 330px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: scroll;
+}
+
+.chat-sessionUser {
+    background-color: rgb(118, 118, 118);
+    color: #FFFEFA;
+    max-width: 60%;
+    width: max-content;
+    text-align: right;
+    align-self: flex-end;
+    margin: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 24px;
+}
+
+.chat-otherUser {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.chat-otherUser-message {
+    background-color: #E7717D;
+    max-width: 60%;
+    width: max-content;
+    margin: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 24px;
+}
+
+.chat-user-pic {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.active-chat-window>form {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    height: 100px;
+}
+
+.active-chat-window>form>textarea {
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+    padding: 8px;
+    font-size: 14px;
+
+}
+
+.active-chat-window>form>button {
+    background-color: #E7717D;
+    color: #FFFEFA;
+    font-size: 14px;
+}
+
+.active-chat-window>form>button:hover {
+    cursor: pointer
+}

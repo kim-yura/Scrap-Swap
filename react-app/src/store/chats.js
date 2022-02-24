@@ -34,29 +34,33 @@ const loadChatsAction = (chats) => ({
     chats
 });
 
-export const loadConvos = ({
+export const loadConvos = (
     sessionUserId
-}) => async (dispatch) => {
-    const response = await csrfFetch(`/api/chats/${sessionUserId}/`, {
+) => async (dispatch) => {
+    const response = await csrfFetch(`/api/chats/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            session_user_id: sessionUserId
-        })
     });
 
     if (response.ok) {
-        const convos = await response.json();
-        dispatch(loadConvosAction(convos));
-        return convos;
+        const chats = Object.values(await response.json())[0];
+        const usersConvos = new Set();
+        chats.forEach((chat) => {
+            if (chat.convo_id.includes(sessionUserId)) {
+                usersConvos.add(chat.convo_id);
+            };
+        });
+        const usersConvosArr = Array.from(usersConvos);
+        dispatch(loadConvosAction(usersConvosArr));
+        return usersConvosArr;
     };
 };
 
-const loadConvosAction = (convos) => ({
+const loadConvosAction = (usersConvosArr) => ({
     type: LOAD_CONVOS,
-    convos
+    usersConvosArr
 });
 
 // -------------------- CREATE -------------------- //
@@ -102,9 +106,7 @@ const chatReducer = (state = {}, action) => {
             });
             return newState;
         case LOAD_CONVOS:
-            action.chats.forEach(convo => {
-                newState[convo.convo_id] = convo.convo_id;
-            });
+            newState.usersConvos = action.usersConvosArr;
             return newState;
         case CREATE_CHAT:
 
