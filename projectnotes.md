@@ -142,10 +142,15 @@
 * Wiki - User Stories
 * Resolved some console errors
 
+# 02/24:
+* Chats: Flask socket set up
+* Chats: DB model
+* Chats: DB seeds and migration files
+
+
+
 
 // TO-DO //
-* User Stories
 * BugFix: Users should not be able to search for negative amounts of Scraps
-
 * Scrap Cards: Image width needs adjustment
 * Like Icon: For Scraps with longer titles, styling is a bit wonky

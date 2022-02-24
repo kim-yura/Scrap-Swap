@@ -5,6 +5,7 @@ from .swap_targets import seed_swap_targets, undo_swap_targets
 from .scraps import seed_scraps, undo_seed_scraps
 from .comments import seed_comments, undo_seed_comments
 from .likes import seed_likes, undo_seed_likes
+from .chats import seed_chats, undo_seed_chats
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -20,6 +21,7 @@ def seed():
     seed_scraps()
     seed_comments()
     seed_likes()
+    seed_chats()
 
 
 # Creates the `flask seed undo` command
@@ -31,3 +33,4 @@ def undo():
     undo_seed_scraps()
     undo_seed_comments()
     undo_seed_likes()
+    undo_seed_chats()

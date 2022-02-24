@@ -5,3 +5,4 @@ from .swap_target import SwapTarget
 from .scrap import Scrap
 from .comment import Comment
 from .like import Like
+from .chat import Chat
