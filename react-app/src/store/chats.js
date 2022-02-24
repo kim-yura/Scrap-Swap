@@ -1,0 +1,116 @@
+import { csrfFetch } from "../helpers";
+
+const LOAD_CHATS = 'chats/loadChats';
+const LOAD_CONVOS = 'chats/loadConvos';
+const CREATE_CHAT = 'chats/createChat';
+
+// -------------------- READ -------------------- //
+
+export const loadChats = (
+    convoId
+) => async (dispatch) => {
+    const response = await csrfFetch(`/api/chats/`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    if (response.ok) {
+        const chats = Object.values(await response.json())[0];
+        const filteredChats = [];
+        chats.forEach((chat) => {
+            if (chat.convo_id === convoId) {
+                filteredChats.push(chat);
+            };
+        });
+        dispatch(loadChatsAction(filteredChats));
+        return chats;
+    };
+};
+
+const loadChatsAction = (chats) => ({
+    type: LOAD_CHATS,
+    chats
+});
+
+export const loadConvos = ({
+    sessionUserId
+}) => async (dispatch) => {
+    const response = await csrfFetch(`/api/chats/${sessionUserId}/`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            session_user_id: sessionUserId
+        })
+    });
+
+    if (response.ok) {
+        const convos = await response.json();
+        dispatch(loadConvosAction(convos));
+        return convos;
+    };
+};
+
+const loadConvosAction = (convos) => ({
+    type: LOAD_CONVOS,
+    convos
+});
+
+// -------------------- CREATE -------------------- //
+
+export const createChat = ({
+    convoId,
+    userId,
+    message
+}) => async (dispatch) => {
+    const response = await csrfFetch('/api/chats/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            convoId,
+            userId,
+            message
+        })
+    });
+
+    if (response.ok) {
+        const chat = await response.json();
+        dispatch(createChatAction((chat)));
+        return chat;
+    }
+};
+
+const createChatAction = (chat) => ({
+    type: CREATE_CHAT,
+    chat
+});
+
+// -------------------- REDUCER -------------------- //
+
+const chatReducer = (state = {}, action) => {
+    let newState = { ...state };
+
+    switch (action.type) {
+        case LOAD_CHATS:
+            action.chats.forEach(chat => {
+                newState[chat.id] = chat;
+            });
+            return newState;
+        case LOAD_CONVOS:
+            action.chats.forEach(convo => {
+                newState[convo.convo_id] = convo.convo_id;
+            });
+            return newState;
+        case CREATE_CHAT:
+
+        default:
+            return state;
+    }
+};
+
+export default chatReducer;

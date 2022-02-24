@@ -25,6 +25,8 @@ import { authenticate } from './store/session';
 import Followers from './components/UserView/Followers';
 import Followings from './components/UserView/Followings';
 
+import Chat from './components/Chat/Chat';
+
 import PageNotFound from './components/PageNotFound/PageNotFound';
 
 import './index.css';
@@ -89,6 +91,13 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId/followings' exact={true} >
           <Followings />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/chats' exact={true} >
+          <Chat />
+        </ProtectedRoute>
+        <ProtectedRoute path='/chats/:convoId' exact={true}>
+          <Chat />
         </ProtectedRoute>
 
         <Route path='/search' exact={true} >

@@ -1,16 +1,25 @@
 import { io } from 'socket.io-client';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
+import { loadConvos, loadChats, createChat } from '../../store/chats';
 
 let socket;
 
 const Chat = () => {
+
+    const dispatch = useDispatch();
+
+    const { convoId } = useParams();
 
     const [messages, setMessages] = useState([]);
     const [chatInput, setChatInput] = useState('');
     const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
+        dispatch(loadChats(convoId));
+
         // create websocket/connect
         socket = io();
 
@@ -24,7 +33,11 @@ const Chat = () => {
         return (() => {
             socket.disconnect();
         })
-    }, []);
+    }, [dispatch]);
+
+    const chats = useSelector((state) => {
+        return Object.values(state.chats);
+    });
 
     const updateChatInput = (e) => {
         setChatInput(e.target.value);
@@ -35,16 +48,23 @@ const Chat = () => {
         // emit a message
         socket.emit('chat', { user: sessionUser.username, msg: chatInput });
         setChatInput('');
+        dispatch(createChat({
+            convoId,
+            userId: sessionUser.id,
+            message: chatInput
+        }));
+        dispatch(loadChats(convoId));
     };
 
     return (sessionUser && (
         <div>
             <div>
-                {messages.map((message, idx) => (
-                    <div key={idx}>
-                        {`${message.user}: ${message.msg}`}
-                    </div>
-                ))}
+                {chats &&
+                    chats.map((chat, idx) => (
+                        <div key={idx}>
+                            {`${chat.user_id}: ${chat.message}`}
+                        </div>
+                    ))}
             </div>
             <form onSubmit={sendChat}>
                 <input
