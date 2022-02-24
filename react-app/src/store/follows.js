@@ -9,7 +9,7 @@ export const createFollow = ({
     followerId,
     followingId
 }) => async (dispatch) => {
-    const response = await csrfFetch('/api/users/follow', {
+    const response = await csrfFetch('/api/users/follow/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export const deleteFollow = ({
     followerId,
     followingId
 }) => async (dispatch) => {
-    const response = await csrfFetch('/api/users/unfollow', {
+    const response = await csrfFetch('/api/users/unfollow/', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
