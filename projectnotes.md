@@ -146,6 +146,7 @@
 * Chats: Flask socket set up
 * Chats: DB model
 * Chats: DB seeds and migration files
+* Chats: API routes
 
 
 
