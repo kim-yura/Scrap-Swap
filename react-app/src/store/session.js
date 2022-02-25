@@ -6,6 +6,7 @@ const REMOVE_USER = 'session/REMOVE_USER';
 const EDIT_USER = 'session/editUser';
 const CREATE_FOLLOW = 'follows/createFollow';
 const DELETE_FOLLOW = 'follows/deleteFollow';
+const FETCH_USERS = 'session/fetchUsers';
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -14,7 +15,7 @@ const setUser = (user) => ({
 
 const removeUser = () => ({
   type: REMOVE_USER,
-})
+});
 
 const initialState = { user: null };
 
@@ -190,6 +191,19 @@ const deleteFollowAction = (follower) => {
   };
 };
 
+
+export const fetchUsers = () => async (dispatch) => {
+  const response = await csrfFetch('/api/users/');
+  const allUsers = await response.json();
+  dispatch(fetchUsersAction(allUsers));
+  return allUsers;
+};
+
+const fetchUsersAction = (allUsers) => ({
+  type: FETCH_USERS,
+  allUsers
+})
+
 export default function reducer(state = initialState, action) {
   let newState = { ...state };
   switch (action.type) {
@@ -205,6 +219,11 @@ export default function reducer(state = initialState, action) {
       return newState;
     case DELETE_FOLLOW:
       newState.user = action.follower;
+      return newState;
+    case FETCH_USERS:
+      action.allUsers.users.forEach(user => {
+        newState[user.id] = user;
+      });
       return newState;
     default:
       return state;

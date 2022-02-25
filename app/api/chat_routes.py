@@ -11,7 +11,7 @@ def get_chats():
 
 @chat_routes.route('/<int:id>', methods=['GET'])
 def get_users_convos():
-    convos = Chat.query.all().filter(request.json['session_user_id'] in Chat.convo_id).all()
+    convos = Chat.query.all().filter(('$' + request.json['session_user_id'] + '$') in Chat.convo_id).all()
     return {'convos': [convo.convo_id for convo in convos]}
 
 @chat_routes.route('/', methods=['POST'])
