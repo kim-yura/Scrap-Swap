@@ -31,6 +31,8 @@ class User(db.Model, UserMixin):
     scrap = db.relationship('Scrap', back_populates='user')
     comment = db.relationship('Comment', back_populates='user')
     like = db.relationship('Like', back_populates='user')
+    conversations = db.relationship('Conversation', back_populates='user')
+    chats = db.relationship('Chat', back_populates='user')
 
     @property
     def password(self):
