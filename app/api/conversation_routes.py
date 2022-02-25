@@ -8,6 +8,11 @@ def get_conversations():
     conversations = Conversation.query.all()
     return jsonify([conversation.to_JSON() for conversation in conversations])
 
+@conversation_routes.route('/<int:conversationId>', methods=['GET'])
+def get_conversation(conversationId):
+    conversation = Conversation.query.get(conversationId)
+    return conversation.to_JSON()
+
 @conversation_routes.route('/', methods=['POST'])
 def create_conversation():
     conversation_name = request.json['conversation_name']

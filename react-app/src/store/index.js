@@ -4,12 +4,14 @@ import session from './session'
 import scrapReducer from './scraps';
 import commentReducer from './comments';
 import likeReducer from './likes';
+import conversationReducer from './conversations';
 
 const rootReducer = combineReducers({
   session,
   scraps: scrapReducer,
   comments: commentReducer,
   likes: likeReducer,
+  conversations: conversationReducer
 });
 
 
