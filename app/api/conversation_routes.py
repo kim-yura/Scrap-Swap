@@ -25,7 +25,7 @@ def create_conversation():
     if conversation:
         return make_response({'errors': ['Conversation already exists']})
     else:
-        participants = conversation_name.split('%')
+        participants = conversation_name.split('c')
         conversation_1 = Conversation(
             user_id = participants[0],
             conversation_name = conversation_name

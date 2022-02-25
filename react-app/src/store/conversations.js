@@ -2,6 +2,7 @@ import { csrfFetch } from "../helpers";
 
 const LOAD_ALL_CONVERSATIONS = 'conversations/loadAllConversations';
 const LOAD_CONVERSATION = 'conversations/loadConversation';
+const LOAD_USERS_CONVERSATIONS = 'conversations/loadUsersConversations';
 const CREATE_CONVERSATION = 'conversations/createConversation';
 
 // -------------------- READ -------------------- //
@@ -33,6 +34,25 @@ const loadConversationAction = (conversation) => ({
     type: LOAD_CONVERSATION,
     conversation
 });
+
+export const loadUsersConversations = (userId) => async (dispatch) => {
+    const response = await csrfFetch('/api/conversations/');
+    const allConversations = await response.json();
+    const usersConversations = [];
+    allConversations.forEach((convo) => {
+        if (convo.conversationName.includes(`c${userId}c`)) {
+            usersConversations.push(convo);
+        }
+    });
+    dispatch(loadAllConversationsAction(usersConversations));
+    return usersConversations;
+};
+
+const loadUsersConversationsAction = (usersConversations) => ({
+    type: LOAD_USERS_CONVERSATIONS,
+    usersConversations
+});
+
 
 // -------------------- CREATE -------------------- //
 
@@ -72,6 +92,11 @@ const conversationReducer = (state = {}, action) => {
             });
             return newState;
         case LOAD_CONVERSATION:
+        case LOAD_USERS_CONVERSATIONS:
+            action.usersConversations.forEach(conversation => {
+                newState[conversation.id] = conversation;
+            });
+            return newState;
         case CREATE_CONVERSATION:
 
         default:

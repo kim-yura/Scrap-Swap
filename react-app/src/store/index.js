@@ -5,13 +5,15 @@ import scrapReducer from './scraps';
 import commentReducer from './comments';
 import likeReducer from './likes';
 import conversationReducer from './conversations';
+import chatReducer from './chats';
 
 const rootReducer = combineReducers({
   session,
   scraps: scrapReducer,
   comments: commentReducer,
   likes: likeReducer,
-  conversations: conversationReducer
+  conversations: conversationReducer,
+  chats: chatReducer
 });
 
 
