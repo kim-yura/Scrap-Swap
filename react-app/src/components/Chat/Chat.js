@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import { loadConvos, loadChats, createChat } from '../../store/chats';
 
@@ -12,6 +12,7 @@ let socket;
 const Chat = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const { convoId } = useParams();
 
@@ -22,9 +23,9 @@ const Chat = () => {
 
     const sessionUser = useSelector(state => state.session.user);
 
-    useEffect(() => {
+    useEffect(async () => {
         dispatch(loadConvos(sessionUser.id));
-        dispatch(loadChats(convoId));
+        dispatch(loadChats());
 
         const activeWindow = document.getElementById('active-window');
         activeWindow.scrollTop = activeWindow.scrollHeight;
@@ -48,25 +49,47 @@ const Chat = () => {
     const convos = useSelector((state) => {
         return state.chats.usersConvos;
     });
-    console.log(convos);
 
-    // useEffect(() => {
-    //     const uniqueConvos = [];
-    //     convos.forEach(convo => {
-    //         const convoId = convo[0];
-    //         if (!uniqueConvos.includes(convoId)) {
-    //             uniqueConvos.push([convoId, convo[1]])
-    //         }
-    //     })
-    //     console.log(uniqueConvos);
-    // })
-
-    const chats = useSelector((state) => {
+    useEffect(() => {
+        const convosArr = [];
+        convos?.forEach(convo => {
+            if (parseInt(convo[1].id) !== parseInt(sessionUser.id)) {
+                if (!renderedChats.includes(parseInt(convo[1]))) {
+                    convosArr.push(convo);
+                };
+            };
+        });
+        setRenderedChats(convosArr);
+    }, [convos]);
+    const allChats = useSelector((state) => {
         return Object.values(state.chats);
+    });
+    const usersChats = [];
+    allChats.forEach(chat => {
+        if (chat.convo_id?.includes(sessionUser.id)) {
+            usersChats.push(chat);
+        };
+    });
+
+    const currentChatMessages = [];
+    usersChats.forEach(chat => {
+        if (chat.convo_id === convoId) {
+            currentChatMessages.push(chat);
+        }
     });
 
     const updateChatInput = (e) => {
         setChatInput(e.target.value);
+    };
+
+    const changeMessageFocus = async (e) => {
+        const inner = e.target.innerHTML;
+        let innerSplit = inner.split('id=');
+        innerSplit = innerSplit[1].split('"');
+        const convoId = innerSplit[1];
+        setMessages([]);
+        history.push(`/chats/${convoId}`);
+        await dispatch(loadChats(convoId));
     };
 
     const sendChat = async (e) => {
@@ -90,13 +113,18 @@ const Chat = () => {
     return (sessionUser && (
         <div className='chat-page'>
             <div className='chat-sidebar-container'>
+                {renderedChats.map((convo) => {
+                    return (
+                        <div className='chat-sidebar-row'
+                            id={convoId === convo[0] ? 'chat-selected' : ''}
+                            key={convo[0]}
+                            onClick={changeMessageFocus}>
+                            <img src={convo[1].profile_pic_url} alt='user profile' />
+                            <p id={convo[0]}>{convo[1].username}</p>
+                        </div>
+                    )
+                })}
 
-
-                {convos &&
-                    convos.map((convo) => {
-                        <>{convo[0]}</>
-                    })
-                }
             </div>
 
             <div className='active-chat-window'>
@@ -104,8 +132,8 @@ const Chat = () => {
                     {messages.map((message, idx) => (
                         <div key={idx}>{`${message.user}: ${message.msg}`}</div>
                     ))}
-                    {chats &&
-                        chats.map((chat, idx) => {
+                    {currentChatMessages &&
+                        currentChatMessages.map((chat, idx) => {
                             if (chat.convo_id) {
                                 if (chat.user_id === sessionUser.id) {
                                     return (
@@ -117,7 +145,7 @@ const Chat = () => {
                                     )
                                 } else {
                                     return (
-                                        <div className='chat-otherUser'>
+                                        <div className='chat-otherUser' key={idx}>
                                             <img
                                                 src={chat.user.profile_pic_url}
                                                 className='chat-user-pic' />

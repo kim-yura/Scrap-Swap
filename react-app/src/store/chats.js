@@ -6,9 +6,7 @@ const CREATE_CHAT = 'chats/createChat';
 
 // -------------------- READ -------------------- //
 
-export const loadChats = (
-    convoId
-) => async (dispatch) => {
+export const loadChats = () => async (dispatch) => {
     const response = await csrfFetch(`/api/chats/`, {
         method: 'GET',
         headers: {
@@ -18,13 +16,7 @@ export const loadChats = (
 
     if (response.ok) {
         const chats = Object.values(await response.json())[0];
-        const filteredChats = [];
-        chats.forEach((chat) => {
-            if (chat.convo_id === convoId) {
-                filteredChats.push(chat);
-            };
-        });
-        dispatch(loadChatsAction(filteredChats));
+        dispatch(loadChatsAction(chats));
         return chats;
     };
 };
@@ -49,7 +41,7 @@ export const loadConvos = (
         const usersConvos = new Set();
         chats.forEach((chat) => {
             if (chat.convo_id.includes(sessionUserId)) {
-                usersConvos.add(chat.convo_id);
+                usersConvos.add([chat.convo_id, chat.user]);
             };
         });
         const usersConvosArr = Array.from(usersConvos);
