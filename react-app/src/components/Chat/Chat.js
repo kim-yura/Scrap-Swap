@@ -83,13 +83,14 @@ const Chat = () => {
     };
 
     const changeMessageFocus = async (e) => {
-        const inner = e.target.innerHTML;
-        let innerSplit = inner.split('id=');
-        innerSplit = innerSplit[1].split('"');
-        const convoId = innerSplit[1];
-        setMessages([]);
+        const convoUsername = e.target.innerText;
+        let convoId = '';
+        usersChats.forEach(chat => {
+            if (chat.user.username === convoUsername) {
+                convoId = chat.convo_id;
+            };
+        });
         history.push(`/chats/${convoId}`);
-        await dispatch(loadChats(convoId));
     };
 
     const sendChat = async (e) => {
