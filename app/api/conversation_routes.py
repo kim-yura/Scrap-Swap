@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, make_response, request
-from app.models import db, Conversation
+from app.models import db, Conversation, Chat
 
 conversation_routes = Blueprint('conversations', __name__)
 
@@ -12,6 +12,11 @@ def get_conversations():
 def get_conversation(conversationId):
     conversation = Conversation.query.get(conversationId)
     return conversation.to_JSON()
+
+@conversation_routes.route('/<int:roomId>/chats', methods=['GET'])
+def get_chats(conversationId):
+    chats = Chat.query.filter(Chat.conversation_id == conversationId).all()
+    return {'chats': [chat.to_JSON() for chat in chats]}
 
 @conversation_routes.route('/', methods=['POST'])
 def create_conversation():
