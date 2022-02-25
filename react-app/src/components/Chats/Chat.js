@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import { loadUsersConversations, loadConversation, createConversation } from '../../store/conversations';
 import { loadChats, createChat } from '../../store/chats';
@@ -13,11 +13,12 @@ import './Chat.css';
 const Chat = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const { conversationName } = useParams();
-    console.log(conversationName)
 
     const [renderedConvos, setRenderedConvos] = useState([]);
+    const [focus, setFocus] = useState('');
 
     const sessionUser = useSelector(state => {
         return state.session.user;
@@ -43,15 +44,22 @@ const Chat = () => {
         setRenderedConvos(convos);
     }, [usersConversations]);
 
+    const handleChatFocus = (e) => {
+        history.push(`/inbox/${e.target.id}`);
+    };
+
     return (
         <div className='chat-page'>
             <div className='chat-sidebar'>
                 {renderedConvos && renderedConvos.map((convo, idx) => {
                     return (
-                        <div className={conversationName ?
-                            conversationName === convo.conversationName ? 'chat-sidebar-selected-row'
-                                : 'chat-sidebar-row'
-                            : 'chat-sidebar-row'}>
+                        <div
+                            onClick={handleChatFocus}
+                            id={convo.conversationName}
+                            className={conversationName ?
+                                conversationName === convo.conversationName ? 'chat-sidebar-selected-row'
+                                    : 'chat-sidebar-row'
+                                : 'chat-sidebar-row'}>
                             <img src={convo.user.profile_pic_url} alt='user profile' />
                             <p>{convo.user.username}</p>
                         </div>
