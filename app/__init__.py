@@ -12,6 +12,8 @@ from .api.scrap_routes import scrap_routes
 from .api.image_routes import image_routes
 from .api.comment_routes import comment_routes
 from .api.like_routes import like_routes
+from .api.conversation_routes import conversation_routes
+from .api.chat_routes import chat_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +41,8 @@ app.register_blueprint(scrap_routes, url_prefix='/api/scraps')
 app.register_blueprint(image_routes, url_prefix='/api/images')
 app.register_blueprint(comment_routes, url_prefix='/api/comments')
 app.register_blueprint(like_routes, url_prefix='/api/likes')
+app.register_blueprint(conversation_routes, url_prefix='/api/conversations')
+app.register_blueprint(chat_routes, url_prefix='/api/chats')
 db.init_app(app)
 Migrate(app, db)
 
