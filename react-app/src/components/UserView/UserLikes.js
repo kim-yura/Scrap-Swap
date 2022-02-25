@@ -33,11 +33,9 @@ const UserLikes = ({ user, userId }) => {
             <div className={usersLikesArr.length >= 7 ? 'users-likes-gallery-long' : 'users-likes-gallery'}>
                 {usersLikesArr.length ?
                     usersLikesArr.map((scrap, idx) => {
-                        scrap !== undefined ?
-                            (
-                                <UserSlapCard scrap={scrap} key={idx} />
-                            )
-                            : ''
+                        return (
+                            <UserSlapCard scrap={scrap} key={idx} />
+                        )
                     })
                     : <div className='missing-likes'>
                         You haven't liked any Scraps!
