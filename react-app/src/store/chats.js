@@ -1,9 +1,33 @@
 import { csrfFetch } from "../helpers";
 
+const LOAD_USERS_CHATS = 'chats/loadUsersChats';
 const LOAD_CHATS = 'chats/loadChats';
 const CREATE_CHAT = 'chats/createChat';
 
 // -------------------- READ -------------------- //
+
+export const loadUsersChats = (userId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/chats/`);
+    if (response.ok) {
+        const chats = await response.json();
+        if (chats.errors) {
+            return;
+        };
+        const usersChats = [];
+        chats.forEach(chat => {
+            if ((chat.conversationName).includes(userId.toString())) {
+                usersChats.push(chat);
+            }
+        });
+        dispatch(loadUsersChatsAction(usersChats));
+        return usersChats;
+    };
+};
+
+const loadUsersChatsAction = (chats) => ({
+    type: LOAD_USERS_CHATS,
+    chats
+});
 
 export const loadChats = (conversationId) => async (dispatch) => {
     const response = await csrfFetch(`/api/conversations/${conversationId}/chats`);
@@ -57,6 +81,11 @@ const chatReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD_CHATS:
             action.chats.forEach(chat => {
+                newState[chat.id] = chat;
+            });
+            return newState;
+        case LOAD_USERS_CHATS:
+            Object.values(action.chats).forEach(chat => {
                 newState[chat.id] = chat;
             });
             return newState;
